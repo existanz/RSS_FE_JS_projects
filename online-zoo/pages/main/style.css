@@ -1,0 +1,20 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color:white;
+}
+.menu {
+    display: flex;
+    justify-content: space-between;
+    list-style:none;
+}
+a {
+    color:white;
+    text-decoration: none;
+    padding: 15px;
+}
+.preview {
+    background: url(../../assets/images/Giant_Panda.png) no-repeat center;
+    height: 765px;
+}
