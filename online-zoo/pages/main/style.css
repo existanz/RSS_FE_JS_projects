@@ -1,3 +1,6 @@
+.header {
+    
+}
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -15,6 +18,10 @@ a {
     padding: 15px;
 }
 .preview {
-    background: url(../../assets/images/Giant_Panda.png) no-repeat center;
-    height: 765px;
+    background: url(../../assets/images/Giant_Panda_cr.png) no-repeat center;   
+    height: 700px;
+}
+.preview-text {
+    padding-top: 60px;
+    margin-top: 0px;
 }
