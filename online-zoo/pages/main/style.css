@@ -33,6 +33,8 @@ body {
 
 .header {
     font-weight: 500;
+    background-color: black;
+    color: white;
 }
 
 .pet-logo {
@@ -40,8 +42,10 @@ body {
     border: 1px solid #FFFFFF;
     border-radius: 2px;
     width: 82px;
+    box-sizing: border-box;
     position: relative;
 }
+
 .pet-logo-text {
     margin: 0;
     text-align: center;
@@ -50,28 +54,36 @@ body {
     color: #FFFFFF;
     font-weight: 400;
 }
+
 .pet-logo-img {
     position: absolute;
     bottom: 9px;
     left: 9px;
     height: 19px;
 }
+
 .navbar {
     display: flex;
-    justify-content: space-between;
-    background-color: black;
-    color: white;
+    align-items: center;
+    margin: 0 auto;
+    width: 1160px;
+    min-height: 80px
 }
 
 .menu {
     display: flex;
     justify-content: space-between;
+    padding-left: 60px;
+    width: 475px;
+}
+
+.header-copyright {
+    margin-left: auto;
 }
 
 a {
     color: white;
     text-decoration: none;
-    padding: 15px;
 }
 
 li {
@@ -83,11 +95,32 @@ li {
     height: 700px;
 }
 
-.preview-text {
-    padding-top: 60px;
-    margin-top: 0px;
+.preview-circle {
+    position: absolute;
+    border-radius: 50%;
+    width: 465px;
+    height: 465px;
+    left: calc(50% - 232.5px + 239.5px);
+    top: 94px;
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
 }
 
+.preview-text {
+    position: absolute;
+    font-weight: 700;
+    font-size: 106.496px;
+    line-height: 75%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    width: 500.31px;
+    height: 400px;
+    left: calc(50% - 250.155px + 330.15px);
+    top: 77px;
+}
+.preview-text span {
+    color: #ffee2e;
+}
 .footer {
     display: flex;
     justify-content: space-between;
