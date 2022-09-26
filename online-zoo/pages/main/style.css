@@ -85,7 +85,23 @@ a {
     color: white;
     text-decoration: none;
 }
-
+.button {
+    cursor: pointer;
+    border: none;
+    padding: 16px 0;
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 22px;
+    color: #FFFFFF;
+    border-radius: 25px;
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+    text-transform: uppercase;
+    text-decoration: none;
+    min-width: 298px;
+    text-align: center;
+}
 li {
     list-style: none;
 }
@@ -120,6 +136,11 @@ li {
 }
 .preview-text span {
     color: #ffee2e;
+}
+.preview-button {
+    position: absolute;
+    left: 985px;
+    top: 625px;
 }
 .footer {
     display: flex;
