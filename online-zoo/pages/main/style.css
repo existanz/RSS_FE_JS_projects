@@ -152,13 +152,31 @@ li {
     padding-bottom: 100px;
     color: #333B41;
 }
+.backstage-image {
+    margin-right: 85px;
+}
 .backstage-right {
-    width: 500px;
+    width: 465px;
+}
+.backstage-title {
+    font-weight: 400;
+    font-size: 48px;
+    margin: 0 0 27px 0;
+}
+.backstage-subtitle {
+    font-size: 24px;
+    margin: 55px 0 35px 0;
+}
+.backstage-text {
+    line-height: 20.8px;
+    margin-bottom: 0px;
 }
 .backstage-container {
     display: flex;
     justify-content: center;
 }
+
+/*animals*/
 .footer {
     display: flex;
     justify-content: space-between;
