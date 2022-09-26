@@ -85,6 +85,7 @@ a {
     color: white;
     text-decoration: none;
 }
+
 .button {
     cursor: pointer;
     border: none;
@@ -102,6 +103,7 @@ a {
     min-width: 298px;
     text-align: center;
 }
+
 li {
     list-style: none;
 }
@@ -134,14 +136,17 @@ li {
     left: calc(50% - 250.155px + 330.15px);
     top: 77px;
 }
+
 .preview-text span {
     color: #ffee2e;
 }
+
 .preview-button {
     position: absolute;
     left: 985px;
     top: 625px;
 }
+
 /*backstage*/
 .backstage {
     position: relative;
@@ -149,34 +154,99 @@ li {
     background-position: right top 13px;
     background-repeat: no-repeat;
     padding-top: 140px;
-    padding-bottom: 100px;
+    padding-bottom: 180px;
     color: #333B41;
 }
+
 .backstage-image {
     margin-right: 85px;
 }
+
 .backstage-right {
     width: 465px;
 }
+
 .backstage-title {
     font-weight: 400;
     font-size: 48px;
     margin: 0 0 27px 0;
 }
+
 .backstage-subtitle {
     font-size: 24px;
     margin: 55px 0 35px 0;
 }
+
 .backstage-text {
     line-height: 20.8px;
     margin-bottom: 0px;
 }
+
 .backstage-container {
     display: flex;
     justify-content: center;
 }
 
 /*animals*/
+.animal-slider {
+    position: relative;
+    margin: 0 auto;
+    width: 1160px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px 28px;
+    grid-auto-rows: 426px;
+}
+
+.animal-card {
+    position: relative;
+    border-radius: 5px;
+    background: linear-gradient(#FA6F32, #FE9013);
+    overflow: hidden;
+    height: 426px;
+    transition: height 0.2s linear;
+}
+
+.animal-card-desc {
+    display: flex;
+    justify-content: space-between;
+    width: 364px;
+    margin-left: 1px;
+    background-color: #FFFFFF;
+}
+
+.animal-card-title {
+    margin: 4px 0 0 16px;
+}
+
+.animal-card-area {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0 0 13px 16px;
+}
+
+.animal-button {
+    margin: 0 auto;
+    margin-top: 82px;
+}
+.arrow {
+    position: absolute;
+    top: 404px;
+    background-color: #F9804B;
+    border-radius: 50%;
+    height: 62px;
+    width: 62px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.arrow-left {
+    left: -80px;
+    background-image: url('../../assets/icons/leftArrow.svg');
+}
+.arrow-right {
+    right: -80px;
+    background-image: url('../../assets/icons/rightArrow.svg');
+}
 .footer {
     display: flex;
     justify-content: space-between;
