@@ -206,7 +206,9 @@ li {
     height: 426px;
     transition: height 0.2s linear;
 }
-
+.animal-card-img {
+    margin: 2px 0 0 1px;
+}
 .animal-card-desc {
     display: flex;
     justify-content: space-between;
