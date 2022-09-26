@@ -38,12 +38,14 @@ body {
 .menu {
     display: flex;
     justify-content: space-between;
-    list-style:none;
 }
 a {
     color:white;
     text-decoration: none;
     padding: 15px;
+}
+li {
+    list-style: none;
 }
 .preview {
     background: url(../../assets/images/Giant_Panda_cr.png) no-repeat center;   
@@ -52,4 +54,10 @@ a {
 .preview-text {
     padding-top: 60px;
     margin-top: 0px;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color:white;
 }
