@@ -5,59 +5,92 @@
     font-weight: 300;
     src: url('../../assets/fonts/Roboto-Light.ttf');
 }
+
 @font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     src: url('../../assets/fonts/Roboto-Regular.ttf');
 }
+
 @font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
     src: url('../../assets/fonts/Roboto-Medium.ttf');
 }
+
 @font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     src: url('../../assets/fonts/Roboto-Bold.ttf');
 }
+
 body {
     font-family: 'Roboto';
 }
+
 .header {
     font-weight: 500;
+}
+
+.pet-logo {
+    padding: 2.2px 4.75px;
+    border: 1px solid #FFFFFF;
+    border-radius: 2px;
+    width: 82px;
+    position: relative;
+}
+.pet-logo-text {
+    margin: 0;
+    text-align: center;
+    font-size: 19.0145px;
+    line-height: 23px;
+    color: #FFFFFF;
+    font-weight: 400;
+}
+.pet-logo-img {
+    position: absolute;
+    bottom: 9px;
+    left: 9px;
+    height: 19px;
 }
 .navbar {
     display: flex;
     justify-content: space-between;
     background-color: black;
-    color:white;
+    color: white;
 }
+
 .menu {
     display: flex;
     justify-content: space-between;
 }
+
 a {
-    color:white;
+    color: white;
     text-decoration: none;
     padding: 15px;
 }
+
 li {
     list-style: none;
 }
+
 .preview {
-    background: url(../../assets/images/Giant_Panda_cr.png) no-repeat center;   
+    background: url(../../assets/images/Giant_Panda_cr.png) no-repeat center;
     height: 700px;
 }
+
 .preview-text {
     padding-top: 60px;
     margin-top: 0px;
 }
+
 .footer {
     display: flex;
     justify-content: space-between;
     background-color: black;
-    color:white;
+    color: white;
 }
