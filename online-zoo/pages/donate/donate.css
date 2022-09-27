@@ -9,9 +9,25 @@
     padding-top: 40px;
     padding-bottom: 180px;
 }
+.donation-container {
+    margin: 0 auto;
+    width: 1160px;
+}
 .feed-slider-container {
     position: relative;
     margin-bottom: 40px;
+}
+.feed-friend-container {
+    padding: 40px 92px 60px;
+    box-sizing: border-box;
+    background: rgba(253, 253, 255, 0.52);
+    backdrop-filter: blur(2px);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    color: #333B41;
+    margin: 0 auto;
+    width: 1160px;
 }
 .feed-slider-range {
     padding: 0 11px;
