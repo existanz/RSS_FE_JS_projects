@@ -2,3 +2,57 @@
     height: 386px;
     background-image: url("../../assets/images/panda_bg.png");
 }
+
+.feed-friend {
+    background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+    opacity: 0.9;
+    padding-top: 40px;
+    padding-bottom: 180px;
+}
+.feed-slider-container {
+    position: relative;
+    margin-bottom: 40px;
+}
+.feed-slider-range {
+    padding: 0 11px;
+    box-sizing: border-box;
+    width: 100%;
+    -webkit-appearance: none;
+    height: 27px;
+    background: #404950;
+    border-radius: 2px;
+    transition: opacity 0.2s;
+}
+.feed-slider-itemText {
+    width: 75px;
+    color: #333B41;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 36px;
+    cursor: pointer;
+}
+.feed-slider-item-active {
+    color: #FE9013;
+}
+.feed-slider-line {
+    pointer-events: none;
+    box-sizing: border-box;
+    position: absolute;
+    height: 2px;
+    top: 5px;
+    left: 28px;
+    right: 28px;
+    background: #767474;
+    z-index: 1;
+    border: none;
+}
+.feed-slider-items {
+    pointer-events: none;
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    top: 9px;
+    padding: 0 26px;
+}
