@@ -104,15 +104,19 @@ a {
     text-align: center;
     transition: 0.5s;
 }
+
 .button:hover {
-  background: #E47209;
+    background: #E47209;
 }
+
 .button:active {
-  background-color: #4B9200;
+    background-color: #4B9200;
 }
+
 .button:disabled {
-  background: #767474;
+    background: #767474;
 }
+
 li {
     list-style: none;
 }
@@ -201,6 +205,7 @@ li {
     position: relative;
     padding-bottom: 100px;
 }
+
 .animal-slider {
     position: relative;
     margin: 0 auto;
@@ -219,9 +224,11 @@ li {
     height: 426px;
     transition: height 0.2s linear;
 }
+
 .animal-card-img {
     margin: 2px 0 0 1px;
 }
+
 .animal-card-desc {
     display: flex;
     justify-content: space-between;
@@ -244,6 +251,7 @@ li {
     margin: 0 auto;
     margin-top: 82px;
 }
+
 .arrow {
     position: absolute;
     top: 404px;
@@ -255,18 +263,21 @@ li {
     background-repeat: no-repeat;
     cursor: pointer;
 }
+
 .arrow:active {
     background-color: #4B9200;
-  }
+}
 
 .arrow-left {
     left: -80px;
     background-image: url('../../assets/icons/leftArrow.svg');
 }
+
 .arrow-right {
     right: -80px;
     background-image: url('../../assets/icons/rightArrow.svg');
 }
+
 /*animal flowers*/
 .animal-flower-left {
     background-repeat: no-repeat;
@@ -294,7 +305,7 @@ li {
     opacity: 0.9;
     padding-top: 69px;
     padding-bottom: 100px;
-  }
+}
 
 .feed-container {
     box-sizing: border-box;
@@ -307,9 +318,9 @@ li {
     color: #333B41;
     margin: 0 auto;
     width: 1160px;
-  }
+}
 
-  .feed-title {
+.feed-title {
     align-self: center;
     font-size: 48px;
     font-weight: 400;
@@ -317,9 +328,9 @@ li {
     line-height: 58px;
     color: #FE9013;
     margin: 0 0 30px 0;
-  }
+}
 
-  .feed-how-title{
+.feed-how-title {
     align-self: center;
     margin-top: 60px;
     font-size: 36px;
@@ -328,51 +339,55 @@ li {
     line-height: 47px;
     color: #333B41;
     margin-bottom: 40px;
-  }
+}
 
-  .feed-subtitle {
+.feed-subtitle {
     font-size: 24px;
     font-weight: 400;
     font-style: normal;
     line-height: 29px;
     margin-top: 0;
     margin-bottom: 40px;
-  }
+}
 
-  .feed-link {
+.feed-link {
     position: relative;
     display: inline-block;
     text-decoration: none;
     color: inherit;
     border-bottom: solid 1px #FE9013;
-  }
-  .feed-link:hover {
+}
+
+.feed-link:hover {
     border-color: #4B9200;
-  }
-  .feed-text {
+}
+
+.feed-text {
     display: inline-block;
     margin: 0;
     position: relative;
     width: 869px;
     line-height: 21px;
-  }
+}
 
-  .feed-black-text {
+.feed-black-text {
     margin-top: 0;
     margin-bottom: 9px;
     position: relative;
     width: 1006px;
     font-weight: 500;
-  }
-  .feed-scheme {
+}
+
+.feed-scheme {
     align-self: center;
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(5, 1fr);
     max-width: 764px;
-    margin-bottom: 60px;
-  }
-  .feed-card {
+    margin-bottom: 70px;
+}
+
+.feed-card {
     box-sizing: border-box;
     width: 168px;
     height: 168px;
@@ -382,56 +397,65 @@ li {
     margin-bottom: 30px;
     background-position: center;
     background-repeat: no-repeat;
-  }
-  .feed-card-pay {
+}
+
+.feed-card-pay {
     background-image: url("../../assets/icons/pay.svg");
-  }
-  .feed-card-zoo {
+}
+
+.feed-card-zoo {
     background-image: url("../../assets/icons/zoo.svg");
-  }
-  .feed-card-monkey {
+}
+
+.feed-card-monkey {
     background-image: url("../../assets/icons/monkey.svg");
-  }
-  .feed-arrow {
+}
+
+.feed-arrow {
     position: relative;
     top: 60px;
-  }
-  .feed-card-text {
-    margin: 0;
-  }
-  .feed-button {
-    align-self: center;
-  }
+}
 
-  .feed-friend__timeChoose {
+.feed-card-text {
+    margin: 0;
+}
+
+.feed-button {
+    align-self: center;
+}
+
+.feed-friend__timeChoose {
     min-width: 218px;
     align-self: center;
     margin-top: 28px;
     display: flex;
     gap: 50px;
     margin-bottom: 28px;
-  }
-  
+}
 
- /*testimonials*/
- .testimonials {
+
+/*testimonials*/
+.testimonials {
     padding-top: 140px;
     padding-bottom: 180px;
     position: relative;
-  }
-  .testimonials-container {
+}
+
+.testimonials-container {
     margin: 0 auto;
     width: 1160px;
-  }
-  .testimonials-title {
+}
+
+.testimonials-title {
     font-size: 36px;
     font-weight: 400;
     font-style: normal;
     line-height: 47px;
     margin: 0;
     text-align: center;
-  }
-  .testimonials-slider {
+}
+
+.testimonials-slider {
     margin-top: 47px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -439,9 +463,9 @@ li {
     column-gap: 30px;
     margin-bottom: 60px;
     position: relative;
-  }
- 
-  .range-slider {
+}
+
+.range-slider {
     -webkit-appearance: none;
     height: 8px;
     box-sizing: border-box;
@@ -456,11 +480,13 @@ li {
     right: 0;
     width: 600px;
     transition: opacity 0.2s;
-  }
-  .range-slider:hover {
+}
+
+.range-slider:hover {
     opacity: 0.7;
-  }
-  .range-slider::-webkit-slider-thumb {
+}
+
+.range-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     border-radius: 5px;
@@ -468,16 +494,18 @@ li {
     height: 6px;
     background: #FE9013;
     cursor: pointer;
-  }
-  .testimonials-card {
+}
+
+.testimonials-card {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
     background: linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
     border-radius: 20px;
     padding: 2px;
-  }
-  .testimonials-card-content {
+}
+
+.testimonials-card-content {
     border-radius: 19px;
     height: 100%;
     width: 100%;
@@ -490,48 +518,62 @@ li {
     line-height: 18px;
     display: flex;
     flex-direction: column;
-  }
-  .testimonials-card-title {
+}
+
+.testimonials-card-title {
     margin-bottom: 10px;
-  }
-  .testimonials-card-ava {
+}
+
+.testimonials-card-ava {
     float: left;
     margin-right: 10px;
-  }
-  .testimonials-card-name {
+}
+
+.testimonials-card-name {
     line-height: 19px;
     color: black;
     margin: 0;
     font-weight: 400;
     font-size: 16px;
-  }
-  .testimonials-card-area {
+}
+
+.testimonials-card-area {
     margin: 0;
-  }
-  .testimonials-card-date {
+}
+
+.testimonials-card-date {
     margin: 0;
-  }
-  .testimonials-card-text {
+}
+
+.testimonials-card-text {
     overflow: scroll;
     margin: 0;
-  }
-  .testimonials-card-text::-webkit-scrollbar {
+}
+
+.testimonials-card-text p {
+    margin: 0;
+}
+
+.testimonials-card-text::-webkit-scrollbar {
     width: 0;
     padding: 0;
     height: 0;
-  }
-  .testimonials-button {
+}
+
+.testimonials-button {
     border-radius: 5px;
-  } 
-  .testimonials-flowerRight {
+}
+
+.testimonials-flowerRight {
     background-repeat: no-repeat;
-    width: 199px;
+    width: 247px;
     height: 266px;
     position: absolute;
     bottom: 0;
     right: 0;
     background-image: url("../../assets/images/leav_foto.png");
-  }
+}
+
 /*footer*/
 .footer {
     display: flex;
