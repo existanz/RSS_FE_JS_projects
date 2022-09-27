@@ -1,19 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="donate.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Online Zoo!</title>
 </head>
+
 <body>
-    <h1>Proverka</h1>
-    <div class="div">
-        | <p class="par">hope</p>
-    </div>
-    <div class="div2">
-    </div>
-    <script src="script.js"></script>
+    <header class="header">
+        <nav class="navbar">
+            <div class="pet-logo">
+                <h1 class="pet-logo-text">PetStory online</h1>
+                <img src="../../assets/icons/bamboo.svg" alt="Logo" class="pet-logo-img">
+            </div>
+            <ul class="menu">
+                <li><a class="menu-active" href="#about">About</a></li>
+                <li><a href="#map">Map</a></li>
+                <li><a href="#zoos">Zoos</a></li>
+                <li><a href="../donate/donate.html">Donate</a></li>
+                <li><a href="#contactus">Contact Us</a></li>
+            </ul>
+            <a href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks?node-id=0%3A1"
+                class="header-copyright">Designed By
+                &copy;</a>
+        </nav>
+    </header>
+    <main>
+ 
+    </main>
+    <footer class="footer">
+        <div class="footer-column footer-left">
+            <div class="pet-logo">
+                <p class="pet-logo-text">PetStory online</p>
+                <img src="../../assets/icons/bamboo.svg" alt="Logo" class="pet-logo-img">
+            </div>
+            <button onclick="location.href='../donate/donate.html';" class="button footer-button">donate for
+                volunteers
+            </button>
+            <ul class="contacts">
+                <li> <a href='https://www.facebook.com/' class="contacts-item">
+                        <img src="../../assets/icons/contacts0.svg" class="contact-item-icon">
+                        <p class="contact-item-text">Facebook</p>
+                    </a>
+                </li>
+                <li> <a href='https://www.twitter.com/' class="contacts-item">
+                        <img src="../../assets/icons/contacts1.svg" class="contact-item-icon">
+                        <p class="contact-item-text">Twitter</p>
+                    </a>
+                </li>
+                <li> <a href='https://www.instagram.com/' class="contacts-item">
+                        <img src="../../assets/icons/contacts2.svg" class="contact-item-icon">
+                        <p class="contact-item-text">Instagram</p>
+                    </a>
+                </li>
+                <li> <a href='https://www.youtube.com/' class="contacts-item">
+                        <img src="../../assets/icons/contacts3.svg" class="contact-item-icon">
+                        <p class="contact-item-text">YouTube</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <nav class="footer-navbar">
+            <ul class="menu footer-menu">
+                <li><a class="menu-active" href="#about">About</a></li>
+                <li><a href="#map">Map</a></li>
+                <li><a href="#zoos">Zoos</a></li>
+                <li><a href="#contactus">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="footer-column footer-right">
+            <div class="copyrights">
+                <p>Designed by Alisa Samborskaya</p>
+                <p>&copy;RSSchool & &copy;Yem Digital 2021</p>
+            </div>
+            <form class="form-subscribe">
+                <label for="email" class="form-subscribe-title">Subscribe to our news</label>
+                <div class="form-input-cont">
+                    <input class="email-input" placeholder="Enter your email" type="email" name="email" id="email"
+                        required><button class="button button-submit">submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </footer>
 </body>
+
 </html>
