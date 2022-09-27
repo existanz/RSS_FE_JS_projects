@@ -31,6 +31,15 @@ body {
     font-family: 'Roboto';
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #4B9200;
+}
+
 .header {
     font-weight: 500;
     background-color: black;
@@ -77,13 +86,14 @@ body {
     width: 475px;
 }
 
-.header-copyright {
-    margin-left: auto;
+.menu-active {
+    color: #F9804B;
+    pointer-events: none;
+    cursor: default;
 }
 
-a {
-    color: white;
-    text-decoration: none;
+.header-copyright {
+    margin-left: auto;
 }
 
 .button {
@@ -424,14 +434,6 @@ li {
     align-self: center;
 }
 
-.feed-friend__timeChoose {
-    min-width: 218px;
-    align-self: center;
-    margin-top: 28px;
-    display: flex;
-    gap: 50px;
-    margin-bottom: 28px;
-}
 
 
 /*testimonials*/
@@ -577,7 +579,132 @@ li {
 /*footer*/
 .footer {
     display: flex;
-    justify-content: space-between;
-    background-color: black;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: #111115;
     color: white;
+    padding-top: 41px;
+    padding-bottom: 50px;
+}
+
+.footer-column {
+    height: 353px;
+    position: relative;
+    width: 400px;
+}
+
+.contacts {
+    position: absolute;
+    bottom: -25px;
+    left: -38px;
+    z-index: 1;
+}
+
+.contacts li a {
+    display: flex;
+    cursor: pointer;
+}
+
+.contacts li a p {
+    margin: 10px 0 10px 15px;
+}
+
+.footer-button {
+    border-radius: 5px;
+    margin-top: 68px;
+    margin-left: 10px;
+}
+
+.footer-menu {
+    padding: 0;
+    margin: 0;
+    width: 365px;
+}
+
+.email-input {
+    margin-right: 10px;
+    color: #BDBDBD;
+    background-color: transparent;
+    box-sizing: border-box;
+    border: 1px solid orange;
+    border-radius: 2px;
+    padding: 10px;
+    min-width: 228px;
+}
+
+.form-subscribe {
+    position: absolute;
+    margin: 0;
+    top: 0;
+    right: 0;
+}
+
+.form-input-cont {
+    display: flex;
+}
+
+.form-subscribe-title {
+    display: inline-block;
+    margin: 0;
+    color: white;
+    font-size: 24px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 29px;
+    margin-bottom: 14px;
+}
+
+.button-submit {
+    color: #D31414;
+    border-color: #D31414;
+    display: inline-block;
+    font-weight: 400;
+    text-transform: capitalize;
+    min-width: 129px;
+    background: #F1F3F2;
+    padding: 9px;
+    border-radius: 5px;
+    border: 1px solid black;
+    color: black;
+}
+
+.copyrights {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    color: white;
+    font-weight: 100;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.copyrights p {
+    margin: 5px 0 5px 0;
+}
+
+.contact-item-icon {
+    width: 26px;
+    height: 26px;
+    background: rgba(196, 196, 196, 0.5) center no-repeat;
+    border-radius: 50%;
+}
+
+.input {
+    color: #BDBDBD;
+    background-color: transparent;
+    box-sizing: border-box;
+    border: 1px solid orange;
+    border-radius: 2px;
+    padding: 10px;
+    min-width: 228px;
+}
+
+.input:active {
+    border-color: #4B9200;
+}
+
+.input:active::placeholder {
+    color: #4B9200;
 }

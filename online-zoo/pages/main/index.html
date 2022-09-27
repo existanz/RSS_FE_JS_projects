@@ -18,7 +18,7 @@
                 <img src="../../assets/icons/bamboo.svg" alt="Logo" class="pet-logo-img">
             </div>
             <ul class="menu">
-                <li><a href="#about">About</a></li>
+                <li><a class="menu-active" href="#about">About</a></li>
                 <li><a href="#map">Map</a></li>
                 <li><a href="#zoos">Zoos</a></li>
                 <li><a href="../donate/donate.html">Donate</a></li>
@@ -261,18 +261,18 @@
                     </div>
                 </div>
                 <button class="button testimonials-button">leave feedback</button>
-            </div>  
+            </div>
             </div>
             <div class="testimonials-flowerRight"></div>
         </section>
     </main>
     <footer class="footer">
-        <div class="footer-left">
+        <div class="footer-column footer-left">
             <div class="pet-logo">
                 <p class="pet-logo-text">PetStory online</p>
                 <img src="../../assets/icons/bamboo.svg" alt="Logo" class="pet-logo-img">
             </div>
-            <button onclick="location.href='../donate/index.html';" class="button footer-button">donate for
+            <button onclick="location.href='../donate/donate.html';" class="button footer-button">donate for
                 volunteers
             </button>
             <ul class="contacts">
@@ -299,23 +299,25 @@
             </ul>
         </div>
         <nav class="footer-navbar">
-            <ul class="menu">
-                <li><a href="#about">About</a></li>
+            <ul class="menu footer-menu">
+                <li><a class="menu-active" href="#about">About</a></li>
                 <li><a href="#map">Map</a></li>
                 <li><a href="#zoos">Zoos</a></li>
                 <li><a href="#contactus">Contact Us</a></li>
             </ul>
         </nav>
-        <div class="footer-right">
+        <div class="footer-column footer-right">
             <div class="copyrights">
                 <p>Designed by Alisa Samborskaya</p>
                 <p>&copy;RSSchool & &copy;Yem Digital 2021</p>
             </div>
             <form class="form-subscribe">
-                <label for="email" class="subscribe-title">Subscribe to our news</label><br>
-                <input class="email-input" placeholder="Enter your email" type="email" name="email" id="email"
-                    required><button class="button button-submit">submit
-                </button>
+                <label for="email" class="form-subscribe-title">Subscribe to our news</label>
+                <div class="form-input-cont">
+                    <input class="email-input" placeholder="Enter your email" type="email" name="email" id="email"
+                        required><button class="button button-submit">submit
+                    </button>
+                </div>
             </form>
         </div>
     </footer>
