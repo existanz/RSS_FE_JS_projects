@@ -1,13 +1,4 @@
-.par {
-    padding: 10px 20px; 
-    margin: 30px; 
-    border: 5px solid #040;
-    font-size: 4em;
-}
-.div {
-    font-size: 12px;
-}
-.div2 {
-    background-color: #040;
-    height: 12px;
+.preview {
+    height: 386px;
+    background-image: url("../../assets/images/panda_bg.png");
 }
