@@ -102,8 +102,17 @@ a {
     text-decoration: none;
     min-width: 298px;
     text-align: center;
+    transition: 0.5s;
 }
-
+.button:hover {
+  background: #E47209;
+}
+.button:active {
+  background-color: #4B9200;
+}
+.button:disabled {
+  background: #767474;
+}
 li {
     list-style: none;
 }
