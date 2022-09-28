@@ -248,6 +248,13 @@ li {
     border-radius: 50%;
 }
 
+.contact-item-icon:hover {
+    width: 28px;
+    height: 28px;
+    background: rgba(75, 146, 0, 0.5) center no-repeat;
+    border-radius: 50%;
+}
+
 .input {
     color: #BDBDBD;
     background-color: transparent;
