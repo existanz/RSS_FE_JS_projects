@@ -60,8 +60,8 @@ a:hover {
 }
 
 .pet-logo:hover {
-    border: 1px solid #4B9200;
-    color: #4B9200;
+    border: 1px solid #E47209;
+    color: #E47209;
 }
 
 .pet-logo-text {
@@ -257,7 +257,7 @@ li {
 .contact-item-icon:hover {
     width: 28px;
     height: 28px;
-    background: rgba(75, 146, 0, 0.5) center no-repeat;
+    background: rgba(249, 128, 75, 0.5) center no-repeat;
     border-radius: 50%;
 }
 
