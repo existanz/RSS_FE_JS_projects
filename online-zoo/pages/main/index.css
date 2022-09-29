@@ -1,6 +1,7 @@
 /*preview*/
 .preview {
     background: url(../../assets/images/Giant_Panda_cr.png) no-repeat center;
+    background-size: cover;
     height: 700px;
 }
 
