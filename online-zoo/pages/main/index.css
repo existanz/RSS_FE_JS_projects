@@ -101,17 +101,29 @@
     background: linear-gradient(#FA6F32, #FE9013);
     overflow: hidden;
     height: 426px;
+    transition: 0.7s;
 }
-
-
-
 .animal-card-img {
     margin: 2px 0 0 1px;
     transition: height 0.5s linear;
 }
-.animal-card-img:hover {
-    height: 110%;
+.animal-card-text{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
+
+.animal-card:hover {
+    background: rgba(0, 0, 0, 0.4);
+    color: #fdfdfd;
+    transform: scale(1.1);
+}
+.animal-card:hover .animal-card-img{
+    opacity: 0.5;
+}
+.animal-card:hover .animal-card-text{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: translateY(-60px);
+}
+
 
 .animal-card-desc {
     display: flex;
