@@ -250,15 +250,21 @@ li {
 .contact-item-icon {
     width: 26px;
     height: 26px;
+    line-height: 26px;
     background: rgba(196, 196, 196, 0.5) center no-repeat;
     border-radius: 50%;
+    text-align: center;
+}
+.contact-item-icon img {
+    vertical-align: middle;
 }
 
-.contact-item-icon:hover {
-    width: 28px;
-    height: 28px;
-    background: rgba(249, 128, 75, 0.5) center no-repeat;
-    border-radius: 50%;
+.contacts-item:hover {
+    color: #4B9200;
+}
+
+.contacts-item:hover .contact-item-icon {
+    background: rgba(75, 146, 0, 0.5) center no-repeat;
 }
 
 .input {
