@@ -1,5 +1,6 @@
 .preview {
     background: url(../../assets/images/Giant_Panda_sd.png) no-repeat center;
+    background-size: cover;
     height: 504px;
 }
 .preview-circle {
@@ -17,4 +18,39 @@
 .preview-button {
     left: calc(50% + 66px);
     top: 483px;
+}
+
+/*BACKSTAGE*/
+.backstage {
+    padding-top: 110px;
+    background-image: none;
+}
+.backstage-image {
+    margin-right: 20px;
+}
+
+/*ANIMAL*/
+.animal-slider {
+    width: 940px;
+}
+.animal-card {
+    height: 354px;
+}
+.animal-card-img {
+    width: 294px;
+}
+.animal-card-desc {
+    width: 292px;
+}
+.arrow {
+    top: 369px
+}
+.arrow-right {
+    right: calc(50% - 150px);
+}
+.arrow-left {
+    left: calc(50% - 150px);
+}
+.feed-container {
+    width: 940px;
 }
