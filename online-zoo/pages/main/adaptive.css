@@ -28,6 +28,7 @@
 }
 .backstage-image {
     margin-right: 20px;
+    object-fit: cover;
 }
 
 /*ANIMAL*/
