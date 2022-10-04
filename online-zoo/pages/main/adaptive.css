@@ -1,3 +1,7 @@
+.preview {
+    background: url(../../assets/images/Giant_Panda_sd.png) no-repeat center;
+    height: 504px;
+}
 .preview-circle {
     width: 367px;
     height: 367px;
@@ -5,8 +9,12 @@
     top: 68px;
 }
 .preview-text {
-    width: 320px;
+    width: 400px;
     font-size: 85px;
-    left: 55%;
-    top: 50px
+    left: calc(51% + 3px);
+    top: 53px
+}
+.preview-button {
+    left: calc(50% + 66px);
+    top: 483px;
 }
