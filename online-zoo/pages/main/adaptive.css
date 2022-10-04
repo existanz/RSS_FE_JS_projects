@@ -56,17 +56,71 @@
 .arrow-left {
     left: calc(50% - 150px);
 }
+.animal-flower-left {
+    width: 194px;
+    height: 202px;
+    background-image: url("../../assets/images/palm_foto_sd.png");
+}
+.animal-flower-right {
+    width: 241px;
+    height: 180px;
+    background-image: url("../../assets/images/strelitzia_sd.png");
+}
+
+/*FEED FRIEND*/
+.feed-friend {
+    padding-top: 31px;
+    padding-bottom: 51px;
+}
 .feed-container {
     width: 940px;
+    padding: 30px 48px 49px;
+}
+.feed-title {
+    margin-bottom: 23px;
+}
+.feed-subtitle {
+    margin-bottom: 20px;
+}
+.feed-black-text {
+    margin-bottom: 13px;
+    width: 95%;
+}
+.feed-text {
+    width: 95%;
+}
+.feed-how-title {
+    margin-top: 40px;
+}
+.feed-scheme {
+    margin-bottom: 78px;
 }
 
 /*TESTIMONIALS*/
+.testimonials {
+    padding-top: 100px;
+    padding-bottom: 140px;
+}
 .testimonials-container {
     width: 94%;
 }
 .testimonials-slider {
+    margin-top: 30px;
+    margin-bottom: 81px;
     grid-template-columns: repeat(3, 1fr);
 }
 .testimonials-card4 {
     display: none;
+}
+.range-slider {
+    bottom: -28px;
+    width: 390px;
+}
+.range-slider::-webkit-slider-thumb {
+    width: 75px;
+}
+.testimonials-flowerRight {
+    width: 197px;
+    height: 240px;
+    background-image: url("../../assets/images/leav_foto_sd.png");
 }
