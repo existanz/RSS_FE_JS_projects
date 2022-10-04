@@ -23,6 +23,7 @@
 /*BACKSTAGE*/
 .backstage {
     padding-top: 110px;
+    padding-bottom: 157px;
     background-image: none;
 }
 .backstage-image {
@@ -42,6 +43,10 @@
 .animal-card-desc {
     width: 292px;
 }
+.animal-button {
+    margin-top:9px;
+    margin-bottom: 40px;
+}
 .arrow {
     top: 369px
 }
@@ -53,4 +58,15 @@
 }
 .feed-container {
     width: 940px;
+}
+
+/*TESTIMONIALS*/
+.testimonials-container {
+    width: 94%;
+}
+.testimonials-slider {
+    grid-template-columns: repeat(3, 1fr);
+}
+.testimonials-card4 {
+    display: none;
 }
