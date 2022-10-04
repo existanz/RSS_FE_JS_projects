@@ -1,0 +1,12 @@
+.preview-circle {
+    width: 367px;
+    height: 367px;
+    left: calc(50% - 45px);
+    top: 68px;
+}
+.preview-text {
+    width: 320px;
+    font-size: 85px;
+    left: 55%;
+    top: 50px
+}
