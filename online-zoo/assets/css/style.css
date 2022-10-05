@@ -284,3 +284,25 @@ li {
 .input:active::placeholder {
     color: #4B9200;
 }
+
+@media (max-width:1440px) {
+    /*HEADER*/
+    .navbar {
+        width: 94%;
+    }
+    .menu {
+        width: 46.38%;
+    }
+
+    /*FOOTER*/
+    .footer-column {
+        width: 289px;
+    }
+    .footer-menu {
+        width: 333px;
+        margin: 1px 1px 1px 1px;
+    }
+    .footer-button {
+        margin-left: 0;
+    }
+}
