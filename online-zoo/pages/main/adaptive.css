@@ -156,4 +156,28 @@
         left: 20px;
         top: 279px;
     }
+    .backstage-image {
+        display: none;
+    }
+    .backstage {
+        padding-top: 68px;
+        padding-bottom: 78px;
+        background-image: url(../../assets/images/flower_foto1_t.png);
+        background-position: right top 0px;
+        background-repeat: no-repeat;
+    }
+    .backstage-right {
+        width: 92.34%;
+    }
+    .backstage-text {
+        margin-left: -5px;
+        width: 80%;
+    }
+    .backstage-text2 {
+        width: 85%;
+        line-height: 22px;
+    }
+    .backstage-subtitle {
+        margin: 31px 0 21px 0;
+    }
 }
