@@ -1,0 +1,35 @@
+.preview {
+    height: 390px;
+    background: url(../../assets/images/panda_bg_sd.png) no-repeat center;
+    background-size: cover;
+}
+.donation-container {
+    width: 93.4%;
+}
+.donation-title {
+    width: 800px;
+    margin-bottom: 30px;
+}
+.donation-subtitle {
+    margin-bottom: 40px;
+}
+.feed-friend {
+    padding-bottom: 27px;
+}
+.feed-friend-container {
+    padding: 22px 47px 50px;
+    width: 94%;
+}
+.feed-friend-title {
+    margin-bottom: 13px;
+}
+.feed-slider-container {
+    padding: 0 16px;
+}
+.feed-slider-items {
+    width: 96.34%;
+    padding: 0 13px;
+}
+.feed-slider-item-5000 {
+    display: none;
+}
