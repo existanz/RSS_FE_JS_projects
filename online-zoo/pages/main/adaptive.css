@@ -27,8 +27,12 @@
     background-image: none;
 }
 .backstage-image {
-    margin-right: 20px;
+    margin-right: 28px;
     object-fit: cover;
+}
+.backstage-right {
+    width: 45.4%;
+    margin-top: -8px;
 }
 
 /*ANIMAL*/

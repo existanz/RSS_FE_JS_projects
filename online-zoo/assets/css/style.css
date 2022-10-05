@@ -305,4 +305,10 @@ li {
     .footer-button {
         margin-left: 0;
     }
+    .form-subscribe {
+        right: 6px;
+    }
+    .copyrights {
+        right: -25px;
+    }
 }
