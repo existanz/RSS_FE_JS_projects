@@ -454,4 +454,12 @@ li {
         font-weight: 400;
       }
       /*END OF BURGER MENU*/
+
+      /*FOOTER*/
+      .form-subscribe {
+        display: none;
+      }
+      .copyrights {
+        right: 0px;
+    }
 }
