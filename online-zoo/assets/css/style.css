@@ -294,6 +294,10 @@ li {
 
 @media (max-width:1440px) {
     /*HEADER*/
+    .header {
+        position: fixed;
+        width: 100%;
+    }
     .navbar {
         width: 94%;
     }
@@ -321,11 +325,6 @@ li {
 } /*end media 1440px*/
 
 @media (max-width:980px) {
-    .header {
-        position: fixed;
-        width: 100%;
-        top: 0;
-    }
     .pet-logo {
         border: none;
 

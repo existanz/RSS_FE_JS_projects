@@ -1,7 +1,7 @@
 .preview {
     background: url(../../assets/images/Giant_Panda_sd.png) no-repeat center;
     background-size: cover;
-    height: 504px;
+    height: 584px;
 }
 .preview-circle {
     width: 367px;
@@ -131,15 +131,10 @@
 /*END OF 1440px ADAPDATION*/
 
 @media (max-width:980px) {
-    .header {
-        position: fixed;
-        width: 100%;
-        top: 0;
-    }
     .preview {
         background: url(../../assets/images/Giant_Panda_t.png) no-repeat center;
         background-size: cover;
-        height: 339px;
+        height: 373px;
     }
     .animals {
       overflow-x: hidden;
