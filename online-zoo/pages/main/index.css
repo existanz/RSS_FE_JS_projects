@@ -100,6 +100,7 @@
     background: linear-gradient(#FA6F32, #FE9013);
     overflow: hidden;
     height: 426px;
+    width: 368px;
     transition: 0.7s;
 }
 .animal-card-img {

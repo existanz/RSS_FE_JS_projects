@@ -41,6 +41,7 @@
 }
 .animal-card {
     height: 354px;
+    width: 295px;
 }
 .animal-card-img {
     width: 294px;
@@ -179,5 +180,25 @@
     }
     .backstage-subtitle {
         margin: 31px 0 21px 0;
+    }
+    .animal-slider {
+        position: relative;
+        margin: 0 auto;
+        width: 93.75%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 28px;
+        grid-auto-rows: 404px;
+    }
+    .animal-card-640 {
+        display: none;
+    }
+    .animal-card {
+        width: 285px; 
+        height: 332px;
+  
+    }
+    .animal-card-img {
+        width: 284px;
     }
 }
