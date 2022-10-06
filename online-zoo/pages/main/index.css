@@ -129,7 +129,7 @@
 .animal-card-desc {
     display: flex;
     justify-content: space-between;
-    width: 364px;
+    width: 99%;
     margin-left: 1px;
     background-color: #FFFFFF;
 }
