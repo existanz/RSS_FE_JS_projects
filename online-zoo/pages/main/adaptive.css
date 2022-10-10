@@ -252,4 +252,9 @@
         margin-bottom: 28px;
     }
 
+    /*TESTIMONIAL 980*/
+    .testimonials-slider {
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
 }
