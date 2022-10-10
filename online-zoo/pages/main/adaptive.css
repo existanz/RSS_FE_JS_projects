@@ -254,7 +254,15 @@
 
     /*TESTIMONIAL 980*/
     .testimonials-slider {
-        grid-template-rows: 1fr 1fr 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+    .testimonials-card {
+        height: 109px;
+        margin-bottom: 15px;
+    }
+    .testimonials-card-content {
+        padding: 15px 15px 0px 15px;
     }
 
 }
