@@ -11,7 +11,6 @@ logo.forEach(el => {
 
 const setRangeMin = () => {
     const screenWidth = screen.width;
-    console.log(screenWidth);
     if (screenWidth>1440) rangeSlider.setAttribute("min","0")
     else if (screenWidth<=1440 && screenWidth>980) rangeSlider.setAttribute("min","1")
     else if (screenWidth<=980) rangeSlider.setAttribute("min","2");
@@ -21,7 +20,6 @@ setRangeMin();
 window.addEventListener('resize', setRangeMin);
 
 const changeRange = () => {
-    console.log(rangeSlider.value);
     const rangeTexts = document.querySelectorAll(".feed-slider-itemText")
 
     rangeTexts.forEach((el,id) => {
@@ -38,7 +36,6 @@ amountInput.addEventListener('input', () => {
     const iValue = amountInput.value;
     if (iValue%25==0 && iValue <= 5000 && iValue >= 25) {
         const newRangeValue = arrValues.indexOf(Number(amountInput.value));
-        console.log(newRangeValue)
         if (newRangeValue<=rangeSlider.getAttribute('max')&& newRangeValue>=rangeSlider.getAttribute('min')) {
             rangeSlider.value = arrValues.indexOf(Number(amountInput.value));
             changeRange();
