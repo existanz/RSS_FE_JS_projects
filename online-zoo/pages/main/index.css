@@ -449,7 +449,35 @@
     padding: 0;
     height: 0;
 }
-
+.testimonials-popup {
+    display: none;
+    position: absolute;
+    width: 320px;
+    height: 396px;
+    left:calc(50% - 160px);
+    background: linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+    border-radius: 20px;
+    padding: 2px;
+}
+.testimonials-shadow {
+    display: none;
+    position:fixed;
+    left:0;
+    top:0;
+    height:100vh;
+    width:100vw;
+    background:#000;
+    opacity:0.5;
+  }
+.popup-x {
+    display: none;
+    position: absolute;
+    left:calc(50% + 145px);
+    top: 8px;
+}
+.popup {
+    display: block;
+}
 .testimonials-button {
     border-radius: 5px;
 }

@@ -17,3 +17,30 @@ if (screen.width < 1440) cWidth = 323;
  inputRange.addEventListener('input', () => {
     testCards.style.left = -inputRange.value*cWidth + 'px';
  });
+
+ //TESTIMONIALS POPUP
+ const popCards = document.querySelectorAll('.testimonials-card-pop'),
+ testPop = document.querySelector('.testimonials-popup'),
+ testPopX = document.querySelector('.popup-x'),
+ testShadow = document.querySelector('.testimonials-shadow')
+ 
+ const togglePopup = () => {
+    if (screen.width < 980) {
+        testPop.classList.toggle('popup');
+        testPopX.classList.toggle('popup');
+        testShadow.classList.toggle('popup');
+    }
+ }
+
+ popCards.forEach(el => {
+    el.addEventListener('click', () => {
+        testPop.innerHTML = el.innerHTML;
+        togglePopup();
+    })
+ })
+ testPopX.addEventListener('click', () => {
+    togglePopup();
+ })
+ testShadow.addEventListener('click', () => {
+    togglePopup();
+ })
