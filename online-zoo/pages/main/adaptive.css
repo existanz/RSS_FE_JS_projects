@@ -257,16 +257,22 @@
     }
 
     /*TESTIMONIAL 980*/
-    .testimonials-slider {
-        display: flex;
+    .testimonials-cards {
         flex-direction: column;
     }
     .testimonials-card {
         height: 109px;
-        margin-bottom: 15px;
+        flex: 1 0 auto;
     }
     .testimonials-card-content {
         padding: 15px 15px 0px 15px;
     }
+    .testimonials-ranger {
+        display: none;
+    }
+
+}
+/*END OF 1440px ADAPDATION*/
+@media (max-width:425px) {
 
 }

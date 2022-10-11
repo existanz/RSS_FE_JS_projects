@@ -29,7 +29,7 @@
 }
 
 @media (max-width:980px) {
-    .feed-slider-item-2000 {
+    .feed-slider-item-2000, .feed-slider-item-1000 {
         display: none;
     }
 

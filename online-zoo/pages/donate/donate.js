@@ -13,7 +13,7 @@ const setRangeMin = () => {
     const screenWidth = screen.width;
     if (screenWidth>1440) rangeSlider.setAttribute("min","0")
     else if (screenWidth<=1440 && screenWidth>980) rangeSlider.setAttribute("min","1")
-    else if (screenWidth<=980) rangeSlider.setAttribute("min","2");
+    else if (screenWidth<=980) rangeSlider.setAttribute("min","3");
 }
 setRangeMin();
 
