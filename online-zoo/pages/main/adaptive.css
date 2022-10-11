@@ -108,14 +108,18 @@
 .testimonials-container {
     width: 94%;
 }
+.testimonials-cards {
+    height: 400px;
+}
+.testimonials-card {
+    flex: 1 0 293px;
+}
 .testimonials-slider {
     margin-top: 30px;
     margin-bottom: 81px;
     grid-template-columns: repeat(3, 1fr);
 }
-.testimonials-card4 {
-    display: none;
-}
+
 .range-slider {
     bottom: -28px;
     width: 390px;

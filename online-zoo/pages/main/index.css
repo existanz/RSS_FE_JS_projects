@@ -346,27 +346,27 @@
 
 .testimonials-slider {
     margin-top: 47px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 391px;
-    column-gap: 30px;
     margin-bottom: 60px;
     position: relative;
+    overflow: hidden;
 }
-
+.testimonials-cards {
+    display: flex;
+    position: relative;
+    gap: 30px;
+    height: 420px;
+    transition: 0.7s ease;
+}
+.testimonials-ranger {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
 .range-slider {
-    -webkit-appearance: none;
-    height: 8px;
+    appearance: none;
     box-sizing: border-box;
-    background-color: rgb(245, 247, 246);
     border-radius: 5px;
     border: 1px solid #FE9013;
-    position: absolute;
-    bottom: -31px;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
     width: 600px;
     transition: opacity 0.2s;
 }
@@ -392,6 +392,7 @@
     background: linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
     border-radius: 20px;
     padding: 2px;
+    flex: 1 0 266px;
 }
 
 .testimonials-card-content {
