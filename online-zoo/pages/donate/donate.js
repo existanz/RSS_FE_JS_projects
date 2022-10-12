@@ -20,26 +20,34 @@ setRangeMin();
 window.addEventListener('resize', setRangeMin);
 
 const changeRange = () => {
-    const rangeTexts = document.querySelectorAll(".feed-slider-itemText")
-
+    const rangeTexts = document.querySelectorAll(".feed-slider-itemText");
     rangeTexts.forEach((el,id) => {
             el.classList.remove("feed-slider-item-active");
             if (id==rangeSlider.value) el.classList.add("feed-slider-item-active");
     })
     amountInput.value = arrValues[rangeSlider.value];
-
+    rangeSlider.classList.remove('range-inactive');
+}
+const clearRange = () => {
+    const rangeTexts = document.querySelectorAll(".feed-slider-itemText");
+    rangeTexts.forEach((el,id) => {
+        el.classList.remove("feed-slider-item-active");
+    })
+    rangeSlider.classList.add('range-inactive');
 }
 
 rangeSlider.addEventListener('change', changeRange);
 
 amountInput.addEventListener('input', () => {
     const iValue = amountInput.value;
-    if (iValue%25==0 && iValue <= 5000 && iValue >= 25) {
-        const newRangeValue = arrValues.indexOf(Number(amountInput.value));
+    const newRangeValue = arrValues.indexOf(Number(amountInput.value));
         if (newRangeValue<=rangeSlider.getAttribute('max')&& newRangeValue>=rangeSlider.getAttribute('min')) {
-            rangeSlider.value = arrValues.indexOf(Number(amountInput.value));
+            rangeSlider.value = newRangeValue;
             changeRange();
+        }
+        else {
+            clearRange();
         }
 
     }
-})
+)

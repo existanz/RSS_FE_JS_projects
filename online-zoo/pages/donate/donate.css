@@ -127,6 +127,7 @@
     box-sizing: border-box;
     width: 100%;
     -webkit-appearance: none;
+    appearance: none;
     height: 27px;
     background: #404950;
     border-radius: 2px;
@@ -150,6 +151,9 @@
 
 .feed-slider-range:hover::-webkit-slider-thumb {
     background-size: 150%;
+}
+.range-inactive::-webkit-slider-thumb {
+    background-image: none;
 }
 
 .feed-slider-itemText {
