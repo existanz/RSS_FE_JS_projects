@@ -120,7 +120,8 @@ animalWraper = document.querySelector(".animals-wraper"),
 nextBtn = document.querySelector(".arrow-right"),
 prevBtn = document.querySelector(".arrow-left")
 
-let slideWidth = -1550
+let slideWidth = screen.width-50,
+q=1;
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -153,7 +154,7 @@ function getPets(data) {
         </div>
       `;
       animalLeft.append(petsCardLeft);
-      animalRRight.append(petsCardLeft.cloneNode());
+      animalRRight.append(petsCardLeft.cloneNode(true));
     });
   
     data.slice(6, 12).forEach(({img, title, location, food}) => {
@@ -205,38 +206,25 @@ function getPets(data) {
         </div>
       `;
       animalRight.append(petsCardRight);
-      animalLLeft.append(petsCardRight.cloneNode());
+      animalLLeft.append(petsCardRight.cloneNode(true));
     });
 }
 shuffle(arrPets);
 getPets(arrPets);
+animalWraper.style.transform = `translateX(${-slideWidth*q}px)`
 
 function nextSlide() {
-    if (window.innerWidth >= 1600) {
-        slideWidth -= 1550
-        animalWraper.style.transform = `translateX(${slideWidth}px)`;
-        shuffle(arrPets);
-        getPets(arrPets);
-    } else if (window.innerWidth < 1600 && window.innerWidth >= 1000) {
-
-    } else if (window.innerWidth < 1000 && window.innerWidth >= 640) {
-   
-    }
-    nextBtn.disabled = true;
-    prevBtn.disabled = true;
+        q++;
+        if(q>4) q=0;
+        animalWraper.style.transform = `translateX(${-slideWidth*q}px)`;
+        console.log(q);
   }
   
   function prevSlide() {
-    if (window.innerWidth >= 1600) {
-        slideWidth += 1550;
-        animalWraper.style.transform = `translateX(${slideWidth}px)`;
-    } else if (window.innerWidth < 1600 && window.innerWidth >= 1000) {
-
-    } else if (window.innerWidth < 1000 && window.innerWidth >= 640) {
-
-    }
-    nextBtn.disabled = true;
-    prevBtn.disabled = true;
+        q--;
+        if (q<0) q=4;
+        animalWraper.style.transform = `translateX(${-slideWidth*q}px)`;
+        console.log(q)
   }
   
   nextBtn.addEventListener("click", nextSlide);

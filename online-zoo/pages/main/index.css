@@ -89,7 +89,6 @@
     display: flex;
     height: 882px;
     min-width: 7750px;
-    transform: translateX(-1550px);
     transition: 0.5s;
 }
 
