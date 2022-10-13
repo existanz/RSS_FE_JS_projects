@@ -82,9 +82,28 @@
 .animals {
     position: relative;
     padding-bottom: 100px;
+    overflow: hidden;
+
+}
+.animals-wraper {
+    display: flex;
+    height: 882px;
+    min-width: 7750px;
+    transform: translateX(-1550px);
+    transition: 0.5s;
 }
 
 .animal-slider {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        column-gap: 30px;
+        height: 865px;
+        margin-right: 30px;
+}
+.animal-center2 {
     position: relative;
     margin: 0 auto;
     width: 72.5%;
@@ -166,12 +185,12 @@
 }
 
 .arrow-left {
-    left: -80px;
+    left: 80px;
     background-image: url('../../assets/icons/leftArrow.svg');
 }
 
 .arrow-right {
-    right: -80px;
+    right: 80px;
     background-image: url('../../assets/icons/rightArrow.svg');
 }
 

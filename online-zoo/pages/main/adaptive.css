@@ -274,5 +274,11 @@
 }
 /*END OF 1440px ADAPDATION*/
 @media (max-width:425px) {
-
+    .animal-slider {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 404px;
+    }
+    .arrow {
+        display: none;
+    }
 }
