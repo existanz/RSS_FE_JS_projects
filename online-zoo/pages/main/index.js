@@ -120,8 +120,9 @@ animalWraper = document.querySelector(".animals-wraper"),
 nextBtn = document.querySelector(".arrow-right"),
 prevBtn = document.querySelector(".arrow-left")
 
-let slideWidth = screen.width-50,
+let slideWidth = 1550,
 q=1;
+if (screen.width <=1400) slideWidth = screen.width;
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -139,7 +140,7 @@ function getPets(data) {
         <img
           src="${img}"
           alt="${title}"
-          class="pet-img"
+          class="animal-card-img"
         />
         <div class="animal-card-desc">
           <div class="animal-card-text">
@@ -166,7 +167,7 @@ function getPets(data) {
         <img
           src="${img}"
           alt="${title}"
-          class="pet-img"
+          class="animal-card-img"
         />
         <div class="animal-card-desc">
           <div class="animal-card-text">
@@ -191,7 +192,7 @@ function getPets(data) {
         <img
           src="${img}"
           alt="${title}"
-          class="pet-img"
+          class="animal-card-img"
         />
         <div class="animal-card-desc">
           <div class="animal-card-text">
@@ -241,11 +242,14 @@ logo.forEach(el => {
 //TESTIMONIALS SLIDER
 const testCards = document.querySelector('.testimonials-cards');
 const inputRange = document.querySelector('.range-slider');
-let cWidth = 296;
-if (screen.width < 1440) cWidth = 323;
+cWidth = 296;
+inputRange.setAttribute('max','7');
+if (screen.width < 1440) {
+cWidth = 323;
+inputRange.setAttribute('max','8');
+}
 window.addEventListener('resize', () => {
-    cWidth = 296;
-if (screen.width < 1440) cWidth = 323;
+    location.reload()
 })
  inputRange.addEventListener('input', () => {
     testCards.style.left = -inputRange.value*cWidth + 'px';

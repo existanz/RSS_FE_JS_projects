@@ -39,6 +39,9 @@
 .animal-slider {
     width: 94%;
 }
+.animals-wraper {
+    min-width: 5000px
+}
 .animal-card {
     height: 354px;
     width: 295px;
@@ -52,7 +55,7 @@
     margin-bottom: 40px;
 }
 .arrow {
-    top: 369px
+    top: 398px
 }
 .arrow-right {
     right: calc(50% - 150px);
@@ -199,7 +202,7 @@
         height: 332px;
     }
     .arrow {
-        top: 344px;
+        top: 400px;
     }
     .arrow-right {
         right: calc(50% - 77px);
