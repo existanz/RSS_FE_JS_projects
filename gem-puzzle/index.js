@@ -1,14 +1,18 @@
 const loadOptions = () => {
-    return { nFrames: 4 }
+    return { nFrames: 4,
+             sound: true}
 }
 
 const field = document.querySelector('.field'),
-    nFrames = loadOptions().nFrames;
+    nFrames = loadOptions().nFrames,
+    sound = loadOptions().sound
 
 let gameRun = true;
 
 console.log(loadOptions().nFrames);
-
+//load sound
+const sfxClick = new Audio('assets/sounds/click.mp3'),
+      sfxLowClick = new Audio('assets/sounds/click_.mp3')
 //init field
 puzzle = document.createElement('div');
 puzzle.classList.add('puzzle');
@@ -29,9 +33,7 @@ for (let i = 1; i <= nFrames; i++) {
             cell.classList.add('number');
             cell.classList.add((i % 2 == 0 && j % 2 > 0 || i % 2 > 0 && j % 2 == 0) ? 'dark' : 'light');
             cell.innerHTML = (j + nFrames * (i - 1)).toString();
-
         }
-
         puzzle.appendChild(cell);
     }
 }
@@ -45,7 +47,6 @@ puzzle.addEventListener('click', function(e){
 function shiftCell(cell){
 		console.log(cell);
         const emptyCell = getEmptyAdjacentCell(cell);
-        console.log(emptyCell);
         if(emptyCell){
             const buff = {style: cell.style.cssText, id: cell.id};
             
@@ -57,7 +58,10 @@ function shiftCell(cell){
             if(gameRun){
                 //setTimeout(checkOrder, 150);
             }
-        }
+            if (sound) {
+                sfxClick.play();
+            }
+        } else if (sound) sfxLowClick.play();
 }
 function getEmptyAdjacentCell(cell){
 		
@@ -91,11 +95,34 @@ function getCell(row, col){
     return document.getElementById('cell-'+row+'-'+col);
 }
 
-/**
- * Gets empty cell
- *
- */
+
 function getEmptyCell(){
     return puzzle.querySelector('.empty');
+
+}
+
+function checkOrder(){
+		
+    // Checks if the empty cell is in correct position
+    if(getCell(3, 3).className != 'empty'){
+        return;
+    }
+
+    var n = 1;
+    // Goes through all cells and checks numbers
+    for(var i = 0; i <= 3; i++){
+        for(var j = 0; j <= 3; j++){
+            if(n <= 15 && getCell(i, j).innerHTML != n.toString()){
+                // Order is not correct
+                return;
+            }
+            n++;
+        }
+    }
+    
+    // Puzzle is solved, offers to scramble it
+    if(confirm('Congrats, You did it! \nScramble the puzzle?')){
+        scramble();
+    }
 
 }

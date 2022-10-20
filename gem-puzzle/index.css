@@ -1,3 +1,7 @@
+.field {
+	display: flex;
+	justify-content: center;
+}
 .puzzle {
 	position: relative;
 	width: 492px;
