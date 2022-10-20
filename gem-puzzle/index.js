@@ -5,6 +5,8 @@ const loadOptions = () => {
 const field = document.querySelector('.field'),
     nFrames = loadOptions().nFrames;
 
+let gameRun = true;
+
 console.log(loadOptions().nFrames);
 
 //init field
@@ -32,4 +34,68 @@ for (let i = 1; i <= nFrames; i++) {
 
         puzzle.appendChild(cell);
     }
+}
+
+puzzle.addEventListener('click', function(e){
+    if(gameRun){
+        shiftCell(e.target);
+    }
+});
+
+function shiftCell(cell){
+		console.log(cell);
+        const emptyCell = getEmptyAdjacentCell(cell);
+        console.log(emptyCell);
+        if(emptyCell){
+            const buff = {style: cell.style.cssText, id: cell.id};
+            
+            cell.style.cssText = emptyCell.style.cssText;
+            cell.id = emptyCell.id;
+            emptyCell.style.cssText = buff.style;
+            emptyCell.id = buff.id;
+            
+            if(gameRun){
+                //setTimeout(checkOrder, 150);
+            }
+        }
+}
+function getEmptyAdjacentCell(cell){
+		
+    const adjacent = getMoveCells(cell);
+    for(let i = 0; i < adjacent.length; i++){
+        console.log(adjacent[i])
+        if(!!adjacent[i] && adjacent[i].className == 'cell empty'){
+            return adjacent[i];
+        }
+    }
+    return false;
+    
+}
+
+
+ function getMoveCells(cell){
+		
+    const row = parseInt(cell.id.split('-')[1]);
+    const col = parseInt(cell.id.split('-')[2]);
+    
+    let moveCells = [];
+    moveCells.push(getCell(row+1, col));			
+    moveCells.push(getCell(row-1, col));
+    moveCells.push(getCell(row, col+1));
+    moveCells.push(getCell(row, col-1));
+    return moveCells;
+    
+}
+
+function getCell(row, col){
+    return document.getElementById('cell-'+row+'-'+col);
+}
+
+/**
+ * Gets empty cell
+ *
+ */
+function getEmptyCell(){
+    return puzzle.querySelector('.empty');
+
 }

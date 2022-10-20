@@ -1,19 +1,21 @@
 .puzzle {
 	position: relative;
-	border-radius: 10px;
-    border-color: rgb(198, 226, 43);
-    border: solid 2px;
+	width: 492px;
+	height: 492px;
+	border-radius: 5px;
+    border: rgb(198, 226, 43) solid 2px;
 }
 .cell {
 	position: absolute;
 	display: block;
 	width: 80px;
 	height: 80px;
+	transition: 0.3s;
 }
 .number {
 	border-radius: 10px;
-    border-color: rgb(198, 226, 43);
-    border: solid 2px;
+
+    border: rgb(198, 226, 43) solid 2px;
 	text-align: center;
 	font-size: 32px;
 }
