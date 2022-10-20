@@ -4,10 +4,8 @@
 }
 .puzzle {
 	position: relative;
-	width: 492px;
-	height: 492px;
 	border-radius: 5px;
-    border: rgb(198, 226, 43) solid 2px;
+    border: rgb(165, 184, 62) solid 2px;
 }
 .cell {
 	position: absolute;

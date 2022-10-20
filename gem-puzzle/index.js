@@ -12,32 +12,37 @@ let gameRun = true;
 console.log(loadOptions().nFrames);
 //load sound
 const sfxClick = new Audio('assets/sounds/click.mp3'),
-      sfxLowClick = new Audio('assets/sounds/click_.mp3')
+      sfxLowClick = new Audio('assets/sounds/click_.mp3');
 //init field
-puzzle = document.createElement('div');
+
+const puzzle = document.createElement('div');
 puzzle.classList.add('puzzle');
-puzzle.innerHTML = '';
 field.appendChild(puzzle);
 
-for (let i = 1; i <= nFrames; i++) {
-    for (let j = 1; j <= nFrames; j++) {
-        const cell = document.createElement('div');
-        cell.classList.add('cell');
-        cell.id = 'cell-' + i + '-' + j;
-        cell.style.left = (j * 80 + 1 * j + 1) + 'px';
-        cell.style.top = (i * 80 + 1 * i + 1) + 'px';
+const initgame = () => {
+    puzzle.style.width=`${nFrames*82+2}px`;
+    puzzle.style.height=`${nFrames*82+2}px`;
+    puzzle.innerHTML = '';
+    for (let i = 1; i <= nFrames; i++) {
+        for (let j = 1; j <= nFrames; j++) {
+            const cell = document.createElement('div');
+            cell.classList.add('cell');
+            cell.id = 'cell-' + i + '-' + j;
+            cell.style.left = ((j-1) * 81 + 1) + 'px';
+            cell.style.top = ((i-1) * 81 + 1) + 'px';
 
-        if (i == nFrames && j == nFrames) {
-            cell.classList.add('empty');
-        } else {
-            cell.classList.add('number');
-            cell.classList.add((i % 2 == 0 && j % 2 > 0 || i % 2 > 0 && j % 2 == 0) ? 'dark' : 'light');
-            cell.innerHTML = (j + nFrames * (i - 1)).toString();
+            if (i == nFrames && j == nFrames) {
+                cell.classList.add('empty');
+            } else {
+                cell.classList.add('number');
+                cell.classList.add((i % 2 == 0 && j % 2 > 0 || i % 2 > 0 && j % 2 == 0) ? 'dark' : 'light');
+                cell.innerHTML = (j + nFrames * (i - 1)).toString();
+            }
+            puzzle.appendChild(cell);
         }
-        puzzle.appendChild(cell);
     }
 }
-
+initgame();
 puzzle.addEventListener('click', function(e){
     if(gameRun){
         shiftCell(e.target);
