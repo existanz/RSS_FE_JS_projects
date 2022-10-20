@@ -61,7 +61,7 @@ function shiftCell(cell){
             emptyCell.id = buff.id;
             
             if(gameRun){
-                //setTimeout(checkOrder, 150);
+                setTimeout(checkWin, 150);
             }
             if (sound) {
                 sfxClick.play();
@@ -106,28 +106,29 @@ function getEmptyCell(){
 
 }
 
-function checkOrder(){
-		
-    // Checks if the empty cell is in correct position
-    if(getCell(3, 3).className != 'empty'){
-        return;
-    }
-
-    var n = 1;
-    // Goes through all cells and checks numbers
-    for(var i = 0; i <= 3; i++){
-        for(var j = 0; j <= 3; j++){
-            if(n <= 15 && getCell(i, j).innerHTML != n.toString()){
-                // Order is not correct
-                return;
-            }
-            n++;
+function checkWin() {
+    const cells = document.querySelectorAll('.cell');
+    let ordered = true;
+    cells.forEach(el => {
+        const elRow = parseInt(el.id.split('-')[1]);
+        const elCol = parseInt(el.id.split('-')[2]);
+        console.log(nFrames * (elRow - 1) + elCol, el.innerHTML);
+        console.log((nFrames * (elRow - 1) + elCol).toString() != el.innerHTML);
+        if (el.innerHTML && el.innerHTML != (nFrames * (elRow - 1) + elCol).toString()) {
+            console.log('Not match!')
+            ordered = false;
+            //j + nFrames * (i - 1)
+        }
+    })
+    if (ordered) {
+        if (confirm('CHooray! You solved the puzzle in ##:## and N moves!')) {
+            initgame();
+            shuffle();
         }
     }
-    
-    // Puzzle is solved, offers to scramble it
-    if(confirm('Congrats, You did it! \nScramble the puzzle?')){
-        scramble();
-    }
 
+}
+
+function shuffle() {
+    console.log('shuffle');
 }
