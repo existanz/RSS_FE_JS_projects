@@ -92,7 +92,7 @@ function getEmptyAdjacentCell(cell){
     moveCells.push(getCell(row-1, col));
     moveCells.push(getCell(row, col+1));
     moveCells.push(getCell(row, col-1));
-    return moveCells;
+    return moveCells.filter(i => i!=null);
     
 }
 
@@ -131,4 +131,28 @@ function checkWin() {
 
 function shuffle() {
     console.log('shuffle');
+    
+    let previousCell,
+        i = 1;
+
+    const interval = setInterval(function(){
+        if(i <= 100){
+            let adjacent = getMoveCells(getEmptyCell());
+            if(previousCell){
+                for(let j = adjacent.length-1; j >= 0; j--){
+                    if(adjacent[j].innerHTML == previousCell.innerHTML){
+                        adjacent.splice(j, 1);
+                    }
+                }
+            }
+            previousCell = adjacent[rand(0, adjacent.length-1)];
+            shiftCell(previousCell);
+            i++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 15);
+
 }
+
+const rand = (from, to) => Math.floor(Math.random() * (to - from + 1)) + from;
