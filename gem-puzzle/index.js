@@ -9,12 +9,34 @@ const field = document.querySelector('.field'),
 
 let gameRun = true;
 
-console.log(loadOptions().nFrames);
 //load sound
 const sfxClick = new Audio('assets/sounds/click.mp3'),
       sfxLowClick = new Audio('assets/sounds/click_.mp3');
-//init field
 
+
+//add comand panel
+const comPanel = document.createElement('div');
+comPanel.classList.add('.command-panel');
+field.appendChild(comPanel);
+const bShuffle = document.createElement('button');
+bShuffle.innerHTML = 'Shuffle';
+comPanel.appendChild(bShuffle);
+const bStop = document.createElement('button');
+bStop.innerHTML = 'Stop'
+comPanel.appendChild(bStop);
+const bSave = document.createElement('button');
+bSave.innerHTML = 'Save'
+comPanel.appendChild(bSave);
+const bSound = document.createElement('button');
+bSound.innerHTML = 'Sound'
+comPanel.appendChild(bSound);
+const bResults = document.createElement('button');
+bResults.innerHTML = 'Results'
+comPanel.appendChild(bResults);
+
+bShuffle.addEventListener('click', shuffle);
+
+//init puzzle dock
 const puzzle = document.createElement('div');
 puzzle.classList.add('puzzle');
 field.appendChild(puzzle);
@@ -42,15 +64,16 @@ const initgame = () => {
         }
     }
 }
+
 initgame();
-puzzle.addEventListener('click', function(e){
+//shuffle();
+puzzle.addEventListener('click', (e) => {
     if(gameRun){
         shiftCell(e.target);
     }
 });
 
 function shiftCell(cell){
-		console.log(cell);
         const emptyCell = getEmptyAdjacentCell(cell);
         if(emptyCell){
             const buff = {style: cell.style.cssText, id: cell.id};
@@ -72,7 +95,6 @@ function getEmptyAdjacentCell(cell){
 		
     const adjacent = getMoveCells(cell);
     for(let i = 0; i < adjacent.length; i++){
-        console.log(adjacent[i])
         if(!!adjacent[i] && adjacent[i].className == 'cell empty'){
             return adjacent[i];
         }
@@ -112,10 +134,7 @@ function checkWin() {
     cells.forEach(el => {
         const elRow = parseInt(el.id.split('-')[1]);
         const elCol = parseInt(el.id.split('-')[2]);
-        console.log(nFrames * (elRow - 1) + elCol, el.innerHTML);
-        console.log((nFrames * (elRow - 1) + elCol).toString() != el.innerHTML);
         if (el.innerHTML && el.innerHTML != (nFrames * (elRow - 1) + elCol).toString()) {
-            console.log('Not match!')
             ordered = false;
             //j + nFrames * (i - 1)
         }
