@@ -5,15 +5,15 @@
 	align-items: center;
 }
 button {
-	border: green solid 2px;
+	border: #A64B00 solid 2px;
 	border-radius: 5px;
-	background-color: aqua;
+	background-color: #009999;
 	font-size: 1.5em;
 }
 .puzzle {
 	position: relative;
 	border-radius: 5px;
-    border: rgb(165, 184, 62) solid 2px;
+    border: solid 2px;
 }
 .cell {
 	position: absolute;
@@ -24,8 +24,13 @@ button {
 }
 .number {
 	border-radius: 10px;
-
-    border: rgb(198, 226, 43) solid 2px;
+    border: solid 2px;
 	text-align: center;
 	font-size: 32px;
+}
+.dark {
+	background-color: #006363;
+}
+.light {
+	background-color: #009999;
 }

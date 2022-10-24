@@ -3,11 +3,14 @@ const loadOptions = () => {
              sound: true}
 }
 
-const field = document.querySelector('.field'),
-    nFrames = loadOptions().nFrames,
+const field = document.querySelector('.field');
+let nFrames = loadOptions().nFrames,
     sound = loadOptions().sound
 
-let gameRun = true;
+
+let gameRun = true,
+    nMoves = 0;
+    tTime = '00.00';
 
 //load sound
 const sfxClick = new Audio('assets/sounds/click.mp3'),
@@ -16,25 +19,68 @@ const sfxClick = new Audio('assets/sounds/click.mp3'),
 
 //add comand panel
 const comPanel = document.createElement('div');
-comPanel.classList.add('.command-panel');
+comPanel.classList.add('command-panel');
 field.appendChild(comPanel);
+const comPanelBtn = document.createElement('div');
+comPanelBtn.classList.add('command-panel-buttons');
+comPanel.appendChild(comPanelBtn);
+
+//buttons
 const bShuffle = document.createElement('button');
 bShuffle.innerHTML = 'Shuffle';
-comPanel.appendChild(bShuffle);
+comPanelBtn.appendChild(bShuffle);
 const bStop = document.createElement('button');
 bStop.innerHTML = 'Stop'
-comPanel.appendChild(bStop);
+comPanelBtn.appendChild(bStop);
 const bSave = document.createElement('button');
 bSave.innerHTML = 'Save'
-comPanel.appendChild(bSave);
+comPanelBtn.appendChild(bSave);
 const bSound = document.createElement('button');
-bSound.innerHTML = 'Sound'
-comPanel.appendChild(bSound);
+bSound.innerHTML = 'Sound On'
+comPanelBtn.appendChild(bSound);
 const bResults = document.createElement('button');
 bResults.innerHTML = 'Results'
-comPanel.appendChild(bResults);
+comPanelBtn.appendChild(bResults);
 
+
+//second panel
+const comPanelDock = document.createElement('div');
+comPanelDock.classList.add('command-panel-dock');
+comPanel.appendChild(comPanelDock);
+
+const lTime = document.createElement('label');
+lTime.classList.add('lTime');
+lTime.innerHTML = ('--:--')
+comPanelDock.appendChild(lTime);
+const lMoves = document.createElement('label');
+lMoves.classList.add('lMoves');
+lMoves.innerHTML = ('00')
+comPanelDock.appendChild(lMoves);
+const selFrames = document.createElement('select');
+    selFrames.options.add(new Option('3x3'));
+    selFrames.options.add(new Option('4x4','', true, true));
+    selFrames.options.add(new Option('5x5'));
+    selFrames.options.add(new Option('6x6'));
+    selFrames.options.add(new Option('7x7'));
+    selFrames.options.add(new Option('8x8'));
+comPanel.appendChild(selFrames);
+
+selFrames.addEventListener('change', (el) => {
+    console.log(el.target.options.selectedIndex);
+    nFrames = 3+el.target.options.selectedIndex;
+    initgame();
+    shuffle();
+})
 bShuffle.addEventListener('click', shuffle);
+bSound.addEventListener('click', () => {
+    if (sound) {
+        sound = false;
+        bSound.innerHTML = 'Sound Off';
+    } else {
+        sound = true;
+        bSound.innerHTML = 'Sound On';
+    }
+})
 
 //init puzzle dock
 const puzzle = document.createElement('div');
@@ -66,13 +112,25 @@ const initgame = () => {
 }
 
 initgame();
-//shuffle();
+shuffle();
 puzzle.addEventListener('click', (e) => {
     if(gameRun){
         shiftCell(e.target);
     }
 });
-
+const setNumberMoves = () => {
+    lMoves.innerHTML = `Moves: ${nMoves}`;
+}
+const setTime = () => {
+    lTime.innerHTML = tTime;
+}
+const showTime = () => {
+    const date = new Date();
+    const currentTime = date.toLocaleTimeString();
+    lTime.innerHTML = currentTime;
+    setTimeout(showTime, 1000);
+  };
+showTime();
 function shiftCell(cell){
         const emptyCell = getEmptyAdjacentCell(cell);
         if(emptyCell){
@@ -89,6 +147,8 @@ function shiftCell(cell){
             if (sound) {
                 sfxClick.play();
             }
+            nMoves++;
+            setNumberMoves();
         } else if (sound) sfxLowClick.play();
 }
 function getEmptyAdjacentCell(cell){
@@ -140,7 +200,7 @@ function checkWin() {
         }
     })
     if (ordered) {
-        if (confirm('CHooray! You solved the puzzle in ##:## and N moves!')) {
+        if (confirm(`CHooray! You solved the puzzle in ##:## and ${nMoves} moves!`)) {
             initgame();
             shuffle();
         }
@@ -155,7 +215,7 @@ function shuffle() {
         i = 1;
 
     const interval = setInterval(function(){
-        if(i <= 100){
+        if(i <= 50*nFrames){
             let adjacent = getMoveCells(getEmptyCell());
             if(previousCell){
                 for(let j = adjacent.length-1; j >= 0; j--){
@@ -169,8 +229,10 @@ function shuffle() {
             i++;
         } else {
             clearInterval(interval);
+            nMoves=0;
+            setNumberMoves();
         }
-    }, 15);
+    }, 5);
 
 }
 
