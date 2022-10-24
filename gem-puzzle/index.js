@@ -9,8 +9,9 @@ let nFrames = loadOptions().nFrames,
 
 
 let gameRun = true,
-    nMoves = 0;
-    tTime = '00.00';
+    nMoves = 0,
+    nTime = 0,
+    strTime = '00.00.00'
 
 //load sound
 const sfxClick = new Audio('assets/sounds/click.mp3'),
@@ -63,7 +64,7 @@ const selFrames = document.createElement('select');
     selFrames.options.add(new Option('6x6'));
     selFrames.options.add(new Option('7x7'));
     selFrames.options.add(new Option('8x8'));
-comPanel.appendChild(selFrames);
+comPanelDock.appendChild(selFrames);
 
 selFrames.addEventListener('change', (el) => {
     console.log(el.target.options.selectedIndex);
@@ -71,6 +72,7 @@ selFrames.addEventListener('change', (el) => {
     initgame();
     shuffle();
 })
+
 bShuffle.addEventListener('click', shuffle);
 bSound.addEventListener('click', () => {
     if (sound) {
@@ -118,7 +120,7 @@ puzzle.addEventListener('click', (e) => {
         shiftCell(e.target);
     }
 });
-const setNumberMoves = () => {
+const showMoves = () => {
     lMoves.innerHTML = `Moves: ${nMoves}`;
 }
 const setTime = () => {
@@ -126,10 +128,13 @@ const setTime = () => {
 }
 const showTime = () => {
     const date = new Date();
-    const currentTime = date.toLocaleTimeString();
-    lTime.innerHTML = currentTime;
+    date.setTime(nTime*1000-10800000);
+    strTime = date.toLocaleTimeString();
+    lTime.innerHTML = `Time: ${strTime}`;
     setTimeout(showTime, 1000);
+    nTime++;
   };
+
 showTime();
 function shiftCell(cell){
         const emptyCell = getEmptyAdjacentCell(cell);
@@ -148,7 +153,7 @@ function shiftCell(cell){
                 sfxClick.play();
             }
             nMoves++;
-            setNumberMoves();
+            showMoves();
         } else if (sound) sfxLowClick.play();
 }
 function getEmptyAdjacentCell(cell){
@@ -200,7 +205,7 @@ function checkWin() {
         }
     })
     if (ordered) {
-        if (confirm(`CHooray! You solved the puzzle in ##:## and ${nMoves} moves!`)) {
+        if (confirm(`CHooray! You solved the puzzle in ${strTime} and ${nMoves} moves!`)) {
             initgame();
             shuffle();
         }
@@ -230,7 +235,8 @@ function shuffle() {
         } else {
             clearInterval(interval);
             nMoves=0;
-            setNumberMoves();
+            showMoves();
+            nTime=0;
         }
     }, 5);
 
