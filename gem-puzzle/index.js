@@ -9,6 +9,7 @@ let nFrames = loadOptions().nFrames,
 
 
 let gameRun = true,
+    cWidth = 80,
     nMoves = 0,
     nTime = 0,
     strTime = '00.00.00'
@@ -83,23 +84,27 @@ bSound.addEventListener('click', () => {
         bSound.innerHTML = 'Sound On';
     }
 })
-
+//cell size
+if (screen.width < 701) cWidth = 40;
+window.addEventListener('resize', (ev)=>{
+    if (screen.width < 701) cWidth = 40;
+})
 //init puzzle dock
 const puzzle = document.createElement('div');
 puzzle.classList.add('puzzle');
 field.appendChild(puzzle);
 
 const initgame = () => {
-    puzzle.style.width=`${nFrames*82+2}px`;
-    puzzle.style.height=`${nFrames*82+2}px`;
+    puzzle.style.width=`${nFrames*(cWidth+5)+2}px`;
+    puzzle.style.height=`${nFrames*(cWidth+5)+2}px`;
     puzzle.innerHTML = '';
     for (let i = 1; i <= nFrames; i++) {
         for (let j = 1; j <= nFrames; j++) {
             const cell = document.createElement('div');
             cell.classList.add('cell');
             cell.id = 'cell-' + i + '-' + j;
-            cell.style.left = ((j-1) * 81 + 1) + 'px';
-            cell.style.top = ((i-1) * 81 + 1) + 'px';
+            cell.style.left = ((j-1) * (cWidth+5) + 1) + 'px';
+            cell.style.top = ((i-1) * (cWidth+5) + 1) + 'px';
 
             if (i == nFrames && j == nFrames) {
                 cell.classList.add('empty');
