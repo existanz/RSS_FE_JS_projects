@@ -30,15 +30,30 @@ button {
 	border-radius: 10px;
     border: solid 2px;
 	text-align: center;
-	font-size: 32px;
+	font-size: 2em;
 }
 .dark {
 	background-color: #006363;
+	color: #ffb273;
 }
 .light {
 	background-color: #009999;
+	color: #A64B00;
 }
-
+.scores-popup {
+	position: absolute;
+	width: 50%;
+	height: 400px;
+	background-color: #ffb273;
+	color: #006363;
+	opacity: 0.7;
+	left: 25%;
+	top: 100px;
+	border-radius: 5px;
+}
+.unvisible {
+	display: none;
+}
 @media (max-width:700px) {
 	.cell {
 		width: 40px;

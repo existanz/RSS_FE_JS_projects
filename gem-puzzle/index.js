@@ -1,6 +1,8 @@
 const loadOptions = () => {
     return { nFrames: 4,
-             sound: true}
+             sound: true,
+            scores: ['unknown --:--', 'unknown --:--', 'unknown --:--', 'unknown --:--', 'unknown --:--', 'unknown --:--', 
+            'unknown --:--', 'unknown --:--', 'unknown --:--', 'unknown --:--']}
 }
 
 const field = document.querySelector('.field');
@@ -84,6 +86,9 @@ bSound.addEventListener('click', () => {
         bSound.innerHTML = 'Sound On';
     }
 })
+bResults.addEventListener('click', ()=>{
+    hiPopup.classList.toggle('unvisible');
+})
 //cell size
 if (screen.width < 701) cWidth = 40;
 window.addEventListener('resize', (ev)=>{
@@ -120,6 +125,22 @@ const initgame = () => {
 
 initgame();
 shuffle();
+
+
+//hiscores popup
+const hiPopup = document.createElement('div');
+hiPopup.classList.add('scores-popup');
+hiPopup.classList.add('unvisible');
+field.appendChild(hiPopup);
+const hiList = document.createElement('ol');
+hiList.classList.add('scores-list')
+hiPopup.appendChild(hiList);
+const hiScores = loadOptions().scores;
+hiScores.forEach(el => {
+    const elem = document.createElement('li');
+    elem.innerHTML = el;
+    hiList.appendChild(elem);
+})
 puzzle.addEventListener('click', (e) => {
     if(gameRun){
         shiftCell(e.target);
@@ -210,7 +231,7 @@ function checkWin() {
         }
     })
     if (ordered) {
-        if (confirm(`CHooray! You solved the puzzle in ${strTime} and ${nMoves} moves!`)) {
+        if (confirm(`CHooray! You solved the puzzle in ${strTime} and ${nMoves} moves! \nDo you want to play one more game?`)) {
             initgame();
             shuffle();
         }
