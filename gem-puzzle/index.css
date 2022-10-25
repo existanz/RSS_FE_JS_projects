@@ -7,11 +7,15 @@
 .command-panel-dock {
 	display: flex;
 	justify-content: space-between;
+	font-size: 1.5em;
+	font-weight: 500;
+	color: #ffb273;
 }
 button {
 	border: #A64B00 solid 2px;
 	border-radius: 5px;
-	background-color: #009999;
+	background-color: #5CCCCC;
+	color: #A64B00;
 	font-size: 1.5em;
 }
 .puzzle {
@@ -46,7 +50,7 @@ button {
 	height: 400px;
 	background-color: #ffb273;
 	color: #006363;
-	opacity: 0.7;
+	opacity: 0.9;
 	left: 25%;
 	top: 100px;
 	border-radius: 5px;

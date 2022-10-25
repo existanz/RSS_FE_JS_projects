@@ -1,8 +1,8 @@
 const loadOptions = () => {
     return { nFrames: 4,
              sound: true,
-            scores: ['unknown --:--', 'unknown --:--', 'unknown --:--', 'unknown --:--', 'unknown --:--', 'unknown --:--', 
-            'unknown --:--', 'unknown --:--', 'unknown --:--', 'unknown --:--']}
+            scores: ['unknown 4x4 --:--:--', 'unknown 4x4 --:--:--', 'unknown 4x4 --:--:--', 'unknown 4x4 --:--:--', 'unknown 4x4 --:--:--', 'unknown 4x4 --:--:--', 
+            'unknown 4x4 --:--:--', 'unknown 4x4 --:--:--', 'unknown 4x4 --:--:--', 'unknown 4x4 --:--:--']}
 }
 
 const field = document.querySelector('.field');
