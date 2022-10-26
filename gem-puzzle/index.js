@@ -1,14 +1,30 @@
-const loadOptions = () => {
-    return { nFrames: 4,
-             sound: true,
-            scores: ['unknown 4x4 --:--:--', 'unknown 4x4 --:--:--', 'unknown 4x4 --:--:--', 'unknown 4x4 --:--:--', 'unknown 4x4 --:--:--', 'unknown 4x4 --:--:--', 
-            'unknown 4x4 --:--:--', 'unknown 4x4 --:--:--', 'unknown 4x4 --:--:--', 'unknown 4x4 --:--:--']}
-}
-
+  
 const field = document.querySelector('.field');
-let nFrames = loadOptions().nFrames,
-    sound = loadOptions().sound
+let nFrames = 4,
+    sound = true,
+    scores = ['moves: 00 time: --:--:--', 'moves: 00 time: --:--:--',
+    'moves: 00 time: --:--:--', 'moves: 00 time: --:--:--', 'moves: 00 time: --:--:--',
+    'moves: 00 time: --:--:--', 'moves: 00 time: --:--:--', 'moves: 00 time: --:--:--',
+    'moves: 00 time: --:--:--', 'moves: 00 time: --:--:--']
 
+getLocalStorage();
+console.log(sound,nFrames)
+//SAVE AND LOAD
+function setLocalStorage() {
+    //localStorage.setItem('nFrames', nFrames);
+    localStorage.setItem('sound', sound);
+    localStorage.setItem('scores', scores);
+  }
+  window.addEventListener('beforeunload', setLocalStorage);
+  
+  function getLocalStorage() {
+    //if (localStorage.getItem('nFrames')) nFrames = parseInt(localStorage.getItem('nFrames'));
+    if (localStorage.getItem('sound')) sound = localStorage.getItem('sound')==='true';
+    console.log(sound)
+    if (localStorage.getItem('scores')) scores = (localStorage.getItem('scores')).split(',');
+  }
+  
+  window.addEventListener('load', getLocalStorage);
 
 let gameRun = true,
     cWidth = 80,
@@ -40,7 +56,8 @@ const bSave = document.createElement('button');
 bSave.innerHTML = 'Save'
 comPanelBtn.appendChild(bSave);
 const bSound = document.createElement('button');
-bSound.innerHTML = 'Sound On'
+if (sound) {bSound.innerHTML = 'Sound On'}
+else {bSound.innerHTML = 'Sound Off'}
 comPanelBtn.appendChild(bSound);
 const bResults = document.createElement('button');
 bResults.innerHTML = 'Results'
@@ -132,15 +149,23 @@ const hiPopup = document.createElement('div');
 hiPopup.classList.add('scores-popup');
 hiPopup.classList.add('unvisible');
 field.appendChild(hiPopup);
+
+//refresh hiscores
 const hiList = document.createElement('ol');
 hiList.classList.add('scores-list')
 hiPopup.appendChild(hiList);
-const hiScores = loadOptions().scores;
-hiScores.forEach(el => {
+
+//showHiScores();
+const showHiScores = () => {
+    hiList.innerHTML = '';
+    scores.forEach(el => {
     const elem = document.createElement('li');
     elem.innerHTML = el;
     hiList.appendChild(elem);
 })
+}
+showHiScores();
+
 puzzle.addEventListener('click', (e) => {
     if(gameRun){
         shiftCell(e.target);
@@ -231,6 +256,8 @@ function checkWin() {
         }
     })
     if (ordered) {
+        scores[0] = `moves: ${nMoves} time: ${strTime}`;
+        showHiScores();
         if (confirm(`CHooray! You solved the puzzle in ${strTime} and ${nMoves} moves! \nDo you want to play one more game?`)) {
             initgame();
             shuffle();
