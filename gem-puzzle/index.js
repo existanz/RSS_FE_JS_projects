@@ -1,5 +1,8 @@
   
-const field = document.querySelector('.field');
+const field = document.createElement('div');
+field.classList.add('field');
+document.body.appendChild(field);
+
 let nFrames = 4,
     sound = true,
     scores = ['moves: 00 time: --:--:--', 'moves: 00 time: --:--:--',
