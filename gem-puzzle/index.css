@@ -30,13 +30,13 @@ button {
 	height: 80px;
 	transition: 0.3s;
 	user-select: none;
-	cursor:pointer;
 }
 .number {
 	border-radius: 10px;
     border: solid 2px;
 	text-align: center;
 	font-size: 2em;
+	cursor:pointer;
 }
 .dark {
 	background-color: #006363;
