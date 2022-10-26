@@ -26,7 +26,7 @@ function setLocalStorage() {
   
   window.addEventListener('load', getLocalStorage);
 
-let gameRun = true,
+let gameRun = false,
     cWidth = 80,
     nMoves = 0,
     nTime = 0,
@@ -174,20 +174,40 @@ puzzle.addEventListener('click', (e) => {
 const showMoves = () => {
     lMoves.innerHTML = `Moves: ${nMoves}`;
 }
-const setTime = () => {
-    lTime.innerHTML = tTime;
-}
+let intTimer;
+
 const showTime = () => {
     const date = new Date();
     date.setTime(nTime*1000-10800000);
     strTime = date.toLocaleTimeString();
     lTime.innerHTML = `Time: ${strTime}`;
-    setTimeout(showTime, 1000);
     nTime++;
   };
+const stopTime = () => {
+    console.log('stooop')
+    clearInterval(intTimer);
+    gameRun = false;
+}
+const startTime = () => {
+    console.log('start')
+    if (!gameRun) {
+        intTimer = setInterval(showTime, 1000);
+        gameRun = true;
+    }
+}
 
+bStop.addEventListener('click', () => {
+    if (gameRun) {
+        stopTime();
+        bStop.innerHTML = 'Start'
+    } else {
+        startTime();
+        bStop.innerHTML = 'Stop'
+    }
+})
 showTime();
-function shiftCell(cell){
+
+function shiftCell(cell) {
         const emptyCell = getEmptyAdjacentCell(cell);
         if(emptyCell){
             const buff = {style: cell.style.cssText, id: cell.id};
@@ -290,6 +310,7 @@ function shuffle() {
             nMoves=0;
             showMoves();
             nTime=0;
+            startTime();
         }
     }, 5);
 
