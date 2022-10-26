@@ -263,7 +263,10 @@ function getEmptyCell(){
     return puzzle.querySelector('.empty');
 
 }
-
+const saveScores = (moves, time) => {
+    scores[scores.indexOf('moves: 00 time: --:--:--')] = `moves: ${moves} time: ${time}`;
+    showHiScores();
+}
 function checkWin() {
     const cells = document.querySelectorAll('.cell');
     let ordered = true;
@@ -276,8 +279,7 @@ function checkWin() {
         }
     })
     if (ordered) {
-        scores[0] = `moves: ${nMoves} time: ${strTime}`;
-        showHiScores();
+        saveScores(nMoves,strTime);
         if (confirm(`CHooray! You solved the puzzle in ${strTime} and ${nMoves} moves! \nDo you want to play one more game?`)) {
             initgame();
             shuffle();
