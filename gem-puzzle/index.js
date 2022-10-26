@@ -178,7 +178,7 @@ let intTimer;
 
 const showTime = () => {
     const date = new Date();
-    date.setTime(nTime*1000-10800000);
+    date.setTime(nTime*1000-10799999);
     strTime = date.toLocaleTimeString();
     lTime.innerHTML = `Time: ${strTime}`;
     nTime++;
@@ -187,6 +187,7 @@ const stopTime = () => {
     console.log('stooop')
     clearInterval(intTimer);
     gameRun = false;
+    bStop.innerHTML = 'Start'
 }
 const startTime = () => {
     console.log('start')
@@ -194,15 +195,14 @@ const startTime = () => {
         intTimer = setInterval(showTime, 1000);
         gameRun = true;
     }
+    bStop.innerHTML = 'Stop'
 }
 
 bStop.addEventListener('click', () => {
     if (gameRun) {
         stopTime();
-        bStop.innerHTML = 'Start'
     } else {
         startTime();
-        bStop.innerHTML = 'Stop'
     }
 })
 showTime();
