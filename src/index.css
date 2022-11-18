@@ -1,3 +1,19 @@
+@import 'normalize.css';
+
+@import './assets/styles/vars.css';
+@import './assets/styles/header.css';
+@import './assets/styles/footer.css';
+
+
 body {
-  background-color: brown;
+  margin-top: 60px;
+  background-color: var(--main-bg-color);
+  color: var(--main-color);
+  position: relative;
+}
+
+.background-video {
+  position: fixed;
+  top: 0px;
+  width: 100%;
 }
