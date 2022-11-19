@@ -42,3 +42,9 @@
   background-color: var(--link-bg-color);
   transition: .8s;
 }
+
+@media (max-width:475px) {
+  .nav__menu {
+    display: none;
+  }
+}
