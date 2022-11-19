@@ -10,6 +10,7 @@ body {
   background-color: var(--main-bg-color);
   color: var(--main-color);
   position: relative;
+  max-height: 900px;
 }
 
 .background-video {
@@ -23,4 +24,19 @@ body {
 
 .greetings__container {
   text-align: center;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.greetings__link {
+  color: var(--main-color);
+}
+.greetings__link:hover {
+  color: var(--main-bg-color);
+}
+
+@media (min-width:1601px) {
+  .background-video {
+    width: 2600px;
+    left: calc(50% - 1300px);
+  }
 }
