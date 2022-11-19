@@ -32,7 +32,11 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src', 'gallery.html'),
-      filename: 'gallery_[contenthash].html'
+      filename: 'gallery.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src', 'game.html'),
+      filename: 'game.html'
     }),
     new MiniCssExtractPlugin({
       filename: 'index_[contenthash].css',
