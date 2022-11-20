@@ -274,10 +274,10 @@ const birdsData = [
     },
     {
       id: 6,
-      name: {ru: 'Филин', en: ''},
+      name: {ru: 'Филин', en: 'Owl'},
       species: 'Bubo bubo',
       description: {ru: 'Полет филина бесшумный, зрение очень острое. Эти особенности делают птицу непревзойденным ночным охотником. У филина нет естественных врагов, ни один зверь не охотится на взрослых птиц. А вот на птенцов нападают лисы и волки.',
-                    en: ''},
+                    en: 'The flight of the eagle owl is silent, the eyesight is very sharp. These features make the bird an unsurpassed night hunter. The eagle owl has no natural enemies, not a single animal preys on adult birds. But foxes and wolves attack the chicks.'},
       image: 'https://live.staticflickr.com/65535/48137123012_393653c2e4.jpg',
       audio: 'https://www.xeno-canto.org/sounds/uploaded/WNLIDKJKXT/XC518386-sense%20t%C3%ADtol.mp3'
     }
@@ -285,55 +285,55 @@ const birdsData = [
   [
     {
       id: 1,
-      name: {ru: 'Альбатрос', en: ''},
+      name: {ru: 'Альбатрос', en: 'Albatross'},
       species: 'Diomedea exulans',
       description: {ru: 'Альбатрос - самая крупная летающая птица в мире. Размах крыльев достигает три с половиной, вес - десять килограммов. Большую часть жизни альбатросы проводят в воздухе, покрывая над океанскими просторами огромные расстояния',
-                    en: ''},
+                    en: 'Albatross is the largest flying bird in the world. The wingspan reaches three and a half, weight - ten kilograms. Albatrosses spend most of their lives in the air, covering vast distances above the ocean.'},
       image: 'https://live.staticflickr.com/7557/16260253965_8e9430cb66.jpg',
       audio: 'https://www.xeno-canto.org/sounds/uploaded/WOEAFQRMUD/XC293087-Diomedea%20exulans151120_T254.mp3'
     },
     {
       id: 2,
-      name: {ru: 'Олуша', en: ''},
+      name: {ru: 'Олуша', en: 'Gannet'},
       species: 'Sula nebouxii',
       description: {ru: 'Особенностью голубоногой олуши является не только насыщенный ярко-синий цвет лапок, но еще и тот факт, что они очень теплые. В то время как другие виды птиц греют кладки своим телом, голубоногая олуша делает это с помощью лапок',
-                    en: ''},
+                    en: 'A feature of the blue-footed booby is not only the rich bright blue color of the legs, but also the fact that they are very warm. While other species of birds warm the clutches with their bodies, the blue-footed booby does this with the help of its paws.'},
       image: 'https://live.staticflickr.com/800/40645471394_4422e69ed8.jpg',
       audio: 'https://www.xeno-canto.org/sounds/uploaded/YHKQPPJDVP/XC411507-171217_1491%20BF%20Booby%205ft%20IDLP%201230%20mp3%20amp.mp3'
     },    
     {
       id: 3,
-      name: {ru: 'Буревестник', en: ''},
+      name: {ru: 'Буревестник', en: 'Petrel'},
       species: 'Puffinus griseus',
       description: {ru: 'Размеры буревестниковых разные. Самые маленькие из них в длину составляют до 25 см, самые большие - до 1 м, при размахе крыльев около 2 м. Существует поверье, что появление буревестника в воздухе предвещает бурю, о чем говорит само название птицы.',
-                    en: ''},
+                    en: 'The sizes of petrels are different. The smallest of them are up to 25 cm long, the largest - up to 1 m, with a wingspan of about 2 m. There is a belief that the appearance of a petrel in the air portends a storm, as the very name of the bird indicates.'},
       image: 'https://live.staticflickr.com//607//22136056020_935cb113f9.jpg',
       audio: 'https://www.xeno-canto.org/sounds/uploaded/XQEVNREHJY/SHEARWATER%20Christmas%20Island_04_Motu_Isla%20de%20Pascua-Easter%20Island_CH_4MAR03_Alvaro%20Jaramillo.mp3'
     },
     {
       id: 4,
-      name: {ru: 'Пеликан', en: ''},
+      name: {ru: 'Пеликан', en: 'Pelican'},
       species: 'Pelecanus',
       description: {ru: 'Пеликаны — обитатели морей и рек. Ходят они неуклюже, но хорошо летают и плавают. Питаются в основном рыбой, устраивают коллективные охоты — выстроившись полукругом хлопают по воде крыльями и клювами и вытесняют напуганную рыбу на мелководье.',
-                    en: ''},
+                    en: 'Pelicans are inhabitants of the seas and rivers. They walk awkwardly, but fly and swim well. They feed mainly on fish, organize collective hunts - lining up in a semicircle, they flap their wings and beaks on the water and force out the frightened fish in shallow water.'},
       image: 'https://live.staticflickr.com/65535/49159147156_dcbbb5c12a.jpg',
       audio: 'https://www.xeno-canto.org/sounds/uploaded/XAMHIHFTZG/XC331138-call1.mp3'
     },
     {
       id: 5,
-      name: {ru: 'Пингвин', en: ''},
+      name: {ru: 'Пингвин', en: 'Penguin'},
       species: 'Aptenodytes forsteri',
       description: {ru: 'Самец императорского пингвина достигает роста 130 см, его масса может приближаться к 50 кг. Из всех современных пингвинов этот вид – самый крупный. Питание пингвина состоит из рыбы, кальмаров и криля. Охотятся птицы в океане большими группами.',
-                    en: ''},
+                    en: 'The male emperor penguin reaches a height of 130 cm, its weight can approach 50 kg. Of all modern penguins, this species is the largest. The penguins diet consists of fish, squid and krill. Birds hunt in the ocean in large groups.'},
       image: 'https://live.staticflickr.com/5202/5252413926_8e013a3efd.jpg',
       audio: 'https://www.xeno-canto.org/sounds/uploaded/OOECIWCSWV/XC449827-LS100829%20King%20Penguin%20call%20A.mp3'
     },
     {
       id: 6,
-      name: {ru: 'Чайка', en: ''},
+      name: {ru: 'Чайка', en: 'Seagull'},
       species: 'Larus argentatus',
       description: {ru: 'Чайки населяют берега морей, озёр, рек, водохранилищ, болот, часто гнездятся на островах. С конца прошлого века чайки стали появляться в крупных городах, где устраивает гнёзда на крышах зданий. Все чайки ведут колониальный образ жизни.',
-                    en: ''},
+                    en: 'Seagulls inhabit the shores of the seas, lakes, rivers, reservoirs, swamps, often nest on islands. Since the end of the last century, seagulls began to appear in large cities, where they nest on the roofs of buildings. All seagulls lead a colonial lifestyle.'},
       image: 'https://live.staticflickr.com/65535/48577115317_7034201dde.jpg',
       audio: 'https://www.xeno-canto.org/sounds/uploaded/VOLIQOYWKG/XC501190-190801_06.50h_zilvermeeuw_duinen%20van%20goeree_roep_2ex_overvliegend_gezien_.mp3'
     }
