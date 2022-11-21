@@ -1,3 +1,114 @@
+.player {
+  width: 80%;
+  transition: .5s;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.play-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.play-info .duration {
+  display: flex;
+}
+
+.timeline {
+  background: white;
+  width: 100%;
+  height: 2px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 2px 10px 0 #0008;
+  margin-bottom: 12px;
+  transition: 0.2s;
+}
+
+.timeline:hover {
+  margin-top: -2px;
+  height: 6px;
+  margin-bottom: 10px;
+}
+
+.timeline .progress {
+  background: coral;
+  width: 0.1%;
+  height: 100%;
+  transition: 0.25s;
+}
+.volume-container {
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.volume-button {
+  height: 26px;
+  width: 26px;
+  display: flex;
+  align-items: center;
+}
+
+.volume-container .volume-slider {
+  position: absolute;
+  left: -3px;
+  top: 10px;
+  z-index: -1;
+  width: 0;
+  height: 10px;
+  background: white;
+  box-shadow: 0 0 20px #000a;
+  transition: 0.25s;
+}
+
+.volume-container .volume-slider .volume-percentage {
+  background: coral;
+  height: 100%;
+  width: 75%;
+}
+
+.volume-container:hover .volume-slider {
+  left: -123px;
+  width: 120px;
+}
+
+.play-item {
+  position: relative;
+  padding: 5px;
+  padding-left: 20px;
+  list-style: none;
+  opacity: .8;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.play-song {
+  display: flex;
+  justify-content: space-between;
+}
+
+.play-item:hover {
+  opacity: 1;
+}
+
+.play-item::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-weight: 900;
+}
+
+.item-active {
+  color: #C5B358;
+}
+
 .play {
   width: 40px;
   height: 40px;
@@ -9,9 +120,7 @@
   background-image: url("../icons/pause.svg");
 }
 
-.player-icon,
-.slider-icon,
-.change-quote {
+.player-icon {
   width: 32px;
   height: 32px;
   background-size: 32px 32px;
@@ -25,16 +134,25 @@
   transition: .3s;
 }
 
-.player-icon:hover,
-.slider-icon:hover,
-.change-quote:hover {
+.player-icon:hover {
   opacity: 1;
 }
 
-.player-icon:active,
-.slider-icon:active,
-.change-quote:active {
+.player-icon:active {
   border: 0;
   outline: 0;
   transform: scale(1.1);
+}
+
+.cur-quiz {
+  display: flex;
+  justify-content: space-around;
+}
+
+.cur-quiz__info {
+  width: 400px;
+}
+.cur-quiz__img {
+  width: 200px;
+  height: 150px;
 }
