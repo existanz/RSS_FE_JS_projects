@@ -1,5 +1,4 @@
 .player {
-  width: 80%;
   transition: .5s;
 }
 
@@ -46,6 +45,7 @@
   cursor: pointer;
   position: relative;
   z-index: 2;
+  padding-right: 30px;
 }
 
 .volume-button {
@@ -146,22 +146,32 @@
 
 /*PLAYER FIN*/
 
+.quiz {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
 .cur-quiz {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
-
+.cur-quiz__title {
+  text-align: center;
+}
 .cur-quiz__info {
   width: 400px;
 }
 .cur-quiz__img {
   width: 200px;
-  height: 150px;
+  height:150px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: solid 1px;
 }
 
 .birds {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   border: solid 1px;
 }
 
@@ -175,7 +185,7 @@
 }
 
 .birds__info {
-  width: 50%;
+  width: 70%;
   padding-left: 20px;
   border: solid 1px;
 }
