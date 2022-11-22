@@ -8,7 +8,7 @@
   <title>Songbird</title>
 </head>
 <body>
-  <header class = "header">
+  <header class="header">
     <div class="header__logo"></div>
     <div class="header__score"></div>
     <nav class="header__nav">
@@ -16,22 +16,25 @@
         <li class="menu__item"><a href="./index.html" class="menu__link">Home</a></li>
         <li class="menu__item"><a href="./game.html" class="menu__link">Game</a></li>
         <li class="menu__item"><a href="./gallery.html" class="menu__link">Gallery</a></li>
-        <li class="menu__item"><div class="menu__link menu__link-lang">Lang [en|ru]</div></li>
-    </ul>
-    <input id="menu-toggle" type="checkbox" />
-    <label class='menu-button-container' for="menu-toggle">
-    <div class='menu-button'></div>
-    </label>
-    <ul class="burger-menu">
-      <li class="menu__item"><a href="./index.html" class="menu__link">Home</a></li>
-      <li class="menu__item"><a href="./game.html" class="menu__link">Game</a></li>
-      <li class="menu__item"><a href="./gallery.html" class="menu__link">Gallery</a></li>
-      <li class="menu__item"><div class="menu__link menu__link-lang">Lang [en|ru]</div></li>
-    </ul>
-    <div class="shadow" onclick="document.getElementById('menu-toggle').click()"></div>
-</nav>
+        <li class="menu__item">
+          <div class="menu__link menu__link-lang">Lang [en|ru]</div>
+        </li>
+      </ul>
+      <input id="menu-toggle" type="checkbox" />
+      <label class='menu-button-container' for="menu-toggle">
+        <div class='menu-button'></div>
+      </label>
+      <ul class="burger-menu">
+        <li class="menu__item"><a href="./index.html" class="menu__link">Home</a></li>
+        <li class="menu__item"><a href="./game.html" class="menu__link">Game</a></li>
+        <li class="menu__item"><a href="./gallery.html" class="menu__link">Gallery</a></li>
+        <li class="menu__item">
+          <div class="menu__link menu__link-lang">Lang [en|ru]</div>
+        </li>
+      </ul>
+      <div class="shadow" onclick="document.getElementById('menu-toggle').click()"></div>
     </nav>
-    </header>
+  </header>
   <main class="main">
     <div class="greetings">
       <div class="greetings__container">
@@ -62,10 +65,13 @@
               <div class="timeline">
                 <div class="progress"></div>
               </div>
+            </div>
           </div>
         </div>
+        <ul class="quiz__list">
+          
+        </ul>
       </div>
-    </div>
   </main>
   <footer class="footer">
     <p class="footer__year">2022</p>
