@@ -12,6 +12,7 @@ const changeLang = () => {
   if (lang=='en') lang = 'ru'
   else lang = 'en'
   linkLang.innerHTML = `Lang [${lang}]`;
+  setQuizList();
 };
 linkLang.addEventListener('click', changeLang);
 console.log(lang);
@@ -23,7 +24,8 @@ import emptyBird from './assets/images/bird.jpg'
 
 const curQuiz = document.querySelector('.cur-quiz'),
       curTitle = document.querySelector('.cur-quiz__title'),
-      quizList = document.querySelector('.birds__list')
+      quizList = document.querySelector('.birds__list'),
+      birdsInfo = document.querySelector('.birds__info')
 
 const rand = (min, max) => Math.floor(min + Math.random() * (max + 1 - min));
 
@@ -40,7 +42,17 @@ console.log(quizBird.name[lang]);
 console.log(lang);
 
 const showInfo = (el) => () => {
-  console.log(el.name[lang]);
+  birdsInfo.innerHTML = '';
+  const imgBird = document.createElement('img');
+  imgBird.classList.add('birds__info-image')
+  imgBird.src = el.image;
+  imgBird.height = 150;
+  birdsInfo.append(imgBird);
+  console.log(imgBird);
+  const infoBird = document.createElement('div');
+  infoBird.classList.add('birds__info-info');
+  infoBird.innerHTML = el.description[lang];
+  birdsInfo.append(infoBird);
 }
 
 const setQuizList = () => {
