@@ -21,17 +21,19 @@ console.log(quizBird.name[lang]);
 console.log(lang);
 
 const setQuizList = () => {
-  birdsData[curStage].forEach(el => {
-    const li = document.createElement('li');
-    li.classList.add('list__item');
-    li.textContent = el.name[lang];
-    quizList.append(li);
-  });
+  if (quizList) {
+    birdsData[curStage].forEach(el => {
+      const li = document.createElement('li');
+      li.classList.add('list__item');
+      li.textContent = el.name[lang];
+      quizList.append(li);
+    });
+  }
 }
 
 const setNewStage = () => {
-    const curImg = document.querySelector('.cur-quiz__img')
-    curImg.style.backgroundImage =  `url(${emptyBird})`;
+    const curImg = document.querySelector('.cur-quiz__img');
+    if (curImg) curImg.style.backgroundImage =  `url(${emptyBird})`;
     setQuizList();
 };
 
@@ -50,4 +52,4 @@ const playPauseAudio = () => {
       audioQuiz.pause();
     }
   };
-  playButton.addEventListener('click', playPauseAudio);
+  if (playButton) playButton.addEventListener('click', playPauseAudio);
