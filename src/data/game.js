@@ -4,7 +4,7 @@ import emptyBird from '../assets/images/bird.jpg'
 let lang = 'ru';
 const curQuiz = document.querySelector('.cur-quiz'),
       curTitle = document.querySelector('.cur-quiz__title'),
-      quizList = document.querySelector('.quiz__list')
+      quizList = document.querySelector('.birds__list')
 
 const rand = (min, max) => Math.floor(min + Math.random() * (max + 1 - min));
 
@@ -23,7 +23,7 @@ console.log(lang);
 const setQuizList = () => {
   birdsData[curStage].forEach(el => {
     const li = document.createElement('li');
-    li.classList.add('list__bird');
+    li.classList.add('list__item');
     li.textContent = el.name[lang];
     quizList.append(li);
   });
