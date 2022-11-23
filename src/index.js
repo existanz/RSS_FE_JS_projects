@@ -75,8 +75,17 @@ const setNewStage = () => {
 };
 
 setNewStage();
-
-const playButton = document.querySelector('.play');
+/**PLAYER */
+const playButton = document.querySelector('.play'),
+timeline = document.querySelector('.timeline'),
+audioLen = document.querySelector('.length'),
+audioName = document.querySelector('.song-name'),
+volumeButton = document.querySelector('.volume-button'),
+volumeEl = document.querySelector('.volume'),
+volumeSlider = document.querySelector('.volume-slider'),
+volumePercentage = document.querySelector('.volume-percentage'),
+progressBar = document.querySelector('.progress'),
+currentDuration = document.querySelector('.duration .current')
 
 const playPauseAudio = () => {
     if (!isPlay) {
@@ -90,4 +99,63 @@ const playPauseAudio = () => {
     }
   };
   if (playButton) playButton.addEventListener('click', playPauseAudio);
+
+//audioQuiz.addEventListener('ended', playNext);
+
+audioQuiz.addEventListener(
+  "loadeddata",
+  () => {
+    //audioName.textContent = document.querySelector('.item-active .song-name').textContent;
+    audioLen.textContent = getTimeCodeFromNum(audioQuiz.duration);
+    //audioQuiz.volume = .75;
+  },
+  false
+);
+
+//progress bar
+//click on timeline to skip around
+timeline.addEventListener("click", e => {
+  const timelineWidth = window.getComputedStyle(timeline).width;
+  const timeToSeek = e.offsetX / parseInt(timelineWidth) * audioQuiz.duration;
+  audioQuiz.currentTime = timeToSeek;
+}, false);
+//check audio percentage and update time accordingly
+setInterval(() => {
+  progressBar.style.width = audioQuiz.currentTime / audioQuiz.duration * 100 + "%";
+  currentDuration.textContent = getTimeCodeFromNum(audioQuiz.currentTime);
+}, 500);
+//volume slider click change volume
+volumeSlider.addEventListener('click', e => {
+  const sliderWidth = window.getComputedStyle(volumeSlider).width;
+  const newVolume = e.offsetX / parseInt(sliderWidth);
+  audioQuiz.volume = newVolume;
+  volumePercentage.style.width = newVolume * 100 + '%';
+}, false)
+
+//volume button mute\unmute
+volumeButton.addEventListener("click", () => {
+  audioQuiz.muted = !audioQuiz.muted;
+  if (audioQuiz.muted) {
+    volumeEl.classList.remove("icono-volumeMedium");
+    volumeEl.classList.add("icono-volumeMute");
+  } else {
+    volumeEl.classList.add("icono-volumeMedium");
+    volumeEl.classList.remove("icono-volumeMute");
+  }
+});
+
+//turn 128 seconds into 2:08
+function getTimeCodeFromNum(num) {
+  let seconds = parseInt(num);
+  let minutes = parseInt(seconds / 60);
+  seconds -= minutes * 60;
+  const hours = parseInt(minutes / 60);
+  minutes -= hours * 60;
+
+  if (hours === 0) return `${minutes}:${String(seconds % 60).padStart(2, 0)}`;
+  return `${String(hours).padStart(2, 0)}:${minutes}:${String(
+    seconds % 60
+  ).padStart(2, 0)}`;
+}
+
 /*END OF GAME JS*/
