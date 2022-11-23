@@ -13,6 +13,7 @@ const changeLang = () => {
   else lang = 'en'
   linkLang.innerHTML = `Lang [${lang}]`;
   setQuizList();
+  showBirdInfo();
 };
 linkLang.addEventListener('click', changeLang);
 console.log(lang);
@@ -35,25 +36,33 @@ let curStage = 0,
 const nextStage = () => curStage++;
 
 
-let quizBird = birdsData[curStage][rand(0,5)];
+let quizBird = birdsData[curStage][rand(0,5)],
+    selBird = false;
 const audioQuiz = new Audio();
 audioQuiz.src = quizBird.audio;
 console.log(quizBird.name[lang]);
 console.log(lang);
 
-const showInfo = (el) => () => {
-  birdsInfo.innerHTML = '';
-  const imgBird = document.createElement('img');
-  imgBird.classList.add('birds__info-image')
-  imgBird.src = el.image;
-  imgBird.height = 150;
-  birdsInfo.append(imgBird);
-  console.log(imgBird);
-  const infoBird = document.createElement('div');
-  infoBird.classList.add('birds__info-info');
-  infoBird.innerHTML = el.description[lang];
-  birdsInfo.append(infoBird);
+const setSelBird = (el) => () => {
+  selBird = el;
+  showBirdInfo();
 }
+
+const showBirdInfo = () => {
+  if (selBird) {
+    birdsInfo.innerHTML = '';
+    const imgBird = document.createElement('img');
+    imgBird.classList.add('birds__info-image')
+    imgBird.src = selBird.image;
+    imgBird.height = 150;
+    birdsInfo.append(imgBird);
+    const infoBird = document.createElement('div');
+    infoBird.classList.add('birds__info-info');
+    infoBird.innerHTML = selBird.description[lang];
+    birdsInfo.append(infoBird);
+  }
+}
+
 
 const setQuizList = () => {
   if (quizList) {
@@ -62,7 +71,7 @@ const setQuizList = () => {
       const li = document.createElement('li');
       li.classList.add('list__item');
       li.textContent = el.name[lang];
-      li.addEventListener('click', showInfo(el));
+      li.addEventListener('click', setSelBird(el));
       quizList.append(li);
     });
   }
