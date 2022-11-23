@@ -14,10 +14,46 @@ const changeLang = () => {
   linkLang.innerHTML = `Lang [${lang}]`;
   setQuizList();
   showBirdInfo();
+  showMenu();
 };
 linkLang.addEventListener('click', changeLang);
 console.log(lang);
 
+const translate = {
+  en: {
+    menu: {
+      home: 'Home',
+      game: 'Game',
+      gallery: 'Gallery'
+    },
+    misc: {
+      greetings: 'Welcome to songbird quiz!',
+      greetlink: 'press <a class="greetings__link" href="./game.html">play</a> to start the game!',
+      score: 'Score'
+    }
+  },
+  ru: {
+    menu: {
+      home: 'Главная',
+      game: 'Викторина',
+      gallery: 'Галлерея'
+    },
+    misc: {
+      greetings: 'Добро пожаловать в викторину Songbird',
+      greetlink: 'для начала игры нажми <a class="greetings__link" href="./game.html">играть</a> !',
+      score: 'Score'
+    }
+
+  }
+};
+
+const showMenu = () => {
+  const menuItems = document.querySelectorAll('.menu__link');
+  menuItems[0].innerHTML = translate[lang].menu.home;
+  menuItems[1].innerHTML = translate[lang].menu.game;
+  menuItems[2].innerHTML = translate[lang].menu.gallery;
+}
+showMenu();
 
 /* GAME JS MOVE THERE because webpack*/
 import birdsData from './data/birds';
