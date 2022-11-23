@@ -7,7 +7,7 @@
     "start": "webpack serve",
     "dev": "webpack",
     "prod": "webpack --node-env=production",
-    "deploy": "git checkout gh-pages && rd /s /q songbird && xcopy dist songbird /e/h/c/i && git add . && git commit -m 'deploy: update deployment' && git push && git checkout songbird"
+    "deploy": "git checkout gh-pages && 'rd /s /q songbird' && xcopy dist songbird /e/h/c/i && git add . && git commit -m 'deploy: update deployment' && git push && git checkout songbird"
   },
   "repository": {
     "type": "git",
