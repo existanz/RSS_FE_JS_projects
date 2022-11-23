@@ -3,6 +3,7 @@ import './index.html';
 import './game.html';
 import './gallery.html';
 import './data/birds';
+
 console.log("Its start!");
 let lang = 'en';
 
@@ -79,11 +80,17 @@ let quizBird = birdsData[curStage][rand(0,5)],
     selBird = false;
 const audioQuiz = new Audio();
 audioQuiz.src = quizBird.audio;
+const correctAudio = new Audio();
+correctAudio.src = './assets/correct.mp3';
+const wrongAudio = new Audio();
+wrongAudio.src = './assets/wrong.mp3';
 console.log(quizBird.name[lang]);
 console.log(lang);
 
 const setSelBird = (el) => () => {
   selBird = el;
+  if(el.id == quizBird.id) correctAudio.play();
+  else wrongAudio.play();
   showBirdInfo();
 }
 const defaulBirdInfo = () => {
