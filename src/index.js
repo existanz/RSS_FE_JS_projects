@@ -13,6 +13,7 @@ const changeLang = () => {
   else lang = 'en'
   linkLang.innerHTML = `Lang [${lang}]`;
   setQuizList();
+  defaulBirdInfo();
   showBirdInfo();
   showMenu();
 };
@@ -29,7 +30,8 @@ const translate = {
     misc: {
       greetings: 'Welcome to songbird quiz!',
       greetlink: 'press <a class="greetings__link" href="./game.html">play</a> to start the game!',
-      score: 'Score'
+      score: 'Score',
+      birdsinfo: 'Listen to the player and select the name of the bird whose voice sounded'
     }
   },
   ru: {
@@ -41,7 +43,8 @@ const translate = {
     misc: {
       greetings: 'Добро пожаловать в викторину Songbird',
       greetlink: 'для начала игры нажми <a class="greetings__link" href="./game.html">играть</a> !',
-      score: 'Score'
+      score: 'Score',
+      birdsinfo: 'Прослушайте плеер и выберите название птицы чей голос прозвучал'
     }
 
   }
@@ -83,7 +86,10 @@ const setSelBird = (el) => () => {
   selBird = el;
   showBirdInfo();
 }
-
+const defaulBirdInfo = () => {
+  birdsInfo.innerHTML = translate[lang].misc.birdsinfo;
+}
+defaulBirdInfo();
 const showBirdInfo = () => {
   if (selBird) {
     birdsInfo.innerHTML = '';
