@@ -115,6 +115,7 @@ audioQuiz.addEventListener(
   "loadeddata",
   () => {
     //audioName.textContent = document.querySelector('.item-active .song-name').textContent;
+    if(audioLen)
     audioLen.textContent = getTimeCodeFromNum(audioQuiz.duration);
     //audioQuiz.volume = .75;
   },
@@ -123,6 +124,7 @@ audioQuiz.addEventListener(
 
 //progress bar
 //click on timeline to skip around
+if (timeline)
 timeline.addEventListener("click", e => {
   const timelineWidth = window.getComputedStyle(timeline).width;
   const timeToSeek = e.offsetX / parseInt(timelineWidth) * audioQuiz.duration;
@@ -130,10 +132,13 @@ timeline.addEventListener("click", e => {
 }, false);
 //check audio percentage and update time accordingly
 setInterval(() => {
+  if (progressBar)
   progressBar.style.width = audioQuiz.currentTime / audioQuiz.duration * 100 + "%";
+  if (currentDuration)
   currentDuration.textContent = getTimeCodeFromNum(audioQuiz.currentTime);
 }, 500);
 //volume slider click change volume
+if(volumeSlider)
 volumeSlider.addEventListener('click', e => {
   const sliderWidth = window.getComputedStyle(volumeSlider).width;
   const newVolume = e.offsetX / parseInt(sliderWidth);
@@ -142,6 +147,7 @@ volumeSlider.addEventListener('click', e => {
 }, false)
 
 //volume button mute\unmute
+if(volumeButton)
 volumeButton.addEventListener("click", () => {
   audioQuiz.muted = !audioQuiz.muted;
   if (audioQuiz.muted) {
