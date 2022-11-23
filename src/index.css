@@ -7,15 +7,26 @@
 @import './assets/styles/game.css';
 @import './assets/styles/icono.css';
 
+@font-face {
+  font-family: 'Dihjauti-regular';
+  src: url('./assets/fonts/Dihjauti-Regular.otf');
+};
+
+@font-face {
+  font-family: 'Dihjauti-bold';
+  src: url('./assets/fonts/Dihjauti-Bold.otf');
+};
 
 body {
   margin-top: 60px;
   background-color: var(--main-bg-color);
   color: var(--main-color);
   position: relative;
+  font-family: 'Dihjauti-bold';
+}
+.home__body {
   max-height: 900px;
 }
-
 .background-video {
   position: fixed;
   z-index: -1;
