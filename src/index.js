@@ -4,7 +4,6 @@ import './game.html';
 import './gallery.html';
 import './data/birds';
 
-console.log("Its start!");
 let lang = 'en';
 
 const linkLang = document.querySelectorAll('.menu__link-lang');
@@ -14,6 +13,7 @@ const changeLang = () => {
   else lang = 'en'
   linkLang.innerHTML = `Lang [${lang}]`;
   setGreet();
+  setStages();
   setQuizList();
   defaulBirdInfo();
   showBirdInfo();
@@ -22,7 +22,8 @@ const changeLang = () => {
 
 linkLang[0].addEventListener('click', changeLang);
 linkLang[1].addEventListener('click', changeLang);
-console.log(lang);
+
+console.log('Всем кто ждал меня до последнего - спасибо. Я стараюсь, и ваша поддержка меня очень мотивирует!');
 
 const translate = {
   en: {
@@ -35,7 +36,8 @@ const translate = {
       greetings: 'Welcome to songbird quiz!',
       greetlink: 'press <a class="greetings__link" href="./game.html">play</a> to start the game!',
       score: 'Score',
-      birdsinfo: 'Listen to the player and select the name of the bird whose voice sounded'
+      birdsinfo: 'Listen to the player and select the name of the bird whose voice sounded',
+      levels: ['warm-up', 'passerine','forest birds','songbirds','predator birds','sea birds']
     }
   },
   ru: {
@@ -48,7 +50,8 @@ const translate = {
       greetings: 'Добро пожаловать в викторину Songbird',
       greetlink: 'для начала игры нажми <a class="greetings__link" href="./game.html">играть</a> !',
       score: 'Score',
-      birdsinfo: 'Прослушайте плеер и выберите название птицы чей голос прозвучал'
+      birdsinfo: 'Прослушайте плеер и выберите название птицы чей голос прозвучал',
+      levels: ['разминка', 'воробьиные','лесные птицы','певчие птицы','хищные птицы','морские птицы']
     }
 
   }
@@ -62,7 +65,6 @@ const showMenu = () => {
   menuItems[4].innerHTML = translate[lang].menu.home;
   menuItems[5].innerHTML = translate[lang].menu.game;
   menuItems[6].innerHTML = translate[lang].menu.gallery;
-  console.log(menuItems);
 }
 showMenu();
 
@@ -91,6 +93,19 @@ let curStage = 0,
     isPlay = false;
 const nextStage = () => curStage++;
 
+const setStages = () => {
+  const quizLevels = document.querySelector('.quiz__levels');
+  quizLevels.innerHTML = '';
+  translate[lang].misc.levels.forEach((el,id) => {
+    const level = document.createElement('div');
+    level.innerHTML = el;
+    level.classList.add('level');
+    if (id==curStage) level.classList.add('active-level');
+    quizLevels.append(level);
+  });
+};
+
+setStages();
 
 let quizBird = birdsData[curStage][rand(0,5)],
     selBird = false;
@@ -101,7 +116,6 @@ correctAudio.src = './assets/correct.mp3';
 const wrongAudio = new Audio();
 wrongAudio.src = './assets/wrong.mp3';
 console.log(quizBird.name[lang]);
-console.log(lang);
 
 const setSelBird = (el) => () => {
   selBird = el;
