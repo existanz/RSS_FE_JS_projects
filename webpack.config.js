@@ -38,6 +38,10 @@ module.exports = {
       template: path.resolve(__dirname, 'src', 'game.html'),
       filename: 'game.html'
     }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src', 'results.html'),
+      filename: 'results.html'
+    }),
     new MiniCssExtractPlugin({
       filename: 'index_[contenthash].css',
     }),

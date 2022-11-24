@@ -2,6 +2,7 @@ import './index.css';
 import './index.html';
 import './game.html';
 import './gallery.html';
+import './results.html';
 import './data/birds';
 
 let lang = 'en';
@@ -35,6 +36,7 @@ const changeLang = () => {
   defaulBirdInfo();
   showBirdInfo();
   showMenu();
+  showResults();
 };
 
 const showLang = () => {
@@ -56,6 +58,11 @@ const translate = {
       game: 'Game',
       gallery: 'Gallery'
     },
+    results: {
+      congrats: 'Congratulation yove earned 30 points of 30',
+      promt: 'try to play one more time',
+      restartbutton: 'restart game'
+    },
     misc: {
       greetings: 'Welcome to songbird quiz!',
       greetlink: 'press <a class="greetings__link" href="./game.html">play</a> to start the game!',
@@ -70,6 +77,11 @@ const translate = {
       home: 'Главная',
       game: 'Викторина',
       gallery: 'Галлерея'
+    },
+    results: {
+      congrats: 'Поздравляем! вы набрали 30 очков из 30',
+      promt: 'попробуйте сыграть ещё раз',
+      restartbutton: 'Сыграть ещё раз'
     },
     misc: {
       greetings: 'Добро пожаловать в викторину Songbird',
@@ -154,14 +166,15 @@ let correctFlag = false;
 
 const nextLevel = () => {
   if (correctFlag) {
-  nextStage();
-  setNewStage();
-  correctFlag=false;
-  setNextButton();
-  setStages();
-  setQuizBird();
-  selBird = false;
-  defaulBirdInfo();
+    if (curStage==5) window.location.href = './results.html';
+    nextStage();
+    setNewStage();
+    correctFlag = false;
+    setNextButton();
+    setStages();
+    setQuizBird();
+    selBird = false;
+    defaulBirdInfo();
   }
 }
 
@@ -231,8 +244,18 @@ const setNewStage = () => {
 
 setNewStage();
 
-
-
+//RESULTS HTML
+const showResults = () => {
+  const restartButton = document.querySelector('.restart__button');
+  if (restartButton) restartButton.innerHTML = translate[lang].results.restartbutton;
+  const resultTitle = document.querySelector('.result__title');
+  if (resultTitle) resultTitle.innerHTML = translate[lang].results.congrats;
+  const resultSubtitle = document.querySelector('.result__subtitle');
+  if (resultSubtitle) resultSubtitle.innerHTML = translate[lang].results.promt;
+  console.log(restartButton);
+}
+//END OF RESULTS
+showResults();
 
 
 /**PLAYER */

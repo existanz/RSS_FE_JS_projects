@@ -1,0 +1,11 @@
+.greetings__result {
+  margin-top: 150px;
+  text-align: center;
+  text-shadow: 1px 1px 1px #000;
+}
+
+@media (max-width:400px) {
+  .greetings__result {
+    font-size: smaller;
+  }
+}
