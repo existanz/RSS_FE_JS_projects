@@ -13,6 +13,7 @@ const changeLang = () => {
   if (lang=='en') lang = 'ru'
   else lang = 'en'
   linkLang.innerHTML = `Lang [${lang}]`;
+  setGreet();
   setQuizList();
   defaulBirdInfo();
   showBirdInfo();
@@ -59,6 +60,15 @@ const showMenu = () => {
 }
 showMenu();
 
+const setGreet = () => {
+  const greetTitle = document.querySelector('.greetings__title'),
+        greetSubtitle = document.querySelector('.greetings__subtitle');
+  if (greetTitle)
+  greetTitle.innerHTML = translate[lang].misc.greetings;
+  if (greetSubtitle)
+  greetSubtitle.innerHTML = translate[lang].misc.greetlink;
+}
+
 /* GAME JS MOVE THERE because webpack*/
 import birdsData from './data/birds';
 import emptyBird from './assets/images/bird.jpg'
@@ -94,6 +104,7 @@ const setSelBird = (el) => () => {
   showBirdInfo();
 }
 const defaulBirdInfo = () => {
+  if(birdsInfo)
   birdsInfo.innerHTML = translate[lang].misc.birdsinfo;
 }
 defaulBirdInfo();
