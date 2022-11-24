@@ -212,8 +212,8 @@ const setSelBird = (el) => (li) => {
   else {
     wrongAudio.play();
     if(!correctFlag) li.target.classList.add('wrong');
-  showBirdInfo();
   }
+  showBirdInfo();
 }
 const defaulBirdInfo = () => {
   if(birdsInfo)
