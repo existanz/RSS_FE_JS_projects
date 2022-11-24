@@ -37,7 +37,8 @@ const translate = {
       greetlink: 'press <a class="greetings__link" href="./game.html">play</a> to start the game!',
       score: 'Score',
       birdsinfo: 'Listen to the player and select the name of the bird whose voice sounded',
-      levels: ['warm-up', 'passerine','forest birds','songbirds','predator birds','sea birds']
+      levels: ['warm-up', 'passerine','forest birds','songbirds','predator birds','sea birds'],
+      nextbutton: 'next level'
     }
   },
   ru: {
@@ -51,7 +52,8 @@ const translate = {
       greetlink: 'для начала игры нажми <a class="greetings__link" href="./game.html">играть</a> !',
       score: 'Score',
       birdsinfo: 'Прослушайте плеер и выберите название птицы чей голос прозвучал',
-      levels: ['разминка', 'воробьиные','лесные птицы','певчие птицы','хищные птицы','морские птицы']
+      levels: ['разминка', 'воробьиные','лесные птицы','певчие птицы','хищные птицы','морские птицы'],
+      nextbutton: 'далее'
     }
 
   }
@@ -101,7 +103,7 @@ const setStages = () => {
       const level = document.createElement('div');
       level.innerHTML = el;
       level.classList.add('level');
-      if (id == curStage) level.classList.add('active-level');
+      if (id == curStage) level.classList.add('active');
       quizLevels.append(level);
     });
   }
@@ -119,9 +121,38 @@ const wrongAudio = new Audio();
 wrongAudio.src = './assets/wrong.mp3';
 console.log(quizBird.name[lang]);
 
+let correctFlag = false;
+
+const nextLevel = () => {
+  if (correctFlag) {
+  nextStage();
+  setNewStage();
+  correctFlag=false;
+  setNextButton();
+  setStages();
+  }
+}
+
+const nextButton = document.querySelector('.next-button'),
+      setNextButton = () => {
+        if (nextButton) {
+          nextButton.innerHTML = translate[lang].misc.nextbutton;
+          if (correctFlag) nextButton.classList.add('active') 
+          else nextButton.classList.remove('active');
+        }
+      }
+
+setNextButton();
+if (nextButton)
+nextButton.addEventListener('click', nextLevel);
+
 const setSelBird = (el) => () => {
   selBird = el;
-  if(el.id == quizBird.id) correctAudio.play();
+  if(el.id == quizBird.id) {
+    correctAudio.play();
+    correctFlag = true;
+    nextButton.classList.add('active');
+  }
   else wrongAudio.play();
   showBirdInfo();
 }
@@ -166,6 +197,11 @@ const setNewStage = () => {
 };
 
 setNewStage();
+
+
+
+
+
 /**PLAYER */
 const playButton = document.querySelector('.play'),
 timeline = document.querySelector('.timeline'),

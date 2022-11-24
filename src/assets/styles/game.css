@@ -210,22 +210,27 @@
   border: solid 1px;
 }
 
-.active-level {
-  color: var(--link-bg-color);
-  background-color: var(--link-color);
-}
-
 .next-button {
   margin-top: 20px;
   margin-bottom: 80px;
   border: solid 1px;
   text-align: center;
   padding: 3px;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-.next-button .active {
+.active {
   color: var(--link-bg-color);
   background-color: var(--link-color);
+}
+
+.next-button.active:hover {
+  scale: 0.98;
+}
+
+.next-button.active:active {
+  scale: 0.99;
 }
 
 @media (max-width:600px) {
