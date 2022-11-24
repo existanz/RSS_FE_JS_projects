@@ -5,21 +5,32 @@ import './gallery.html';
 import './results.html';
 import './data/birds';
 
-let lang = 'en';
+let lang = 'en',
+    score = 0;
+
+
+let curStage = 0,
+    isPlay = false,
+    scorePenalty = 0
+
 
 // local storage S A V E   A N D   L O A D
 getLocalStorage();
 
 function setLocalStorage() {
   localStorage.setItem('language', lang);
+  localStorage.setItem('score', score);
 }
 window.addEventListener('beforeunload', setLocalStorage)
 
 function getLocalStorage() {
   if (localStorage.getItem('language')) {
-    lang = (localStorage.getItem('language'))
+    lang = (localStorage.getItem('language'));
   }
   else lang = 'en';
+  if (localStorage.getItem('score')) {
+    score = +(localStorage.getItem('score'));
+  }
 }
 
 window.addEventListener('load', getLocalStorage);
@@ -59,7 +70,8 @@ const translate = {
       gallery: 'Gallery'
     },
     results: {
-      congrats: 'Congratulation yove earned 30 points of 30',
+      congrats: 'Congratulation yove earned', 
+      congratsend: 'points of 30',
       promt: 'try to play one more time',
       restartbutton: 'restart game'
     },
@@ -79,17 +91,18 @@ const translate = {
       gallery: 'Галлерея'
     },
     results: {
-      congrats: 'Поздравляем! вы набрали 30 очков из 30',
+      congrats: 'Поздравляем! вы набрали ', 
+      congratsend: ' очков из 30',
       promt: 'попробуйте сыграть ещё раз',
       restartbutton: 'Сыграть ещё раз'
     },
     misc: {
       greetings: 'Добро пожаловать в викторину Songbird',
       greetlink: 'для начала игры нажми <a class="greetings__link" href="./game.html">играть</a> !',
-      score: 'Score',
+      score: 'Баллы',
       birdsinfo: 'Прослушайте плеер и выберите название птицы чей голос прозвучал',
       levels: ['разминка', 'воробьиные','лесные птицы','певчие птицы','хищные птицы','морские птицы'],
-      nextbutton: 'далее'
+      nextbutton: 'далее',
     }
 
   }
@@ -122,6 +135,7 @@ import birdsData from './data/birds';
 import emptyBird from './assets/images/bird.jpg'
 
 const curQuiz = document.querySelector('.cur-quiz'),
+      scoreLabel = document.querySelector('.greetings__score'),
       curTitle = document.querySelector('.cur-quiz__title'),
       curImg = document.querySelector('.cur-quiz__img'),
       quizList = document.querySelector('.birds__list'),
@@ -130,10 +144,9 @@ const curQuiz = document.querySelector('.cur-quiz'),
 const rand = (min, max) => Math.floor(min + Math.random() * (max + 1 - min));
 
 
-let curStage = 0,
-    isPlay = false,
-    curScore = 0,
-    score = 0
+
+
+console.log(curStage,score);
 
 const nextStage = () => curStage++;
 
@@ -201,20 +214,37 @@ const setSelBird = (el) => (li) => {
   selBird = el;
   if(el.id == quizBird.id) {
     correctAudio.play();
-    if (!correctFlag) li.target.classList.add('correct');
+    if (!correctFlag) {
+      li.target.classList.add('correct');
+      if(curStage==0) score = 0;
+      score+=5-scorePenalty;
+      scorePenalty=0;
+      showScores();
+    }
     correctFlag = true;
     nextButton.classList.add('active');
     audioQuiz.pause();
+    playButton.classList.remove('pause');
     curImg.style.backgroundImage = `url(${el.image})`;
     curTitle.innerHTML = el.name[lang];
-    console.log(el.image,curImg);
   }
   else {
     wrongAudio.play();
-    if(!correctFlag) li.target.classList.add('wrong');
+    if(!correctFlag) {
+      li.target.classList.add('wrong');
+      scorePenalty++;
+    }
   }
   showBirdInfo();
+
 }
+
+const showScores= () => {
+  if (scoreLabel) {
+    scoreLabel.innerHTML = translate[lang].misc.score+': '+score;
+  }
+}
+
 const defaulBirdInfo = () => {
   if(birdsInfo)
   birdsInfo.innerHTML = translate[lang].misc.birdsinfo;
@@ -263,7 +293,7 @@ const showResults = () => {
   const restartButton = document.querySelector('.restart__button');
   if (restartButton) restartButton.innerHTML = translate[lang].results.restartbutton;
   const resultTitle = document.querySelector('.result__title');
-  if (resultTitle) resultTitle.innerHTML = translate[lang].results.congrats;
+  if (resultTitle) resultTitle.innerHTML = translate[lang].results.congrats + score + translate[lang].results.congratsend;
   const resultSubtitle = document.querySelector('.result__subtitle');
   if (resultSubtitle) resultSubtitle.innerHTML = translate[lang].results.promt;
 }
