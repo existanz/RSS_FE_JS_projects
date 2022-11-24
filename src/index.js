@@ -191,16 +191,21 @@ setNextButton();
 if (nextButton)
 nextButton.addEventListener('click', nextLevel);
 
-const setSelBird = (el) => () => {
+const setSelBird = (el) => (li) => {
   selBird = el;
+  console.log(li.target);
   if(el.id == quizBird.id) {
     correctAudio.play();
+    if (!correctFlag) li.target.classList.add('correct');
     correctFlag = true;
     nextButton.classList.add('active');
     audioQuiz.pause();
   }
-  else wrongAudio.play();
+  else {
+    wrongAudio.play();
+    if(!correctFlag) li.target.classList.add('wrong');
   showBirdInfo();
+  }
 }
 const defaulBirdInfo = () => {
   if(birdsInfo)

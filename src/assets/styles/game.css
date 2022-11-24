@@ -179,6 +179,22 @@
 
 .birds__list {
   cursor: pointer;
+  list-style: none;
+}
+.list__item::before {
+  content: "\2022";
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em;
+}
+.list__item.wrong::before {
+  color: red;
+}
+
+.list__item.correct::before {
+  color: green;
 }
 
 .list__item:hover {
