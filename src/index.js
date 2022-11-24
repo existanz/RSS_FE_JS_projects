@@ -136,6 +136,8 @@ const nextLevel = () => {
   setNextButton();
   setStages();
   setQuizBird();
+  selBird = false;
+  defaulBirdInfo();
   }
 }
 
