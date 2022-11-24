@@ -115,12 +115,15 @@ const setGreet = () => {
   greetSubtitle.innerHTML = translate[lang].misc.greetlink;
 }
 setGreet();
+
+
 /* GAME JS MOVE THERE because webpack*/
 import birdsData from './data/birds';
 import emptyBird from './assets/images/bird.jpg'
 
 const curQuiz = document.querySelector('.cur-quiz'),
       curTitle = document.querySelector('.cur-quiz__title'),
+      curImg = document.querySelector('.cur-quiz__img'),
       quizList = document.querySelector('.birds__list'),
       birdsInfo = document.querySelector('.birds__info')
 
@@ -128,7 +131,10 @@ const rand = (min, max) => Math.floor(min + Math.random() * (max + 1 - min));
 
 
 let curStage = 0,
-    isPlay = false;
+    isPlay = false,
+    curScore = 0,
+    score = 0
+
 const nextStage = () => curStage++;
 
 const setStages = () => {
@@ -193,13 +199,15 @@ nextButton.addEventListener('click', nextLevel);
 
 const setSelBird = (el) => (li) => {
   selBird = el;
-  console.log(li.target);
   if(el.id == quizBird.id) {
     correctAudio.play();
     if (!correctFlag) li.target.classList.add('correct');
     correctFlag = true;
     nextButton.classList.add('active');
     audioQuiz.pause();
+    curImg.style.backgroundImage = `url(${el.image})`;
+    curTitle.innerHTML = el.name[lang];
+    console.log(el.image,curImg);
   }
   else {
     wrongAudio.play();
@@ -242,8 +250,9 @@ const setQuizList = () => {
 }
 
 const setNewStage = () => {
-    const curImg = document.querySelector('.cur-quiz__img');
+  console.log(2);
     if (curImg) curImg.style.backgroundImage =  `url(${emptyBird})`;
+    if (curTitle) curTitle.innerHTML = '***********';
     setQuizList();
 };
 
@@ -257,7 +266,6 @@ const showResults = () => {
   if (resultTitle) resultTitle.innerHTML = translate[lang].results.congrats;
   const resultSubtitle = document.querySelector('.result__subtitle');
   if (resultSubtitle) resultSubtitle.innerHTML = translate[lang].results.promt;
-  console.log(restartButton);
 }
 //END OF RESULTS
 showResults();
