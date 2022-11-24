@@ -7,7 +7,7 @@ import './data/birds';
 console.log("Its start!");
 let lang = 'en';
 
-const linkLang = document.querySelector('.menu__link-lang');
+const linkLang = document.querySelectorAll('.menu__link-lang');
 
 const changeLang = () => {
   if (lang=='en') lang = 'ru'
@@ -19,7 +19,9 @@ const changeLang = () => {
   showBirdInfo();
   showMenu();
 };
-linkLang.addEventListener('click', changeLang);
+
+linkLang[0].addEventListener('click', changeLang);
+linkLang[1].addEventListener('click', changeLang);
 console.log(lang);
 
 const translate = {
@@ -57,6 +59,10 @@ const showMenu = () => {
   menuItems[0].innerHTML = translate[lang].menu.home;
   menuItems[1].innerHTML = translate[lang].menu.game;
   menuItems[2].innerHTML = translate[lang].menu.gallery;
+  menuItems[4].innerHTML = translate[lang].menu.home;
+  menuItems[5].innerHTML = translate[lang].menu.game;
+  menuItems[6].innerHTML = translate[lang].menu.gallery;
+  console.log(menuItems);
 }
 showMenu();
 

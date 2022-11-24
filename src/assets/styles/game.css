@@ -207,12 +207,20 @@
     gap: 20px;
   }
   
+  .birds {
+    font-size: smaller;
+  }
   .birds__info {
     width: 60%;
     flex-direction: column;
+
   }
   .birds__info-image {
     height: auto;
   }
-
+  
+  .birds__list {
+    padding-left: 20px;
+  }
 }
+
