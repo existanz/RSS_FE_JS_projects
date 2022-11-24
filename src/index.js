@@ -145,9 +145,6 @@ const rand = (min, max) => Math.floor(min + Math.random() * (max + 1 - min));
 
 
 
-
-console.log(curStage,score);
-
 const nextStage = () => curStage++;
 
 const setStages = () => {
@@ -174,7 +171,6 @@ const correctAudio = new Audio();
 correctAudio.src = './assets/correct.mp3';
 const wrongAudio = new Audio();
 wrongAudio.src = './assets/wrong.mp3';
-console.log(quizBird.name[lang]);
 
 const setQuizBird = () => {
   quizBird = birdsData[curStage][rand(0,5)];
@@ -280,7 +276,6 @@ const setQuizList = () => {
 }
 
 const setNewStage = () => {
-  console.log(2);
     if (curImg) curImg.style.backgroundImage =  `url(${emptyBird})`;
     if (curTitle) curTitle.innerHTML = '***********';
     setQuizList();
