@@ -95,14 +95,16 @@ const nextStage = () => curStage++;
 
 const setStages = () => {
   const quizLevels = document.querySelector('.quiz__levels');
-  quizLevels.innerHTML = '';
-  translate[lang].misc.levels.forEach((el,id) => {
-    const level = document.createElement('div');
-    level.innerHTML = el;
-    level.classList.add('level');
-    if (id==curStage) level.classList.add('active-level');
-    quizLevels.append(level);
-  });
+  if (quizLevels) {
+    quizLevels.innerHTML = '';
+    translate[lang].misc.levels.forEach((el, id) => {
+      const level = document.createElement('div');
+      level.innerHTML = el;
+      level.classList.add('level');
+      if (id == curStage) level.classList.add('active-level');
+      quizLevels.append(level);
+    });
+  }
 };
 
 setStages();
