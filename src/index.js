@@ -6,12 +6,29 @@ import './data/birds';
 
 let lang = 'en';
 
+// local storage S A V E   A N D   L O A D
+getLocalStorage();
+
+function setLocalStorage() {
+  localStorage.setItem('language', lang);
+}
+window.addEventListener('beforeunload', setLocalStorage)
+
+function getLocalStorage() {
+  if (localStorage.getItem('language')) {
+    lang = (localStorage.getItem('language'))
+  }
+  else lang = 'en';
+}
+
+window.addEventListener('load', getLocalStorage);
+
 const linkLang = document.querySelectorAll('.menu__link-lang');
 
 const changeLang = () => {
   if (lang=='en') lang = 'ru'
   else lang = 'en'
-  linkLang.innerHTML = `Lang [${lang}]`;
+  showLang();
   setGreet();
   setStages();
   setQuizList();
@@ -19,6 +36,13 @@ const changeLang = () => {
   showBirdInfo();
   showMenu();
 };
+
+const showLang = () => {
+  linkLang[0].innerHTML = `Lang [${lang}]`;
+  linkLang[1].innerHTML = `Lang [${lang}]`;
+}
+
+showLang();
 
 linkLang[0].addEventListener('click', changeLang);
 linkLang[1].addEventListener('click', changeLang);
@@ -78,7 +102,7 @@ const setGreet = () => {
   if (greetSubtitle)
   greetSubtitle.innerHTML = translate[lang].misc.greetlink;
 }
-
+setGreet();
 /* GAME JS MOVE THERE because webpack*/
 import birdsData from './data/birds';
 import emptyBird from './assets/images/bird.jpg'
@@ -301,3 +325,4 @@ function getTimeCodeFromNum(num) {
 }
 
 /*END OF GAME JS*/
+
