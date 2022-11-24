@@ -121,6 +121,11 @@ const wrongAudio = new Audio();
 wrongAudio.src = './assets/wrong.mp3';
 console.log(quizBird.name[lang]);
 
+const setQuizBird = () => {
+  quizBird = birdsData[curStage][rand(0,5)];
+  audioQuiz.src = quizBird.audio;
+}
+
 let correctFlag = false;
 
 const nextLevel = () => {
@@ -130,6 +135,7 @@ const nextLevel = () => {
   correctFlag=false;
   setNextButton();
   setStages();
+  setQuizBird();
   }
 }
 
@@ -152,6 +158,7 @@ const setSelBird = (el) => () => {
     correctAudio.play();
     correctFlag = true;
     nextButton.classList.add('active');
+    audioQuiz.pause();
   }
   else wrongAudio.play();
   showBirdInfo();
