@@ -182,18 +182,19 @@
   list-style: none;
 }
 .list__item::before {
-  content: "\2022";
+  content: "\2610";
   font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
   display: inline-block; 
   width: 1em;
   margin-left: -1em;
 }
 .list__item.wrong::before {
+  content: "\2612";
   color: red;
 }
 
 .list__item.correct::before {
+  content: "\2611";
   color: green;
 }
 
