@@ -28,7 +28,7 @@ function getLocalStorage() {
     lang = (localStorage.getItem('language'));
   }
   else lang = 'en';
-  if (localStorage.getItem('score')) {
+  if (document.querySelector('.result__title')&&localStorage.getItem('score')) {
     score = +(localStorage.getItem('score'));
   }
 }
@@ -44,6 +44,9 @@ const changeLang = () => {
   setGreet();
   setStages();
   setQuizList();
+  setNextButton();
+  showCurTitle();
+  showScores();
   defaulBirdInfo();
   showBirdInfo();
   showMenu();
@@ -70,8 +73,8 @@ const translate = {
       gallery: 'Gallery'
     },
     results: {
-      congrats: 'Congratulation yove earned', 
-      congratsend: 'points of 30',
+      congrats: 'Congratulation yove earned ', 
+      congratsend: ' points of 30',
       promt: 'try to play one more time',
       restartbutton: 'restart game'
     },
@@ -203,8 +206,10 @@ const nextButton = document.querySelector('.next-button'),
       }
 
 setNextButton();
+
 if (nextButton)
 nextButton.addEventListener('click', nextLevel);
+
 
 const setSelBird = (el) => (li) => {
   selBird = el;
@@ -217,29 +222,37 @@ const setSelBird = (el) => (li) => {
       scorePenalty=0;
       showScores();
     }
-    correctFlag = true;
+    correctFlag = selBird.name;
     nextButton.classList.add('active');
     audioQuiz.pause();
     playButton.classList.remove('pause');
-    curImg.style.backgroundImage = `url(${el.image})`;
-    curTitle.innerHTML = el.name[lang];
+    curImg.style.backgroundImage = `url(${selBird.image})`;
+    curTitle.innerHTML = selBird.name[lang];
   }
   else {
     wrongAudio.play();
     if(!correctFlag) {
       li.target.classList.add('wrong');
-      scorePenalty++;
+      scorePenalty+=scorePenalty==5?0:1;
     }
   }
+
   showBirdInfo();
 
 }
+
+const showCurTitle = () => {
+  if (correctFlag)
+  curTitle.innerHTML = correctFlag[lang];
+};
 
 const showScores= () => {
   if (scoreLabel) {
     scoreLabel.innerHTML = translate[lang].misc.score+': '+score;
   }
 }
+
+showScores();
 
 const defaulBirdInfo = () => {
   if(birdsInfo)

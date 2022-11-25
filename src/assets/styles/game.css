@@ -181,6 +181,10 @@
   cursor: pointer;
   list-style: none;
 }
+.list__item {
+ padding-bottom: 10px;
+}
+
 .list__item::before {
   content: "\2610";
   font-weight: bold;
