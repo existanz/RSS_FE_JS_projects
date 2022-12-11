@@ -97,11 +97,27 @@ interface Response {
             name: string;
             description: string;
             url: string;
-            category: string;
-            language: string;
-            country: string;
+            category: Category;
+            language: Language;
+            country: Country;
         }
     ];
 }
 
-export { Request, Response };
+interface Resp {
+    endpoint: string;
+    options?: object;
+}
+
+type Endpoint = 'sources' | 'everything';
+type Method = 'GET' | 'POST';
+type Callback = <Type>(arg: Type) => void;
+
+interface ErrorResp {
+    ok: boolean;
+    status: number;
+    statusText: string;
+    json(): void;
+}
+
+export { Request, Response, Resp, ErrorResp, Endpoint, Method, Callback };

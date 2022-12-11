@@ -2,12 +2,7 @@ import AppLoader from './appLoader';
 
 class AppController extends AppLoader {
     getSources(callback) {
-        super.getResp(
-            {
-                endpoint: 'sources',
-            },
-            callback
-        );
+        super.getResp('sources', {}, callback);
     }
 
     getNews(e, callback) {
@@ -20,11 +15,9 @@ class AppController extends AppLoader {
                 if (newsContainer.getAttribute('data-source') !== sourceId) {
                     newsContainer.setAttribute('data-source', sourceId);
                     super.getResp(
+                        'everything',
                         {
-                            endpoint: 'everything',
-                            options: {
-                                sources: sourceId,
-                            },
+                            sources: sourceId,
                         },
                         callback
                     );
