@@ -82,7 +82,7 @@ enum Country {
     za,
 }
 
-interface Request {
+interface Options {
     apiKey: string;
     category?: Category;
     language?: Language;
@@ -120,4 +120,5 @@ interface ErrorResp {
     json(): void;
 }
 
-export { Request, Response, Resp, ErrorResp, Endpoint, Method, Callback };
+export { Options, Response, Resp, ErrorResp, Endpoint, Method, Callback };
+export type Test = { Options: string };
