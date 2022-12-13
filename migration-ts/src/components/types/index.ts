@@ -102,17 +102,18 @@ interface Source {
 interface Response {
     status: string;
     sources: Source[];
+    articles: Articles[];
 }
 
-interface NewsBlock {
-    author: string;
-    content: string;
-    description: string;
-    publishedAt: string;
+interface Articles {
     source: {
         id: string;
         name: string;
     };
+    author: string;
+    content: string;
+    description: string;
+    publishedAt: string;
     title: string;
     url: string;
     urlToImage: string;
@@ -134,5 +135,5 @@ interface ErrorResp {
     json(): void;
 }
 
-export { Options, Response, Resp, ErrorResp, Endpoint, Method, Callback, NewsBlock, Source };
+export { Options, Response, Resp, ErrorResp, Endpoint, Method, Callback, Articles, Source };
 export type Test = { Options: string };
