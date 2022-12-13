@@ -126,7 +126,7 @@ interface Resp {
 
 type Endpoint = 'sources' | 'everything';
 type Method = 'GET' | 'POST';
-type Callback = <Type>(arg?: Type) => void;
+type Callback<Type> = (arg?: Type) => void;
 
 interface ErrorResp {
     ok: boolean;

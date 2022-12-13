@@ -38,7 +38,7 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    load(method: Method, endpoint: Endpoint, callback: Callback, options = {}) {
+    load(method: Method, endpoint: Endpoint, callback: Callback<void>, options = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())
