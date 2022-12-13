@@ -104,6 +104,20 @@ interface Response {
     ];
 }
 
+interface NewsBlock {
+    author: string;
+    content: string;
+    description: string;
+    publishedAt: string;
+    source: {
+        id: string;
+        name: string;
+    };
+    title: string;
+    url: string;
+    urlToImage: string;
+}
+
 interface Resp {
     endpoint: string;
     options?: object;
@@ -120,5 +134,5 @@ interface ErrorResp {
     json(): void;
 }
 
-export { Options, Response, Resp, ErrorResp, Endpoint, Method, Callback };
+export { Options, Response, Resp, ErrorResp, Endpoint, Method, Callback, NewsBlock };
 export type Test = { Options: string };
