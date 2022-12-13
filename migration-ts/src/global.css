@@ -25,11 +25,18 @@ header h1 {
 ::-webkit-scrollbar {
   background-color: #FFC688;
   height: 7px;
+  border-radius: 7px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.7) inset;
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.7) inset;
+  border-radius: 7px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #FF9727;
-  border-radius: 4px;
+  background: linear-gradient(90deg, #FF9727, #A65C0D);
+  border-radius: 8px;
 }
 
 .footer {
