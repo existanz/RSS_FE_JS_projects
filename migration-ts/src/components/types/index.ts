@@ -89,19 +89,19 @@ interface Options {
     country?: Country;
 }
 
+interface Source {
+    id: string;
+    name: string;
+    description: string;
+    url: string;
+    category: Category;
+    language: Language;
+    country: Country;
+}
+
 interface Response {
     status: string;
-    sources: [
-        {
-            id: string;
-            name: string;
-            description: string;
-            url: string;
-            category: Category;
-            language: Language;
-            country: Country;
-        }
-    ];
+    sources: Source[];
 }
 
 interface NewsBlock {
@@ -134,5 +134,5 @@ interface ErrorResp {
     json(): void;
 }
 
-export { Options, Response, Resp, ErrorResp, Endpoint, Method, Callback, NewsBlock };
+export { Options, Response, Resp, ErrorResp, Endpoint, Method, Callback, NewsBlock, Source };
 export type Test = { Options: string };
