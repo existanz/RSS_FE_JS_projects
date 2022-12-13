@@ -10,25 +10,33 @@
 
 .source__item {
     background: none;
-    border: 2px solid #30c5ff;
+    border: 2px solid #FF9727;
     font: inherit;
     line-height: 1;
     margin: 0.5em;
     padding: 1em 2em;
-    color: #70d6ff;
+    color: #FF9727;
     transition: 0.25s;
     cursor: pointer;
 }
 
 .source__item:hover,
 .source__item:focus {
-    border-color: #3fcc59;
-    color: #69db7e;
-    box-shadow: 0 0.5em 0.5em -0.4em #3fcc59;
+    border-color: #BF8546;
+    color: #FF9727;
+    box-shadow: 0 0.5em 0.5em -0.4em #BF8546;
     transform: translateY(-0.25em);
 }
 
 .source__item-name {
     font-weight: 400;
     white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+    .source__item {
+        line-height: 0.5;
+        margin: 0.2em;
+        padding: 0.5em 1em;
+    }
 }

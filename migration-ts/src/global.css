@@ -1,39 +1,74 @@
 body {
-    color: #fff;
-    background: #17181c;
-    font-family: sans-serif;
-    padding-bottom: 50px;
+  color: #FFC688;
+  background: #107CA6;
+  font-family: sans-serif;
+  padding-bottom: 50px;
 }
 
 header {
-    padding: 10px 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 30px;
 }
 
 header h1 {
-    font-size: 40px;
-    font-weight: 800;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.inoagent {
+  width: 35%;
+  text-align: center;
+}
+
+::-webkit-scrollbar {
+  background-color: #FFC688;
+  height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #FF9727;
+  border-radius: 4px;
 }
 
 .footer {
-    position:fixed;
-    z-index: 2;
-    width: 100%;
-    bottom: 0px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-top: 1px solid black;
-    font-weight: bold;
-    color: #30c5ff;
-    background-color: black;
-    opacity: 0.7;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid black;
+  font-weight: bold;
+  color: #30c5ff;
+  background-color: black;
+  opacity: 0.7;
+}
+
+.footer__year {
+  margin: 10px 0 10px 0;
+}
+
+.footer__github,
+.footer__rsschool {
+  fill: #30c5ff;
+}
+
+@media (max-width: 760px) {
+  header {
+    flex-direction: column;
   }
-  
-  .footer__year {
-    margin: 10px 0 10px 0;
+
+  header h1 {
+    font-size: 20px;
+    font-weight: 800;
   }
-  
-  .footer__github,
-  .footer__rsschool {
-    fill: #30c5ff;
+
+  .inoagent {
+    width: 90%;
+    font-size: 10px;
   }
+}
