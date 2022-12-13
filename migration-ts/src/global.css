@@ -2,6 +2,7 @@ body {
     color: #fff;
     background: #17181c;
     font-family: sans-serif;
+    padding-bottom: 50px;
 }
 
 header {
@@ -13,23 +14,26 @@ header h1 {
     font-weight: 800;
 }
 
-footer {
-    height: 100px;
+.footer {
+    position:fixed;
+    z-index: 2;
+    width: 100%;
+    bottom: 0px;
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
-}
-footer .copyright {
-    font-size: 14px;
-    color: #333;
-    text-align: center;
-}
-footer .copyright a {
-    color: #444;
-}
-footer .copyright a:hover {
-    color: #555;
-}
-footer .copyright:before {
-    content: '©';
-}
+    border-top: 1px solid black;
+    font-weight: bold;
+    color: #30c5ff;
+    background-color: black;
+    opacity: 0.7;
+  }
+  
+  .footer__year {
+    margin: 10px 0 10px 0;
+  }
+  
+  .footer__github,
+  .footer__rsschool {
+    fill: #30c5ff;
+  }
