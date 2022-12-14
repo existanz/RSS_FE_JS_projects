@@ -1,7 +1,7 @@
 import { Options, ErrorResp, Endpoint, Method, Callback } from '../types/index';
 class Loader {
-    baseLink: string;
-    options: Options;
+    public baseLink: string;
+    public options: Options;
 
     constructor(baseLink: string, options: Options) {
         this.baseLink = baseLink;
@@ -14,7 +14,7 @@ class Loader {
         callback = () => {
             console.error('No callback for GET response');
         }
-    ) {
+    ): void {
         this.load('GET', endpoint, callback, options);
     }
 
