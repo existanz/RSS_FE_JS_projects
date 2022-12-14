@@ -7,14 +7,14 @@ class AppController extends AppLoader {
     }
 
     public getNews(e: Event, callback: Callback<RespArticles>) {
-        let target = e.target as Element;
+        let target: Element = e.target as Element;
         const newsContainer = e.currentTarget as Element;
 
         while (target !== newsContainer) {
             if (target.classList.contains('source__item')) {
                 const sourceId = target.getAttribute('data-source-id');
-                if (newsContainer.getAttribute('data-source') !== sourceId) {
-                    newsContainer.setAttribute('data-source', sourceId as string);
+                if (newsContainer.getAttribute('data-source') !== sourceId && sourceId) {
+                    newsContainer.setAttribute('data-source', sourceId);
                     super.getResp(
                         'everything',
                         {
