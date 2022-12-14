@@ -2,6 +2,7 @@ import { Options, ErrorResp, Endpoint, Method, Callback } from '../types/index';
 class Loader {
     baseLink: string;
     options: Options;
+
     constructor(baseLink: string, options: Options) {
         this.baseLink = baseLink;
         this.options = options;
