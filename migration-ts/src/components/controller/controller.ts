@@ -1,12 +1,12 @@
-import { Callback, Response } from '../types/index';
+import { Callback, RespArticles, RespSources } from '../types/index';
 import AppLoader from './appLoader';
 
 class AppController extends AppLoader {
-    getSources(callback: Callback<Response>) {
+    getSources(callback: Callback<RespSources>) {
         super.getResp('sources', {}, callback);
     }
 
-    getNews(e: Event, callback: Callback<Response>) {
+    getNews(e: Event, callback: Callback<RespArticles>) {
         let target = e.target as Element;
         const newsContainer = e.currentTarget as Element;
 

@@ -24,13 +24,17 @@ interface Source {
     country: string;
 }
 
-interface Response {
+interface RespArticles {
     status: string;
-    sources: Source[];
-    articles: Articles[];
+    articles: Article[];
 }
 
-interface Articles {
+interface RespSources {
+    status: string;
+    sources: Source[];
+}
+
+interface Article {
     source: {
         id: string;
         name: string;
@@ -55,5 +59,5 @@ interface ErrorResp {
     json(): void;
 }
 
-export { Options, Response, ErrorResp, Endpoint, Method, Callback, Articles, Source };
+export { Options, ErrorResp, Endpoint, Method, Callback, RespArticles, RespSources, Article, Source };
 export type Test = { Options: string };
