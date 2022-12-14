@@ -44,11 +44,6 @@ interface Articles {
     urlToImage: string;
 }
 
-interface Resp {
-    endpoint: string;
-    options?: object;
-}
-
 type Endpoint = 'sources' | 'everything';
 type Method = 'GET' | 'POST';
 type Callback<Type> = (arg?: Type) => void;
@@ -60,5 +55,5 @@ interface ErrorResp {
     json(): void;
 }
 
-export { Options, Response, Resp, ErrorResp, Endpoint, Method, Callback, Articles, Source };
+export { Options, Response, ErrorResp, Endpoint, Method, Callback, Articles, Source };
 export type Test = { Options: string };
