@@ -9,7 +9,6 @@ enum Category {
 }
 
 interface Options {
-    apiKey: string;
     category?: Category;
     language?: string;
     country?: string;
