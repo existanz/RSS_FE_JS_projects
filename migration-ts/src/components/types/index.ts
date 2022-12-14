@@ -9,6 +9,7 @@ enum Category {
 }
 
 interface Options {
+    apiKey: string;
     category?: Category;
     language?: string;
     country?: string;
@@ -60,4 +61,3 @@ interface ErrorResp {
 }
 
 export { Options, ErrorResp, Endpoint, Method, Callback, RespArticles, RespSources, Article, Source };
-export type Test = { Options: string };
