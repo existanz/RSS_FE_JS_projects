@@ -7,7 +7,7 @@ class AppController extends AppLoader {
     }
 
     public getNews(e: Event, callback: Callback<RespArticles>) {
-        let target: Element = e.target as Element;
+        let target = e.target as Element;
         const newsContainer = e.currentTarget as Element;
 
         while (target !== newsContainer) {
