@@ -8,12 +8,9 @@ enum Category {
     technology,
 }
 
-interface Options {
-    apiKey: string;
-    category?: Category;
-    language?: string;
-    country?: string;
-}
+type Options = {
+    [key: string]: string;
+};
 
 interface Source {
     id: string;

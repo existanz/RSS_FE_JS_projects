@@ -8,7 +8,7 @@ class Loader {
         this.options = options;
     }
 
-    public getResp(
+    protected getResp(
         endpoint: Endpoint,
         options = {},
         callback = () => {
@@ -43,7 +43,7 @@ class Loader {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res: ErrorResp) => res.json())
-            .then((data: void) => callback(data))
+            .then((data) => callback(data))
             .catch((err: string) => console.error(err));
     }
 }
