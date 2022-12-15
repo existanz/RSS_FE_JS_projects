@@ -1,4 +1,4 @@
-import { Options, ErrorResp, Endpoint, Method, Callback } from '../types/index';
+import { Options, ErrorResp, Endpoint, Method, Callback, ResponseNews } from '../types/index';
 class Loader {
     public baseLink: string;
     public options: Options;
@@ -39,11 +39,11 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    private load(method: Method, endpoint: Endpoint, callback: Callback<void>, options = {}) {
+    private load(method: Method, endpoint: Endpoint, callback: Callback<ResponseNews>, options = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res: ErrorResp) => res.json())
-            .then((data) => callback(data))
+            .then((data: ResponseNews) => callback(data))
             .catch((err: string) => console.error(err));
     }
 }

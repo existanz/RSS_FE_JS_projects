@@ -49,6 +49,7 @@ interface Article {
 type Endpoint = 'sources' | 'everything';
 type Method = 'GET' | 'POST';
 type Callback<Type> = (arg?: Type) => void;
+type ResponseNews = RespArticles | RespSources;
 
 interface ErrorResp {
     ok: boolean;
@@ -57,4 +58,4 @@ interface ErrorResp {
     json(): void;
 }
 
-export { Options, ErrorResp, Endpoint, Method, Callback, RespArticles, RespSources, Article, Source };
+export { Options, ErrorResp, Endpoint, Method, Callback, RespArticles, RespSources, Article, Source, ResponseNews };
