@@ -55,7 +55,7 @@ interface ErrorResp {
     ok: boolean;
     status: number;
     statusText: string;
-    json(): void;
+    json(): Promise<ResponseNews>;
 }
 
 export { Options, ErrorResp, Endpoint, Method, Callback, RespArticles, RespSources, Article, Source, ResponseNews };
