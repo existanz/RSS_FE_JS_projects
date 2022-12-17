@@ -42,7 +42,7 @@ class Loader {
     private load(method: Method, endpoint: Endpoint, callback: Callback<ResponseNews>, options = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
-            .then((res: ErrorResp) => res.json())
+            .then((res: ErrorResp): Promise<ResponseNews> => res.json())
             .then((data: ResponseNews) => callback(data))
             .catch((err: string) => console.error(err));
     }
