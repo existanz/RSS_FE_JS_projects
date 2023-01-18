@@ -22,15 +22,16 @@ export default class Router {
     this.notFoundPage = new NotFoundPage();
     this.routerService = new RouterService();
 
-    this.render(this.routerService.routChange().idPage);
-    window.addEventListener('hashchange', () => this.render(this.routerService.routChange().idPage));
+    this.rout(this.routerService.routChange().idPage);
+    window.addEventListener('hashchange', () => this.rout(this.routerService.routChange().idPage));
   }
 
-  public render(idPage: string) {
+  private rout(idPage: string) {
     this.parentNode.innerHTML = '';
     switch (idPage) {
       case 'garage':
         this.parentNode.append(this.garage.node);
+        this.garage.render();
         break;
       case '':
         this.parentNode.append(this.garage.node);
@@ -41,5 +42,9 @@ export default class Router {
       default:
         this.parentNode.append(this.notFoundPage.node);
     }
+  }
+
+  public render() {
+    this.garage.render();
   }
 }
