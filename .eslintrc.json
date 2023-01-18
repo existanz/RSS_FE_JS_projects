@@ -18,6 +18,8 @@
         "node": true
     },
     "rules": {
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": ["error"],
         "@typescript-eslint/no-explicit-any": 2,
         "no-debugger": "off",
         "no-console": 0,
