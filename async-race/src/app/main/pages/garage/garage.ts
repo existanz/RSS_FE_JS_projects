@@ -4,7 +4,7 @@ import stateService from '../../../shared/services/state.service';
 export default class GaragePage extends Page {
   constructor() {
     super('garage');
-    this.node.textContent = `Garage`;
+    this.node.textContent = 'Garage';
   }
 
   render() {
