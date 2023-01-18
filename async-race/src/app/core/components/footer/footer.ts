@@ -32,7 +32,7 @@ export default class Footer extends DOMElement {
     this.year = new DOMElement(this.container.node, 'p', ['footer__year'], '2023');
 
     this.footerSchoolLogo = new DOMElement(this.container.node, 'div', ['footer__shcool-logo']);
-    this.rsschool = new LinkElement(this.footerSchoolLogo.node, ['shcool-logo'], 'https://rs.school/');
+    this.rsschool = new LinkElement(this.footerSchoolLogo.node, ['school-logo'], 'https://rs.school/');
     this.rsschool.node.innerHTML = SVGicons.rsschool;
   }
 }

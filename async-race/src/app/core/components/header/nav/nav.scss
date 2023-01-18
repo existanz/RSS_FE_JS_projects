@@ -1,0 +1,16 @@
+.nav {
+  display: flex;
+  margin-right: 20px;
+}
+
+.nav__item {
+  margin-right: 20px;
+  transition: .3s;
+
+    &:hover {
+      opacity: .5;
+    }
+}
+.nav_link {
+  color: #175615;
+}
