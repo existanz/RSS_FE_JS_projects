@@ -1,4 +1,4 @@
-import { MyObject } from '../models/basse-types';
+import { MyObject, Method } from '../models/basse-types';
 
 const PATH = 'http://localhost:3000/';
 
@@ -11,7 +11,7 @@ class Loader {
     return res;
   }
 
-  private load(url: URL, method: string, data?: MyObject): Promise<Response> {
+  private load(url: URL, method: Method, data?: MyObject): Promise<Response> {
     return fetch(url, {
       headers: { 'Content-Type': 'application/json' },
       method,
