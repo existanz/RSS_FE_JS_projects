@@ -40,6 +40,22 @@ class Loader {
       })
     );
   }
+
+  public post(endpoint: string, data: MyObject) {
+    return this.load(new URL(endpoint), 'POST', data).then((res: Response) => res.json());
+  }
+
+  public put(endpoint: string, data: MyObject) {
+    return this.load(new URL(endpoint), 'PUT', data).then((res: Response) => res.json());
+  }
+
+  public delete(endpoint: string) {
+    return this.load(new URL(endpoint), 'DELETE').then((res: Response) => res.json());
+  }
+
+  public patch(endpoint: string, params: MyObject) {
+    return this.load(new URL(this.makeUrl(endpoint, params)), 'PATCH').then((res: Response) => res.json());
+  }
 }
 
 const apiService = new Loader();
