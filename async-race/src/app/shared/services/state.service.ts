@@ -1,3 +1,5 @@
+import apiService from './api.service';
+
 class State {
   public allData: [];
 
@@ -6,11 +8,7 @@ class State {
   }
 
   public async load() {
-    const url = 'http://127.0.0.1:3000/garage';
-    await fetch(url)
-      .then((res) => res.json())
-      // eslint-disable-next-line no-return-assign
-      .then((data) => (this.allData = data));
+    this.allData = (await apiService.getData('garage', {})).items;
     console.log(this.allData);
   }
 }
