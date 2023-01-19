@@ -26,11 +26,11 @@ class Loader {
       url += `${key}=${params[key]}&`;
     });
 
-    return url.slice(0, -1);
+    return new URL(url.slice(0, -1));
   }
 
   public getData(endpoint: string, params: MyObject) {
-    return this.load(new URL(this.makeUrl(endpoint, params)), 'GET').then((res: Response) =>
+    return this.load(this.makeUrl(endpoint, params), 'GET').then((res: Response) =>
       res.json().then((items) => {
         const total = res.headers.get('X-Total-Count');
         return {
@@ -54,7 +54,7 @@ class Loader {
   }
 
   public patch(endpoint: string, params: MyObject) {
-    return this.load(new URL(this.makeUrl(endpoint, params)), 'PATCH').then((res: Response) => res.json());
+    return this.load(this.makeUrl(endpoint, params), 'PATCH').then((res: Response) => res.json());
   }
 }
 
