@@ -9,6 +9,7 @@ export default class GaragePage extends Page {
   }
 
   render() {
+    this.node.innerHTML = '';
     stateService.allData.forEach((item) => {
       const newCar = new CarElement(this.node, item);
     });
