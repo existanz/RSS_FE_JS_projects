@@ -3,17 +3,19 @@ import DOMElement from '../../shared/components/base-elements/dom-element';
 export default class CarPanel extends DOMElement {
   private panelTop: DOMElement;
 
-  private panelBottom: DOMElement;
-
   private buttonSelect: DOMElement;
 
   private buttonDelete: DOMElement;
+
+  private panelBottom: DOMElement;
 
   private buttonStart: DOMElement;
 
   private buttonStop: DOMElement;
 
-  constructor(parentNode: HTMLElement) {
+  private labelCar: DOMElement;
+
+  constructor(parentNode: HTMLElement, carName: string) {
     super(parentNode, 'div', ['car__panel']);
 
     this.panelTop = new DOMElement(this.node, 'div', ['car__panel-first']);
@@ -42,5 +44,6 @@ export default class CarPanel extends DOMElement {
       ['button', 'car__button', 'car__button-stop'],
       'stop'
     );
+    this.labelCar = new DOMElement(this.panelBottom.node, 'div', ['car__name'], carName);
   }
 }

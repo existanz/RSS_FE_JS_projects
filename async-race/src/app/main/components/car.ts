@@ -13,6 +13,6 @@ export default class CarElement extends DOMElement {
 
     this.car = car;
     this.node.innerHTML = SVGicons.racer;
-    this.carPanel = new CarPanel(this.node);
+    this.carPanel = new CarPanel(this.node, car.name);
   }
 }

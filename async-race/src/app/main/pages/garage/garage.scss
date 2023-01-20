@@ -1,0 +1,21 @@
+.garage{
+  width: 100%;
+}
+.car__element {
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+.car__panel > div {
+  display: flex;
+}
+.button {
+  color: white;
+  width: 80px;
+  background-color: black;
+  border: 1px solid gray;
+  border-radius: 5px;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+}
