@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import DOMElement from './dom-element';
 
 export default class InputElement extends DOMElement {

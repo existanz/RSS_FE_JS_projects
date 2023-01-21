@@ -10,6 +10,7 @@ export default class GaragePage extends Page {
 
   constructor() {
     super('garage');
+    this.garagePanel = new GaragePanel(this.node);
   }
 
   render() {
