@@ -35,7 +35,7 @@ class Loader {
         const total = res.headers.get('X-Total-Count');
         return {
           total: total ? +total : 0,
-          items,
+          items: Array.from(items),
         };
       })
     );

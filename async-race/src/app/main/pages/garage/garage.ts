@@ -1,11 +1,11 @@
 import './garage.scss';
 import Page from '../../../shared/components/page';
-import stateService from '../../../shared/services/state.service';
-//import garageApi from '../../services/api/garage-api';
+import garageApi from '../../services/api/garage-api';
 import CarElement from '../../components/car-element';
 import GaragePanel from '../../components/garage-panel';
 import GarageTitle from '../../components/garage-title';
 import Paginator from '../../../shared/components/paginator';
+import { Car } from '../../../shared/models/basse-types';
 
 export default class GaragePage extends Page {
   private garagePanel: GaragePanel;
@@ -17,19 +17,23 @@ export default class GaragePage extends Page {
   constructor() {
     super('garage');
     this.garagePanel = new GaragePanel(this.node);
-    this.garageTitle = new GarageTitle(this.node, 0);
-    this.paginator = new Paginator(this.node, 40);
+    this.garageTitle = new GarageTitle(this.node, 4);
+    this.paginator = new Paginator(this.node, 4);
+    this.node.addEventListener('click', () => this.render());
   }
 
-  render() {
+  public async render() {
+    const data = await garageApi.getCars(this.paginator.paginator);
     this.node.innerHTML = '';
     this.node.append(this.garagePanel.node);
     this.node.append(this.garageTitle.node);
-    stateService.allData.forEach((item) => {
-      const newCar = new CarElement(this.node, item);
+    data.items.forEach((element) => {
+      const car: Car = element as Car;
+      const newCar = new CarElement(this.node, car);
       newCar.render();
     });
-    this.paginator.update(43);
+    this.paginator.update(data.total);
+    this.garageTitle.update(data.total);
     this.node.append(this.paginator.node);
   }
 }
