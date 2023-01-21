@@ -17,6 +17,26 @@ body {
     -moz-osx-font-smoothing: grayscale;
     display: flex;
     flex-direction: column;
+    font-family: 'Orbit Racer';
+}
+
+@font-face {
+  font-family: 'Epilepsy Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/fonts/EpilepsySans.ttf');
+}
+@font-face {
+  font-family: 'Epilepsy Sans';
+  font-style: normal;
+  font-weight: bold;
+  src: url('./assets/fonts/EpilepsySansBold.ttf');
+}
+@font-face {
+  font-family: 'Orbit Racer';
+  font-style: normal;
+  font-weight: bold;
+  src: url('./assets/fonts/Orbitracer.ttf');
 }
 
 .container {
@@ -66,6 +86,7 @@ button {
   text-align: center;
   user-select: none;
   cursor: pointer;
+  font-family: inherit;
 }
 
 input::-webkit-inner-spin-button,
