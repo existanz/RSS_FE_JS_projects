@@ -1,3 +1,4 @@
+import ButtonElement from '../../shared/components/base-elements/button-element';
 import DOMElement from '../../shared/components/base-elements/dom-element';
 import InputElement from '../../shared/components/base-elements/input-element';
 
@@ -8,17 +9,17 @@ export default class GaragePanel extends DOMElement {
 
   private carColorInput: InputElement;
 
-  private createButton: DOMElement;
+  private createButton: ButtonElement;
 
-  private updateButton: DOMElement;
+  private updateButton: ButtonElement;
 
   private racePanel: DOMElement;
 
-  private raceButton: DOMElement;
+  private raceButton: ButtonElement;
 
-  private resetButton: DOMElement;
+  private resetButton: ButtonElement;
 
-  private generateButton: DOMElement;
+  private generateButton: ButtonElement;
 
   constructor(parentNode: HTMLElement) {
     super(parentNode, 'div', ['garage__panel']);
@@ -26,11 +27,11 @@ export default class GaragePanel extends DOMElement {
     this.carPropPanel = new DOMElement(this.node, 'div', ['garage__panel-car']);
     this.carNameInput = new InputElement(this.carPropPanel.node, ['input', 'input__car-name'], '');
     this.carColorInput = new InputElement(this.carPropPanel.node, ['input', 'input__car-color'], '');
-    this.createButton = new DOMElement(this.carPropPanel.node, 'button', ['button', 'button__create'], 'create');
-    this.updateButton = new DOMElement(this.carPropPanel.node, 'button', ['button', 'button__update'], 'update');
+    this.createButton = new ButtonElement(this.carPropPanel.node, ['button', 'button__create'], 'create');
+    this.updateButton = new ButtonElement(this.carPropPanel.node, ['button', 'button__update'], 'update');
     this.racePanel = new DOMElement(this.node, 'div', ['garage__panel-race']);
-    this.raceButton = new DOMElement(this.racePanel.node, 'button', ['button', 'button__race'], 'race');
-    this.resetButton = new DOMElement(this.racePanel.node, 'button', ['button', 'button__reset'], 'reset');
-    this.generateButton = new DOMElement(this.racePanel.node, 'button', ['button', 'button__generate'], 'generate');
+    this.raceButton = new ButtonElement(this.racePanel.node, ['button', 'button__race'], 'race');
+    this.resetButton = new ButtonElement(this.racePanel.node, ['button', 'button__reset'], 'reset');
+    this.generateButton = new ButtonElement(this.racePanel.node, ['button', 'button__generate'], 'generate');
   }
 }
