@@ -25,6 +25,7 @@
 
 .garage__title {
   margin-top: 20px;
+  text-align: center;
 }
 .car__element {
   width: 100%;
@@ -54,4 +55,16 @@
 
 .car__panel > div {
   display: flex;
+}
+
+.paginator {
+  display: flex;
+  justify-content: center;
+
+  &__button {
+    width: 40px;
+  }
+  &__page-number {
+    padding: 0 10px;
+  }
 }
