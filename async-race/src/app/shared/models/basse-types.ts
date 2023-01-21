@@ -5,3 +5,9 @@ export interface Car extends MyObject {
   name: string;
   color: string;
 }
+
+export interface Winner extends MyObject {
+  id: string;
+  wins: string;
+  time: string;
+}
