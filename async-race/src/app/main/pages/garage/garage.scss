@@ -28,8 +28,28 @@
 }
 .car__element {
   width: 100%;
-  border: 1px solid gray;
+  height: 80px;
+  border-bottom: 1px dashed gray;
   border-radius: 4px;
+  margin-bottom: 5px;
+}
+.car__track {
+  position: relative;
+}
+
+.racer {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  filter: drop-shadow(3px 5px 2px rgba(44, 24, 24, 1));
+}
+.race__flag {
+  position: absolute;
+  right: 60px;
+  top: -20px;
+}
+.flag {
+  width: 40px;
 }
 
 .car__panel > div {

@@ -2,7 +2,7 @@ import './garage.scss';
 import Page from '../../../shared/components/page';
 import stateService from '../../../shared/services/state.service';
 //import garageApi from '../../services/api/garage-api';
-import CarElement from '../../components/car';
+import CarElement from '../../components/car-element';
 import GaragePanel from '../../components/garage-panel';
 import GarageTitle from '../../components/garage-title';
 
