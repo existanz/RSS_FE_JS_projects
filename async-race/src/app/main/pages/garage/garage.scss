@@ -1,21 +1,30 @@
 .garage{
   width: 100%;
 }
+.input__car-color {
+  width: 21px;
+  height: 21px;
+  border: none;
+  margin: 0px 2px 0px -21px;
+  background-color: transparent;
+}
+
+.input__car-name {
+  width: 160px;
+  margin-bottom: 3px;
+}
+
+.button__generate {
+  width: 160px;
+  margin-left: 2px;
+}
+
 .car__element {
   width: 100%;
   border: 1px solid gray;
   border-radius: 4px;
 }
+
 .car__panel > div {
   display: flex;
-}
-.button {
-  color: white;
-  width: 80px;
-  background-color: black;
-  border: 1px solid gray;
-  border-radius: 5px;
-  text-align: center;
-  user-select: none;
-  cursor: pointer;
 }

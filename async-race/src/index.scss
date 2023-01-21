@@ -58,10 +58,14 @@ footer {
 }
 
 button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-		color: inherit;
+  color: white;
+  width: 80px;
+  background-color: black;
+  border: 1px solid gray;
+  border-radius: 5px;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
 }
 
 input::-webkit-inner-spin-button,
