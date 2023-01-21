@@ -27,6 +27,7 @@ export default class GaragePanel extends DOMElement {
     this.carPropPanel = new DOMElement(this.node, 'div', ['garage__panel-car']);
     this.carNameInput = new InputElement(this.carPropPanel.node, ['input', 'input__car-name'], '');
     this.carColorInput = new InputElement(this.carPropPanel.node, ['input', 'input__car-color'], '');
+    this.carColorInput.node.setAttribute('type', 'color');
     this.createButton = new ButtonElement(this.carPropPanel.node, ['button', 'button__create'], 'create');
     this.updateButton = new ButtonElement(this.carPropPanel.node, ['button', 'button__update'], 'update');
     this.racePanel = new DOMElement(this.node, 'div', ['garage__panel-race']);
