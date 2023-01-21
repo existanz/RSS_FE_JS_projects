@@ -33,6 +33,6 @@ export default class GaragePanel extends DOMElement {
     this.racePanel = new DOMElement(this.node, 'div', ['garage__panel-race']);
     this.raceButton = new ButtonElement(this.racePanel.node, ['button', 'button__race'], 'race');
     this.resetButton = new ButtonElement(this.racePanel.node, ['button', 'button__reset'], 'reset');
-    this.generateButton = new ButtonElement(this.racePanel.node, ['button', 'button__generate'], 'generate');
+    this.generateButton = new ButtonElement(this.racePanel.node, ['button', 'button__generate'], 'generate 100 cars');
   }
 }
