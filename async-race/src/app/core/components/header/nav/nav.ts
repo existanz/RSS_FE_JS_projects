@@ -8,11 +8,11 @@ export default class Navigation {
   private menuLinks = [
     {
       content: 'garage',
-      href: '/#garage',
+      href: '#garage',
     },
     {
       content: 'winners',
-      href: '/#winners',
+      href: '#winners',
     },
   ];
 
