@@ -6,8 +6,8 @@ class GarageApi {
     return apiService.getData('garage', paginator);
   }
 
-  public getCar(id: number): Promise<ResponseData<Car>> {
-    return apiService.getData('garage', { id: id.toString() });
+  public getCar(id: string): Promise<Car> {
+    return apiService.get('garage', { id });
   }
 
   public createCar(data: MyObject) {

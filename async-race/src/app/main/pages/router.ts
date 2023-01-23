@@ -38,6 +38,7 @@ export default class Router {
         break;
       case 'winners':
         this.parentNode.append(this.winners.node);
+        this.winners.render();
         break;
       default:
         this.parentNode.append(this.notFoundPage.node);

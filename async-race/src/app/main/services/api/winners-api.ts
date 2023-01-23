@@ -1,12 +1,12 @@
 import apiService from '../../../shared/services/api.service';
-import { MyObject } from '../../../shared/models/basse-types';
+import { MyObject, Winner, ResponseData } from '../../../shared/models/basse-types';
 
 class WinnersApi {
-  public getWinners(params: MyObject) {
+  public getWinners(params: MyObject): Promise<ResponseData<Winner>> {
     return apiService.getData('winners', params);
   }
 
-  public getWinner(id: number) {
+  public getWinner(id: number): Promise<ResponseData<Winner>> {
     return apiService.getData('winners', { id: id.toString() });
   }
 

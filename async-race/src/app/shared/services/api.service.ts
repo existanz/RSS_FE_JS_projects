@@ -41,6 +41,10 @@ class Loader {
     );
   }
 
+  public get<T>(endpoint: string, params: MyObject): Promise<T> {
+    return this.load(this.makeUrl(endpoint, params), 'GET').then((res: Response) => res.json());
+  }
+
   public post<T>(endpoint: string, data: MyObject): Promise<T> {
     return this.load(new URL(endpoint), 'POST', data).then((res: Response) => res.json());
   }
