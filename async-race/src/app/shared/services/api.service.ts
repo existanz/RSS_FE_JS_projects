@@ -46,15 +46,16 @@ class Loader {
   }
 
   public post<T>(endpoint: string, data: MyObject): Promise<T> {
-    return this.load(new URL(endpoint), 'POST', data).then((res: Response) => res.json());
+    console.log(endpoint, data);
+    return this.load(new URL(`${PATH}${endpoint}`), 'POST', data).then((res: Response) => res.json());
   }
 
   public put<T>(endpoint: string, data: MyObject): Promise<T> {
-    return this.load(new URL(endpoint), 'PUT', data).then((res: Response) => res.json());
+    return this.load(new URL(`${PATH}${endpoint}`), 'PUT', data).then((res: Response) => res.json());
   }
 
   public delete<T>(endpoint: string): Promise<T> {
-    return this.load(new URL(endpoint), 'DELETE').then((res: Response) => res.json());
+    return this.load(new URL(`${PATH}${endpoint}`), 'DELETE').then((res: Response) => res.json());
   }
 
   public patch<T>(endpoint: string, params: MyObject): Promise<T> {
