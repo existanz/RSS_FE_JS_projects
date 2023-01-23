@@ -1,5 +1,5 @@
-import DOMElement from '../../shared/components/base-elements/dom-element';
-import SVGicons from '../../shared/components/svg-icons';
+import DOMElement from '../../../shared/components/base-elements/dom-element';
+import SVGicons from '../../../shared/components/svg-icons';
 
 export default class CarRaser extends DOMElement {
   constructor(parentNode: HTMLElement, color: string) {

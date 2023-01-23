@@ -1,6 +1,6 @@
-import DOMElement from '../../shared/components/base-elements/dom-element';
-import TableRowElement from '../../shared/components/base-elements/table-row-element';
-import { Car, Winner } from '../../shared/models/basse-types';
+import DOMElement from '../../../shared/components/base-elements/dom-element';
+import TableRowElement from '../../../shared/components/base-elements/table-row-element';
+import { Car, Winner } from '../../../shared/models/basse-types';
 
 export default class WinnersTable extends DOMElement {
   private tableHead: DOMElement;

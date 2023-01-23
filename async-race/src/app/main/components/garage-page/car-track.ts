@@ -1,6 +1,6 @@
-import DOMElement from '../../shared/components/base-elements/dom-element';
-import SVGicons from '../../shared/components/svg-icons';
-import { Car } from '../../shared/models/basse-types';
+import DOMElement from '../../../shared/components/base-elements/dom-element';
+import SVGicons from '../../../shared/components/svg-icons';
+import { Car } from '../../../shared/models/basse-types';
 import CarRaser from './car-racer';
 
 export default class CarTrack extends DOMElement {

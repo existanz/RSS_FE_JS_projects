@@ -1,5 +1,5 @@
-import DOMElement from '../../shared/components/base-elements/dom-element';
-import { Car } from '../../shared/models/basse-types';
+import DOMElement from '../../../shared/components/base-elements/dom-element';
+import { Car } from '../../../shared/models/basse-types';
 import CarPanel from './car-panel';
 import CarTrack from './car-track';
 

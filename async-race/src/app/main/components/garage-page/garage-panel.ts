@@ -1,6 +1,6 @@
-import ButtonElement from '../../shared/components/base-elements/button-element';
-import DOMElement from '../../shared/components/base-elements/dom-element';
-import InputElement from '../../shared/components/base-elements/input-element';
+import ButtonElement from '../../../shared/components/base-elements/button-element';
+import DOMElement from '../../../shared/components/base-elements/dom-element';
+import InputElement from '../../../shared/components/base-elements/input-element';
 
 export default class GaragePanel extends DOMElement {
   private carPropPanel: DOMElement;

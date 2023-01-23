@@ -1,8 +1,8 @@
 import './winners.scss';
 import Page from '../../../shared/components/page';
 import { Winner } from '../../../shared/models/basse-types';
-import WinnersTable from '../../components/winner-table';
-import WinnersTitle from '../../components/winners-title';
+import WinnersTable from '../../components/winners-page/winner-table';
+import WinnersTitle from '../../components/winners-page/winners-title';
 import Paginator from '../../../shared/components/paginator';
 import winnersApi from '../../services/api/winners-api';
 import garageApi from '../../services/api/garage-api';

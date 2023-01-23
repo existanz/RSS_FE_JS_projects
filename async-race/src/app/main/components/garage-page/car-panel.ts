@@ -1,4 +1,4 @@
-import DOMElement from '../../shared/components/base-elements/dom-element';
+import DOMElement from '../../../shared/components/base-elements/dom-element';
 
 export default class CarPanel extends DOMElement {
   private panelTop: DOMElement;

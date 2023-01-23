@@ -1,9 +1,9 @@
 import './garage.scss';
 import Page from '../../../shared/components/page';
 import garageApi from '../../services/api/garage-api';
-import CarElement from '../../components/car-element';
-import GaragePanel from '../../components/garage-panel';
-import GarageTitle from '../../components/garage-title';
+import CarElement from '../../components/garage-page/car-element';
+import GaragePanel from '../../components/garage-page/garage-panel';
+import GarageTitle from '../../components/garage-page/garage-title';
 import Paginator from '../../../shared/components/paginator';
 
 export default class GaragePage extends Page {
