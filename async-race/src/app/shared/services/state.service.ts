@@ -1,15 +1,13 @@
-import apiService from './api.service';
+import { Car } from '../models/basse-types';
 
 class State {
   public allData: [];
 
+  public selectedCar: Car;
+
   constructor() {
     this.allData = [];
-  }
-
-  public async load() {
-    const data = await apiService.getData('garage', { _limit: '7', _page: '1' });
-    console.log(data.total, data.items);
+    this.selectedCar = { id: '', name: '', color: '' };
   }
 }
 

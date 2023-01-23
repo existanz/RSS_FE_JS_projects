@@ -2,7 +2,6 @@ import Header from './core/components/header/header';
 import Main from './core/components/main-container/main-container';
 import Router from './main/pages/router';
 import Footer from './core/components/footer/footer';
-import stateService from './shared/services/state.service';
 
 export default class App {
   private header: Header;
@@ -21,8 +20,6 @@ export default class App {
   }
 
   public async start() {
-    await stateService.load();
     this.router.render();
-    console.log('Start App!');
   }
 }
