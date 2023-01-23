@@ -14,7 +14,7 @@ class GarageApi {
     return apiService.post('garage', data);
   }
 
-  public deleteCar(id: number) {
+  public deleteCar(id: string) {
     return apiService.delete(`garage/${id}`);
   }
 

@@ -14,7 +14,7 @@ export default class CarElement extends DOMElement {
     super(parentNode, 'div', ['car__element', `carId=${car.id}`]);
 
     this.car = car;
-    this.carPanel = new CarPanel(this.node, car.name);
+    this.carPanel = new CarPanel(this.node, car);
     this.carTrack = new CarTrack(this.node, car);
   }
 
