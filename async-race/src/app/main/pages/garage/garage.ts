@@ -5,7 +5,6 @@ import CarElement from '../../components/car-element';
 import GaragePanel from '../../components/garage-panel';
 import GarageTitle from '../../components/garage-title';
 import Paginator from '../../../shared/components/paginator';
-import { Car } from '../../../shared/models/basse-types';
 
 export default class GaragePage extends Page {
   private garagePanel: GaragePanel;
@@ -27,10 +26,8 @@ export default class GaragePage extends Page {
     this.node.innerHTML = '';
     this.node.append(this.garagePanel.node);
     this.node.append(this.garageTitle.node);
-    data.items.forEach((element) => {
-      const car: Car = element as Car;
-      const newCar = new CarElement(this.node, car);
-      newCar.render();
+    data.items.forEach((car) => {
+      new CarElement(this.node, car);
     });
     this.paginator.update(data.total);
     this.garageTitle.update(data.total);

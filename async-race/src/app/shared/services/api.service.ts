@@ -1,4 +1,4 @@
-import { MyObject, Method } from '../models/basse-types';
+import { MyObject, Method, ResponseData } from '../models/basse-types';
 
 const PATH = 'http://localhost:3000/';
 
@@ -29,7 +29,7 @@ class Loader {
     return new URL(url.slice(0, -1));
   }
 
-  public getData(endpoint: string, params: MyObject) {
+  public getData<T>(endpoint: string, params: MyObject): Promise<ResponseData<T>> {
     return this.load(this.makeUrl(endpoint, params), 'GET').then((res: Response) =>
       res.json().then((items) => {
         const total = res.headers.get('X-Total-Count');
@@ -41,19 +41,19 @@ class Loader {
     );
   }
 
-  public post(endpoint: string, data: MyObject) {
+  public post<T>(endpoint: string, data: MyObject): Promise<T> {
     return this.load(new URL(endpoint), 'POST', data).then((res: Response) => res.json());
   }
 
-  public put(endpoint: string, data: MyObject) {
+  public put<T>(endpoint: string, data: MyObject): Promise<T> {
     return this.load(new URL(endpoint), 'PUT', data).then((res: Response) => res.json());
   }
 
-  public delete(endpoint: string) {
+  public delete<T>(endpoint: string): Promise<T> {
     return this.load(new URL(endpoint), 'DELETE').then((res: Response) => res.json());
   }
 
-  public patch(endpoint: string, params: MyObject) {
+  public patch<T>(endpoint: string, params: MyObject): Promise<T> {
     return this.load(this.makeUrl(endpoint, params), 'PATCH').then((res: Response) => res.json());
   }
 }

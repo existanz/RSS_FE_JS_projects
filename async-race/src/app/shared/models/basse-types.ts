@@ -11,3 +11,8 @@ export interface Winner extends MyObject {
   wins: string;
   time: string;
 }
+
+export interface ResponseData<T> {
+  total: number;
+  items: T[];
+}

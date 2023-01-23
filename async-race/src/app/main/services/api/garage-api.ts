@@ -1,12 +1,12 @@
 import apiService from '../../../shared/services/api.service';
-import { MyObject } from '../../../shared/models/basse-types';
+import { Car, MyObject, ResponseData } from '../../../shared/models/basse-types';
 
 class GarageApi {
-  public getCars(paginator: MyObject) {
+  public getCars(paginator: MyObject): Promise<ResponseData<Car>> {
     return apiService.getData('garage', paginator);
   }
 
-  public getCar(id: number) {
+  public getCar(id: number): Promise<ResponseData<Car>> {
     return apiService.getData('garage', { id: id.toString() });
   }
 
