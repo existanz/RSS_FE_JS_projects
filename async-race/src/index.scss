@@ -87,6 +87,22 @@ button {
   user-select: none;
   cursor: pointer;
   font-family: inherit;
+  opacity: 0.9;
+  transition: 0.2s;
+
+  &:not([disabled]):hover {
+    opacity: 1;
+    scale: 102%;
+  }
+
+  &:not([disabled]):active {
+    scale: 99%;
+  }
+
+  &:disabled {
+    cursor: default ;
+    opacity: 0.7;
+  }
 }
 
 input::-webkit-inner-spin-button,
