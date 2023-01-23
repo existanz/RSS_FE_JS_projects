@@ -15,6 +15,11 @@ export default class WinnersTable extends DOMElement {
     this.tableHead = new DOMElement(this.node, 'thead');
     this.tableHeadRow = new TableRowElement(this.tableHead.node, ['№', 'Car', 'Name', 'Wins', 'Best time'], true);
     this.tableBody = new DOMElement(this.node, 'tbody');
+    this.update(winners, cars);
+  }
+
+  public update(winners: Winner[], cars: Car[]) {
+    this.tableBody.node.innerHTML = '';
     winners.forEach((winner, id) => {
       new TableRowElement(this.tableBody.node, [
         id.toString(),
