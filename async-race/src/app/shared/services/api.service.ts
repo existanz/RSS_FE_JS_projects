@@ -5,7 +5,8 @@ const PATH = 'http://localhost:3000/';
 class Loader {
   private errorHandler(res: Response): Response {
     if (!res.ok) {
-      throw Error(res.status.toString());
+      if (res.status == 404) console.log('Object not found on Server');
+      else throw Error(res.status.toString());
     }
 
     return res;

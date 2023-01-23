@@ -19,7 +19,14 @@ export default class GaragePage extends Page {
     this.garageTitle = new GarageTitle(this.node, 4);
     this.paginator = new Paginator(this.node, 4, 7);
     this.node.addEventListener('click', (ev) => {
-      if ((ev.target as HTMLElement).tagName == 'BUTTON') this.render();
+      const target = ev.target as HTMLElement;
+      console.log(target);
+      if (
+        target.tagName == 'BUTTON' &&
+        !target.classList.contains('car__button-start') &&
+        !target.classList.contains('car__button-stop')
+      )
+        this.render();
     });
   }
 

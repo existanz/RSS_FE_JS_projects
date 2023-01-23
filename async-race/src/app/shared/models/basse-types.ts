@@ -16,3 +16,8 @@ export interface ResponseData<T> {
   total: number;
   items: T[];
 }
+
+export interface CarEngine extends MyObject {
+  velocity: string;
+  distance: string;
+}

@@ -1,12 +1,15 @@
-import { Car } from '../models/basse-types';
+import { Car, Winner } from '../models/basse-types';
 
 class State {
-  public allData: [];
+  public winnersState: Winner[];
+
+  public carsState: Car[];
 
   public selectedCar: Car;
 
   constructor() {
-    this.allData = [];
+    this.winnersState = [];
+    this.carsState = [];
     this.selectedCar = { id: '', name: '', color: '' };
   }
 }

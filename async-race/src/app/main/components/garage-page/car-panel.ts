@@ -1,7 +1,9 @@
+import ButtonElement from '../../../shared/components/base-elements/button-element';
 import DOMElement from '../../../shared/components/base-elements/dom-element';
 import { Car } from '../../../shared/models/basse-types';
 import stateService from '../../../shared/services/state.service';
 import garageApi from '../../services/api/garage-api';
+import winnersApi from '../../services/api/winners-api';
 
 export default class CarPanel extends DOMElement {
   private panelTop: DOMElement;
@@ -12,9 +14,9 @@ export default class CarPanel extends DOMElement {
 
   private panelBottom: DOMElement;
 
-  private buttonStart: DOMElement;
+  public buttonStart: ButtonElement;
 
-  private buttonStop: DOMElement;
+  public buttonStop: ButtonElement;
 
   private labelCar: DOMElement;
 
@@ -35,20 +37,18 @@ export default class CarPanel extends DOMElement {
       ['button', 'car__button', 'car__button-delete'],
       'delete'
     );
-    this.buttonDelete.node.addEventListener('click', () => garageApi.deleteCar(car.id));
+    this.buttonDelete.node.addEventListener('click', () => {
+      garageApi.deleteCar(car.id);
+      winnersApi.deleteWinner(car.id);
+    });
     this.panelBottom = new DOMElement(this.node, 'div', ['car__panel-second']);
-    this.buttonStart = new DOMElement(
+    this.buttonStart = new ButtonElement(
       this.panelBottom.node,
-      'button',
       ['button', 'car__button', 'car__button-start'],
       'start'
     );
-    this.buttonStop = new DOMElement(
-      this.panelBottom.node,
-      'button',
-      ['button', 'car__button', 'car__button-stop'],
-      'stop'
-    );
+    this.buttonStop = new ButtonElement(this.panelBottom.node, ['button', 'car__button', 'car__button-stop'], 'stop');
+    this.buttonStop.disabled = true;
     this.labelCar = new DOMElement(this.panelBottom.node, 'label', ['car__name'], car.name);
   }
 }

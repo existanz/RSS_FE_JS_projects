@@ -1,5 +1,5 @@
 import apiService from '../../../shared/services/api.service';
-import { Car, MyObject, ResponseData } from '../../../shared/models/basse-types';
+import { Car, CarEngine, MyObject, ResponseData } from '../../../shared/models/basse-types';
 
 class GarageApi {
   public getCars(paginator: MyObject): Promise<ResponseData<Car>> {
@@ -20,6 +20,14 @@ class GarageApi {
 
   public updateCar(data: MyObject) {
     return apiService.put(`garage/${data.id}`, data);
+  }
+
+  public startEngine(params: MyObject): Promise<CarEngine> {
+    return apiService.patch('engine', params);
+  }
+
+  public switchEngine(params: MyObject): Promise<MyObject> {
+    return apiService.patch('engine', params);
   }
 }
 

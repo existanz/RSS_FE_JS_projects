@@ -6,7 +6,7 @@ class WinnersApi {
     return apiService.getData('winners', params);
   }
 
-  public getWinner(id: number): Promise<ResponseData<Winner>> {
+  public getWinner(id: string): Promise<ResponseData<Winner>> {
     return apiService.getData('winners', { id: id.toString() });
   }
 
@@ -14,7 +14,7 @@ class WinnersApi {
     return apiService.post('winners', data);
   }
 
-  public deleteWinner(id: number) {
+  public deleteWinner(id: string) {
     return apiService.delete(`winners/${id}`);
   }
 

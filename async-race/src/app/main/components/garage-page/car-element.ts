@@ -16,6 +16,22 @@ export default class CarElement extends DOMElement {
     this.car = car;
     this.carPanel = new CarPanel(this.node, car);
     this.carTrack = new CarTrack(this.node, car);
+    const buttonStart = this.carPanel.buttonStart;
+    const buttonStop = this.carPanel.buttonStop;
+    buttonStart.node.addEventListener('click', () => {
+      if (!buttonStart.disabled) {
+        this.carTrack.startRacer();
+        buttonStart.disabled = true;
+        buttonStop.disabled = false;
+      }
+    });
+    this.carPanel.buttonStop.node.addEventListener('click', () => {
+      if (!buttonStop.disabled) {
+        this.carTrack.stopRacer();
+        buttonStart.disabled = false;
+        buttonStop.disabled = true;
+      }
+    });
   }
 
   public render() {
