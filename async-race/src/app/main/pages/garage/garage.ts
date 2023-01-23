@@ -19,7 +19,6 @@ export default class GaragePage extends Page {
     this.garageTitle = new GarageTitle(this.node, 4);
     this.paginator = new Paginator(this.node, 4, 7);
     this.node.addEventListener('click', (ev) => {
-      console.log((ev.target as HTMLElement).tagName);
       if ((ev.target as HTMLElement).tagName == 'BUTTON') this.render();
     });
   }
@@ -35,5 +34,6 @@ export default class GaragePage extends Page {
     this.paginator.update(data.total);
     this.garageTitle.update(data.total);
     this.node.append(this.paginator.node);
+    this.garagePanel.updateSel();
   }
 }

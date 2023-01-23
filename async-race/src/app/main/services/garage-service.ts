@@ -13,7 +13,7 @@ export default class GarageService {
     return { id: '0', name: this.randomizer.getRandomName(), color: this.randomizer.getRandomColor() };
   }
 
-  public static translitCarName(word: string): string {
+  public translitCarName(word: string): string {
     let answer = '';
 
     for (let i = 0; i < word.length; ++i) {

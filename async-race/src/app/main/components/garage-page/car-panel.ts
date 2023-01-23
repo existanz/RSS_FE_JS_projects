@@ -1,5 +1,6 @@
 import DOMElement from '../../../shared/components/base-elements/dom-element';
 import { Car } from '../../../shared/models/basse-types';
+import stateService from '../../../shared/services/state.service';
 import garageApi from '../../services/api/garage-api';
 
 export default class CarPanel extends DOMElement {
@@ -27,6 +28,7 @@ export default class CarPanel extends DOMElement {
       ['button', 'car__button', 'car__button-select'],
       'select'
     );
+    this.buttonSelect.node.addEventListener('click', () => (stateService.selectedCar = car));
     this.buttonDelete = new DOMElement(
       this.panelTop.node,
       'button',
