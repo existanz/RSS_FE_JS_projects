@@ -15,11 +15,12 @@ export default class Paginator extends DOMElement {
 
   private nextButton: ButtonElement;
 
-  constructor(parentNode: HTMLElement, totalCount: number) {
+  constructor(parentNode: HTMLElement, totalCount: number, limit: number) {
     super(parentNode, 'div', ['paginator']);
 
     this.totalCount = totalCount;
     this.paginator = { _limit: '7', _page: '1' };
+    this.paginator._limit = limit?.toString();
     this.curPage = parseInt(this.paginator._page);
     this.prevButton = new ButtonElement(this.node, ['button', 'paginator__button', 'paginator__button-prev'], '<');
     this.prevButton.node.addEventListener('click', () => {

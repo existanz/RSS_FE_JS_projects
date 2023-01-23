@@ -18,7 +18,7 @@ export default class GaragePage extends Page {
     super('garage');
     this.garagePanel = new GaragePanel(this.node);
     this.garageTitle = new GarageTitle(this.node, 4);
-    this.paginator = new Paginator(this.node, 4);
+    this.paginator = new Paginator(this.node, 4, 7);
     this.node.addEventListener('click', () => this.render());
   }
 
