@@ -14,12 +14,12 @@ export default class CarTrack extends DOMElement {
     super(parentNode, 'div', ['car__track']);
 
     this.car = car;
-    this.carRacer = new CarRaser(this.node, car);
+    this.carRacer = new CarRaser(this.node, car.color);
     this.carFlag = new DOMElement(this.node, 'div', ['race__flag']);
     this.carFlag.node.innerHTML = SVGicons.flag;
   }
 
   public update(car: Car) {
-    this.carRacer.update(car);
+    this.carRacer.update(car.color);
   }
 }

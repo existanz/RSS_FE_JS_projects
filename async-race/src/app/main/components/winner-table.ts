@@ -10,7 +10,7 @@ export default class WinnersTable extends DOMElement {
   private tableBody: DOMElement;
 
   constructor(parentNode: HTMLElement, winners: Winner[], cars: Car[]) {
-    super(parentNode, 'table', ['winners_table']);
+    super(parentNode, 'table', ['winners__table']);
 
     this.tableHead = new DOMElement(this.node, 'thead');
     this.tableHeadRow = new TableRowElement(this.tableHead.node, ['No', 'Car', 'Name', 'Wins', 'Best time'], true);

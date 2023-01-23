@@ -38,7 +38,7 @@
   position: relative;
 }
 
-.racer {
+.car__racer {
   position: absolute;
   left: 10px;
   top: 10px;
@@ -58,6 +58,7 @@
 }
 
 .paginator {
+  padding-top: 20px;
   display: flex;
   justify-content: center;
 

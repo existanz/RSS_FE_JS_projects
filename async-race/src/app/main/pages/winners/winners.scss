@@ -1,0 +1,16 @@
+.winners {
+  width: 100%;
+  text-align: center;
+
+  &__table {
+    margin: 0 auto;
+    width: 90%;
+    font-size: x-large;
+    line-height: 1.8;
+  }
+
+  &__title {
+  margin-top: 20px;
+  text-align: center;
+  }
+}
