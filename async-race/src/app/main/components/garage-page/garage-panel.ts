@@ -22,7 +22,7 @@ export default class GaragePanel extends DOMElement {
 
   public raceButton: ButtonElement;
 
-  private resetButton: ButtonElement;
+  public resetButton: ButtonElement;
 
   private generateButton: ButtonElement;
 

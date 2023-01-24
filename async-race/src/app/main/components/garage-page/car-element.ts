@@ -41,4 +41,8 @@ export default class CarElement extends DOMElement {
   public startRacer() {
     this.carTrack.startRacer();
   }
+
+  public stopRacer() {
+    this.carTrack.stopRacer();
+  }
 }
