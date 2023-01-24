@@ -5,6 +5,7 @@ import CarElement from '../../components/garage-page/car-element';
 import GaragePanel from '../../components/garage-page/garage-panel';
 import GarageTitle from '../../components/garage-page/garage-title';
 import Paginator from '../../../shared/components/paginator';
+import stateService from '../../../shared/services/state.service';
 
 export default class GaragePage extends Page {
   private garagePanel: GaragePanel;
@@ -25,8 +26,10 @@ export default class GaragePage extends Page {
         target.tagName == 'BUTTON' &&
         !target.classList.contains('car__button-start') &&
         !target.classList.contains('car__button-stop')
-      )
+      ) {
+        stateService.carElements = [];
         this.render();
+      }
     });
   }
 
@@ -35,9 +38,10 @@ export default class GaragePage extends Page {
     this.node.innerHTML = '';
     this.node.append(this.garagePanel.node);
     this.node.append(this.garageTitle.node);
-    data.items.forEach((car) => {
-      new CarElement(this.node, car);
-    });
+    if (stateService.carElements.length < 7)
+      stateService.carElements = data.items.map((car) => new CarElement(this.node, car));
+    console.log(stateService.carElements);
+    stateService.carElements.forEach((el) => this.node.append(el.node));
     this.paginator.update(data.total);
     this.garageTitle.update(data.total);
     this.node.append(this.paginator.node);
