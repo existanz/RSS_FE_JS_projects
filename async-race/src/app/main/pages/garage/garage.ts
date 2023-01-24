@@ -25,6 +25,7 @@ export default class GaragePage extends Page {
         stateService.carElements = [];
         this.render();
       }
+      if (target.classList.contains('car__button-select')) this.garagePanel.updateSel();
     });
 
     this.garagePanel.raceButton.node.addEventListener('click', () => {
