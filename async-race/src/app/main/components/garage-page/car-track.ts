@@ -1,3 +1,4 @@
+import AlertModal from '../../../core/components/alert/alert';
 import DOMElement from '../../../shared/components/base-elements/dom-element';
 import SVGicons from '../../../shared/components/svg-icons';
 import { Car, Winner } from '../../../shared/models/basse-types';
@@ -90,7 +91,11 @@ export default class CarTrack extends DOMElement {
   public async isWinner(car: Car, duration: number): Promise<void> {
     if (!stateService.hasWinner) {
       stateService.hasWinner = true;
-      alert(`The winer is ${car.name} with ${(duration / 1000).toFixed(2)}s time!`);
+      const alertMessage = new AlertModal(`The winer is ${car.name} with ${(duration / 1000).toFixed(2)}s time!`);
+      document.body.append(alertMessage.node);
+      setTimeout(() => {
+        alertMessage.node.remove();
+      }, 3500);
       try {
         const elemWinner: Winner = (await winnersApi.getWinner(car.id)).items[0];
 
