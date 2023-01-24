@@ -28,11 +28,17 @@ export default class GaragePage extends Page {
     });
 
     this.garagePanel.raceButton.node.addEventListener('click', () => {
-      stateService.carElements.forEach((elem) => elem.startRacer());
+      stateService.raceRezults = [];
+      stateService.carElements.forEach((elem) => {
+        elem.startRacer();
+        stateService.raceRezults.push({ id: elem.car.id, name: elem.car.name, duration: '0', win: '0' });
+      });
+      console.log(stateService.raceRezults);
     });
 
     this.garagePanel.resetButton.node.addEventListener('click', () => {
       stateService.carElements.forEach((elem) => elem.stopRacer());
+      stateService.raceRezults = [];
     });
   }
 

@@ -4,7 +4,7 @@ import CarPanel from './car-panel';
 import CarTrack from './car-track';
 
 export default class CarElement extends DOMElement {
-  private car: Car;
+  public car: Car;
 
   private carPanel: CarPanel;
 
