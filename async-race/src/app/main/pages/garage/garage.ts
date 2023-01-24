@@ -29,11 +29,8 @@ export default class GaragePage extends Page {
 
     this.garagePanel.raceButton.node.addEventListener('click', () => {
       stateService.raceRezults = [];
-      stateService.carElements.forEach((elem) => {
-        elem.startRacer();
-        stateService.raceRezults.push({ id: elem.car.id, name: elem.car.name, duration: '0', win: '0' });
-      });
-      console.log(stateService.raceRezults);
+      stateService.hasWinner = false;
+      stateService.carElements.forEach((elem) => elem.startRacer());
     });
 
     this.garagePanel.resetButton.node.addEventListener('click', () => {
@@ -49,7 +46,6 @@ export default class GaragePage extends Page {
     this.node.append(this.garageTitle.node);
     if (stateService.carElements.length < 1)
       stateService.carElements = data.items.map((car) => new CarElement(this.node, car));
-    console.log(stateService.carElements);
     stateService.carElements.forEach((el) => this.node.append(el.node));
     this.paginator.update(data.total);
     this.garageTitle.update(data.total);

@@ -66,22 +66,16 @@ export default class CarTrack extends DOMElement {
       }
     );
     this.racerAnimation.play();
-    const resultId = stateService.raceRezults.findIndex((elem) => elem.id == this.car.id);
-    if (resultId > 0) stateService.raceRezults[resultId].duration = duration.toString();
 
     try {
       await garageApi.switchEngine({ id: this.car.id, status: 'drive' });
+      this.isWinner(this.car, duration);
     } catch (err) {
       if ((err as Error).message === '500') {
         this.racerAnimation.pause();
         console.log(`The engine of ${this.car.name} is blow up!`);
-        const resultIdDel = stateService.raceRezults.findIndex((elem) => elem.id == this.car.id);
-        stateService.raceRezults.splice(resultIdDel, 1);
       }
     }
-    setTimeout(() => {
-      this.isWinner(this.car, duration);
-    }, 11000);
   }
 
   public async stopRacer() {
@@ -94,22 +88,23 @@ export default class CarTrack extends DOMElement {
   }
 
   public async isWinner(car: Car, duration: number): Promise<void> {
-    if (!this.hasWinner) {
-      this.hasWinner = true;
+    if (!stateService.hasWinner) {
+      stateService.hasWinner = true;
+      alert(`The winer is ${car.name} with ${(duration / 1000).toFixed(2)}s time!`);
       try {
         const elemWinner: Winner = (await winnersApi.getWinner(car.id)).items[0];
 
         await winnersApi.updateWinner(
           {
             wins: (parseInt(elemWinner.wins) + 1).toString(),
-            time: Math.min(duration, parseInt(elemWinner.time)).toString(),
+            time: Math.min(duration, parseFloat(elemWinner.time)).toString(),
           },
           parseInt(elemWinner.id)
         );
       } catch {
         await winnersApi.createWinner({
           id: car.id,
-          time: duration.toString(),
+          time: (duration / 1000).toFixed(2).toString(),
           wins: '1',
         });
       }

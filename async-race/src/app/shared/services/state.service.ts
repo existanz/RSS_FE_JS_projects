@@ -2,6 +2,8 @@ import CarElement from '../../main/components/garage-page/car-element';
 import { Car, MyObject, Winner } from '../models/basse-types';
 
 class State {
+  public hasWinner: boolean;
+
   public winnersState: Winner[];
 
   public carsState: Car[];
@@ -13,6 +15,7 @@ class State {
   public raceRezults: MyObject[];
 
   constructor() {
+    this.hasWinner = false;
     this.winnersState = [];
     this.carsState = [];
     this.carElements = [];
