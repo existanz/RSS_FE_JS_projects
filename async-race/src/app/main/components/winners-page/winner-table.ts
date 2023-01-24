@@ -1,8 +1,10 @@
 import DOMElement from '../../../shared/components/base-elements/dom-element';
 import TableRowElement from '../../../shared/components/base-elements/table-row-element';
-import { Car, Winner } from '../../../shared/models/basse-types';
+import { Car, MyObject, Winner } from '../../../shared/models/basse-types';
 
 export default class WinnersTable extends DOMElement {
+  public sortOptions: MyObject;
+
   private tableHead: DOMElement;
 
   private tableHeadRow: TableRowElement;
@@ -12,8 +14,12 @@ export default class WinnersTable extends DOMElement {
   constructor(parentNode: HTMLElement, winners: Winner[], cars: Car[]) {
     super(parentNode, 'table', ['winners__table']);
 
+    const tableColumnNames = ['No', 'Car', 'Name', 'Wins', 'Best time'];
+
+    this.sortOptions = { _sort: 'id', _order: 'ASC' };
+
     this.tableHead = new DOMElement(this.node, 'thead');
-    this.tableHeadRow = new TableRowElement(this.tableHead.node, ['No', 'Car', 'Name', 'Wins', 'Best time'], true);
+    this.tableHeadRow = new TableRowElement(this.tableHead.node, tableColumnNames, true);
     this.tableBody = new DOMElement(this.node, 'tbody');
     this.update(winners, cars);
   }

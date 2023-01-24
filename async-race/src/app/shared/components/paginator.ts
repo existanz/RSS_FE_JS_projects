@@ -38,7 +38,8 @@ export default class Paginator extends DOMElement {
       '>'
     );
     this.nextButton.node.addEventListener('click', () => {
-      if (!this.nextButton.disabled && this.curPage < Math.ceil(this.totalCount / parseInt(this.paginator._limit))) {
+      const maxPage = Math.ceil(this.totalCount / parseInt(this.paginator._limit));
+      if (!this.nextButton.disabled && this.curPage < maxPage) {
         this.curPage++;
         this.update(this.totalCount);
       }

@@ -24,7 +24,7 @@ export default class WinnersPage extends Page {
   }
 
   public async render() {
-    const winnersData = await winnersApi.getWinners(this.paginator.paginator);
+    const winnersData = await winnersApi.getWinners({ ...this.paginator.paginator, ...this.winnersTable.sortOptions });
     const cars = await Promise.all(winnersData.items.map((winner: Winner) => garageApi.getCar(winner.id)));
     this.node.innerHTML = '';
     this.winnersTitle.update(winnersData.total);
