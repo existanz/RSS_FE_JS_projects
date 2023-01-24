@@ -22,7 +22,7 @@ export default class GaragePage extends Page {
     this.node.addEventListener('click', (ev) => {
       const target = ev.target as HTMLElement;
       console.log(target);
-      if (target.tagName == 'BUTTON' && target.classList.contains('button-update')) {
+      if (target.tagName == 'BUTTON' && target.classList.contains('button__updater')) {
         stateService.carElements = [];
         this.render();
       }
