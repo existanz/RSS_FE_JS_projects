@@ -34,7 +34,7 @@ export default class CarPanel extends DOMElement {
     this.buttonDelete = new DOMElement(
       this.panelTop.node,
       'button',
-      ['button', 'car__button', 'car__button-delete'],
+      ['button', 'button__updater', 'car__button', 'car__button-delete'],
       'delete'
     );
     this.buttonDelete.node.addEventListener('click', () => {

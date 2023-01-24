@@ -20,7 +20,7 @@ export default class GaragePanel extends DOMElement {
 
   private racePanel: DOMElement;
 
-  private raceButton: ButtonElement;
+  public raceButton: ButtonElement;
 
   private resetButton: ButtonElement;
 
@@ -41,14 +41,22 @@ export default class GaragePanel extends DOMElement {
       this.carColorInput.value = (ev.target as HTMLInputElement).value;
     });
     this.carColorInput.node.setAttribute('type', 'color');
-    this.createButton = new ButtonElement(this.carPropPanel.node, ['button', 'button__create'], 'create');
+    this.createButton = new ButtonElement(
+      this.carPropPanel.node,
+      ['button', 'button__updater', 'button__create'],
+      'create'
+    );
     this.createButton.node.addEventListener('click', () => {
       if (this.carNameInput.value) {
         garageApi.createCar({ name: this.carNameInput.value, color: this.carColorInput.value });
         this.clear();
       }
     });
-    this.updateButton = new ButtonElement(this.carPropPanel.node, ['button', 'button__update'], 'update');
+    this.updateButton = new ButtonElement(
+      this.carPropPanel.node,
+      ['button', 'button__updater', 'button__update'],
+      'update'
+    );
     this.updateButton.node.addEventListener('click', () => {
       if (!this.updateButton.disabled) {
         garageApi.updateCar({
@@ -62,7 +70,11 @@ export default class GaragePanel extends DOMElement {
     this.racePanel = new DOMElement(this.node, 'div', ['garage__panel-race']);
     this.raceButton = new ButtonElement(this.racePanel.node, ['button', 'button__race'], 'race');
     this.resetButton = new ButtonElement(this.racePanel.node, ['button', 'button__reset'], 'reset');
-    this.generateButton = new ButtonElement(this.racePanel.node, ['button', 'button__generate'], 'generate 100 cars');
+    this.generateButton = new ButtonElement(
+      this.racePanel.node,
+      ['button', 'button__updater', 'button__generate'],
+      'generate 100 cars'
+    );
     this.generateButton.node.addEventListener('click', () => {
       for (let i = 0; i < 100; i++) {
         const car = this.garageService.generateCar();

@@ -22,13 +22,21 @@ export default class Paginator extends DOMElement {
     this.paginator = { _limit: '7', _page: '1' };
     this.paginator._limit = limit?.toString();
     this.curPage = parseInt(this.paginator._page);
-    this.prevButton = new ButtonElement(this.node, ['button', 'paginator__button', 'paginator__button-prev'], '<');
+    this.prevButton = new ButtonElement(
+      this.node,
+      ['button', 'button__updater', 'paginator__button', 'paginator__button-prev'],
+      '<'
+    );
     this.prevButton.node.addEventListener('click', () => {
       if (!this.prevButton.disabled && this.curPage > 1) this.curPage--;
       this.update(this.totalCount);
     });
     this.pageNum = new DOMElement(this.node, 'label', ['paginator__page-number'], this.paginator._page);
-    this.nextButton = new ButtonElement(this.node, ['button', 'paginator__button', 'paginator__button-next'], '>');
+    this.nextButton = new ButtonElement(
+      this.node,
+      ['button', 'button__updater', 'paginator__button', 'paginator__button-next'],
+      '>'
+    );
     this.nextButton.node.addEventListener('click', () => {
       if (!this.nextButton.disabled && this.curPage < Math.ceil(this.totalCount / parseInt(this.paginator._limit))) {
         this.curPage++;

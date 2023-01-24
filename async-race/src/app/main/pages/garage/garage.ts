@@ -22,14 +22,14 @@ export default class GaragePage extends Page {
     this.node.addEventListener('click', (ev) => {
       const target = ev.target as HTMLElement;
       console.log(target);
-      if (
-        target.tagName == 'BUTTON' &&
-        !target.classList.contains('car__button-start') &&
-        !target.classList.contains('car__button-stop')
-      ) {
+      if (target.tagName == 'BUTTON' && target.classList.contains('button-update')) {
         stateService.carElements = [];
         this.render();
       }
+    });
+
+    this.garagePanel.raceButton.node.addEventListener('click', () => {
+      stateService.carElements.forEach((elem) => elem.startRacer());
     });
   }
 
