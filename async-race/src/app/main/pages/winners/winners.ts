@@ -20,7 +20,15 @@ export default class WinnersPage extends Page {
     this.winnersTitle = new WinnersTitle(this.node, 10);
     this.winnersTable = new WinnersTable(this.node, [], []);
     this.paginator = new Paginator(this.node, 10, 10);
-    this.node.addEventListener('click', () => this.render());
+    this.node.addEventListener('click', (ev) => {
+      const target = ev.target as HTMLElement;
+      const sorterName = target.textContent;
+      if (target.classList.contains('button__updater')) this.render();
+      if (sorterName == 'Wins' || sorterName == 'Best time') {
+        this.winnersTable.changeSort(sorterName);
+        this.render();
+      }
+    });
   }
 
   public async render() {

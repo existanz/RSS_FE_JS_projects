@@ -36,4 +36,24 @@ export default class WinnersTable extends DOMElement {
       ]);
     });
   }
+
+  public changeSort(sortBy: string) {
+    switch (sortBy) {
+      case 'Wins':
+        this.sortOptions._sort = 'wins';
+        this.changeOrder();
+        break;
+      case 'Best time':
+        this.sortOptions._sort = 'time';
+        this.changeOrder();
+        break;
+      default:
+        break;
+    }
+  }
+
+  private changeOrder() {
+    if (this.sortOptions._order == 'ASC') this.sortOptions._order = 'DESC';
+    else this.sortOptions._order = 'ASC';
+  }
 }
