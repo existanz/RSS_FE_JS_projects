@@ -16,20 +16,14 @@ export default class CarElement extends DOMElement {
     this.car = car;
     this.carPanel = new CarPanel(this.node, car);
     this.carTrack = new CarTrack(this.node, car);
-    const buttonStart = this.carPanel.buttonStart;
-    const buttonStop = this.carPanel.buttonStop;
-    buttonStart.node.addEventListener('click', () => {
-      if (!buttonStart.disabled) {
-        this.carTrack.startRacer();
-        buttonStart.disabled = true;
-        buttonStop.disabled = false;
+    this.carPanel.buttonStart.node.addEventListener('click', () => {
+      if (!this.carPanel.buttonStart.disabled) {
+        this.startRacer();
       }
     });
     this.carPanel.buttonStop.node.addEventListener('click', () => {
-      if (!buttonStop.disabled) {
-        this.carTrack.stopRacer();
-        buttonStart.disabled = false;
-        buttonStop.disabled = true;
+      if (!this.carPanel.buttonStop.disabled) {
+        this.stopRacer();
       }
     });
   }
@@ -39,10 +33,14 @@ export default class CarElement extends DOMElement {
   }
 
   public startRacer() {
+    this.carPanel.buttonStart.disabled = true;
+    this.carPanel.buttonStop.disabled = false;
     this.carTrack.startRacer();
   }
 
   public stopRacer() {
+    this.carPanel.buttonStop.disabled = true;
+    this.carPanel.buttonStart.disabled = false;
     this.carTrack.stopRacer();
   }
 }

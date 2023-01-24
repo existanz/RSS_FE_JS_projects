@@ -21,7 +21,6 @@ export default class GaragePage extends Page {
     this.paginator = new Paginator(this.node, 4, 7);
     this.node.addEventListener('click', (ev) => {
       const target = ev.target as HTMLElement;
-      console.log(target);
       if (target.tagName == 'BUTTON' && target.classList.contains('button__updater')) {
         stateService.carElements = [];
         this.render();
