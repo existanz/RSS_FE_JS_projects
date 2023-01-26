@@ -15,7 +15,7 @@ class State {
   public raceRezults: MyObject[];
 
   constructor() {
-    this.hasWinner = false;
+    this.hasWinner = true;
     this.winnersState = [];
     this.carsState = [];
     this.carElements = [];

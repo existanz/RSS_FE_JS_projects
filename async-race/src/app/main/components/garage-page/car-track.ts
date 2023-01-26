@@ -89,9 +89,10 @@ export default class CarTrack extends DOMElement {
   }
 
   public async isWinner(car: Car, duration: number): Promise<void> {
+    const time = duration / 1000;
     if (!stateService.hasWinner) {
       stateService.hasWinner = true;
-      const alertMessage = new AlertModal(`The winer is ${car.name} with ${(duration / 1000).toFixed(2)}s time!`);
+      const alertMessage = new AlertModal(`The winer is ${car.name} with ${time.toFixed(2)}s time!`);
       document.body.append(alertMessage.node);
       setTimeout(() => {
         alertMessage.node.remove();
@@ -102,14 +103,14 @@ export default class CarTrack extends DOMElement {
         await winnersApi.updateWinner(
           {
             wins: (parseInt(elemWinner.wins) + 1).toString(),
-            time: Math.min(duration, parseFloat(elemWinner.time)).toString(),
+            time: Math.min(time, parseFloat(elemWinner.time)).toFixed(2),
           },
           parseInt(elemWinner.id)
         );
       } catch {
         await winnersApi.createWinner({
           id: car.id,
-          time: (duration / 1000).toFixed(2).toString(),
+          time: time.toFixed(2),
           wins: '1',
         });
       }
