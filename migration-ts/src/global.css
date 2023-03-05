@@ -39,6 +39,11 @@ header h1 {
   border-radius: 8px;
 }
 
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(270deg, #FF9727, #A65C0D);
+  cursor: pointer;
+}
+
 .footer {
   position: fixed;
   z-index: 2;
