@@ -1,2 +1,6 @@
-# existanz-JSFE2022Q3
-Private repository for @existanz
+# RS School FE/JS Tasks
+* [online-zoo](online-zoo)
+* [gem-puzzle](gem-puzzle)
+* [songbird](songbird)
+* [news-org](news-org)
+* [async-race](async-race)

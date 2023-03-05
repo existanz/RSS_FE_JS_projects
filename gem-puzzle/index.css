@@ -1,0 +1,68 @@
+.field {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+.command-panel-dock {
+	display: flex;
+	justify-content: space-between;
+	font-size: 1.5em;
+	font-weight: 500;
+	color: #ffb273;
+}
+button {
+	border: #A64B00 solid 2px;
+	border-radius: 5px;
+	background-color: #5CCCCC;
+	color: #A64B00;
+	font-size: 1.5em;
+}
+.puzzle {
+	position: relative;
+	border-radius: 5px;
+    border: solid 2px;
+}
+.cell {
+	position: absolute;
+	display: block;
+	width: 80px;
+	height: 80px;
+	transition: 0.3s;
+	user-select: none;
+}
+.number {
+	border-radius: 10px;
+    border: solid 2px;
+	text-align: center;
+	font-size: 2em;
+	cursor:pointer;
+}
+.dark {
+	background-color: #006363;
+	color: #ffb273;
+}
+.light {
+	background-color: #009999;
+	color: #A64B00;
+}
+.scores-popup {
+	position: absolute;
+	width: 50%;
+	height: 400px;
+	background-color: #ffb273;
+	color: #006363;
+	opacity: 0.9;
+	left: 25%;
+	top: 100px;
+	border-radius: 5px;
+}
+.unvisible {
+	display: none;
+}
+@media (max-width:700px) {
+	.cell {
+		width: 40px;
+		height: 40px;
+	}
+}
