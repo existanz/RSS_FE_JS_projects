@@ -85,6 +85,13 @@
     overflow: hidden;
 
 }
+
+.animal-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
 .animals-wraper {
     display: flex;
     height: 882px;

@@ -36,11 +36,17 @@
 }
 
 /*ANIMAL*/
+.animal-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
 .animal-slider {
     width: 94%;
 }
 .animals-wraper {
-    min-width: 5000px
+    min-width: 5000px;
 }
 .animal-card {
     height: 354px;

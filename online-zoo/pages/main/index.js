@@ -122,7 +122,7 @@ prevBtn = document.querySelector(".arrow-left")
 
 let slideWidth = 1550,
 q=1;
-if (screen.width <=1400) slideWidth = screen.width;
+if (screen.width <=1440) slideWidth = 1000;
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
